@@ -1,5 +1,5 @@
 //
-//  CSViewController.m
+//  CSHomeViewController.m
 //  MySpots
 //
 //  Created by FlyinGeek on 11/1/13.
@@ -8,13 +8,13 @@
 
 #import "MetaioSDKViewController.h"
 #import "EAGLView.h"
-#import "CSViewController.h"
+#import "CSHomeViewController.h"
 
-@interface CSViewController ()
+@interface CSHomeViewController ()
 
 @end
 
-@implementation CSViewController
+@implementation CSHomeViewController
 
 - (void)viewDidLoad
 {

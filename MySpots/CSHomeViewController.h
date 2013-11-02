@@ -1,5 +1,5 @@
 //
-//  CSViewController.h
+//  CSHomeViewController.h
 //  MySpots
 //
 //  Created by FlyinGeek on 11/1/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CSViewController : UIViewController
+@interface CSHomeViewController : UIViewController
 
 @end

@@ -14,7 +14,7 @@
 		F7466F7318244FAA004BA1FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F7466F7218244FAA004BA1FE /* main.m */; };
 		F7466F7718244FAA004BA1FE /* CSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7466F7618244FAA004BA1FE /* CSAppDelegate.m */; };
 		F7466F7A18244FAB004BA1FE /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7466F7818244FAB004BA1FE /* iPhone.storyboard */; };
-		F7466F7D18244FAB004BA1FE /* CSViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7466F7C18244FAB004BA1FE /* CSViewController.mm */; };
+		F7466F7D18244FAB004BA1FE /* CSHomeViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7466F7C18244FAB004BA1FE /* CSHomeViewController.mm */; };
 		F7466F7F18244FAB004BA1FE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7466F7E18244FAB004BA1FE /* Images.xcassets */; };
 		F7466F8618244FAB004BA1FE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7466F8518244FAB004BA1FE /* XCTest.framework */; };
 		F7466F8718244FAB004BA1FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7466F6618244FAA004BA1FE /* Foundation.framework */; };
@@ -47,6 +47,14 @@
 		F7466FD218248E37004BA1FE /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F7466FD118248E37004BA1FE /* libsqlite3.0.dylib */; };
 		F7466FD418248E45004BA1FE /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F7466FD318248E45004BA1FE /* libxml2.dylib */; };
 		F7466FD618248E4B004BA1FE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F7466FD518248E4B004BA1FE /* libz.dylib */; };
+		F7466FE1182587E7004BA1FE /* HEGeoAR.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7466FDE182587E7004BA1FE /* HEGeoAR.xib */; };
+		F7466FE2182587E7004BA1FE /* HEGeoARViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7466FE0182587E7004BA1FE /* HEGeoARViewController.mm */; };
+		F7466FE5182587F5004BA1FE /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F7466FE4182587F5004BA1FE /* Reachability.m */; };
+		F7466FE918258848004BA1FE /* CSWaypoint.m in Sources */ = {isa = PBXBuildFile; fileRef = F7466FE818258848004BA1FE /* CSWaypoint.m */; };
+		F7466FEB18258E65004BA1FE /* ImageRes in Resources */ = {isa = PBXBuildFile; fileRef = F7466FEA18258E65004BA1FE /* ImageRes */; };
+		F7466FEE18259864004BA1FE /* CSSpotCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7466FED18259864004BA1FE /* CSSpotCreationViewController.m */; };
+		F7466FF718259C12004BA1FE /* CSSpotsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7466FF618259C12004BA1FE /* CSSpotsTableViewController.m */; };
+		F7466FFA18259CF6004BA1FE /* CSAboutUSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7466FF918259CF6004BA1FE /* CSAboutUSViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,8 +79,8 @@
 		F7466F7518244FAA004BA1FE /* CSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSAppDelegate.h; sourceTree = "<group>"; };
 		F7466F7618244FAA004BA1FE /* CSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSAppDelegate.m; sourceTree = "<group>"; };
 		F7466F7918244FAB004BA1FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/iPhone.storyboard; sourceTree = "<group>"; };
-		F7466F7B18244FAB004BA1FE /* CSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSViewController.h; sourceTree = "<group>"; };
-		F7466F7C18244FAB004BA1FE /* CSViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CSViewController.mm; sourceTree = "<group>"; };
+		F7466F7B18244FAB004BA1FE /* CSHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSHomeViewController.h; sourceTree = "<group>"; };
+		F7466F7C18244FAB004BA1FE /* CSHomeViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CSHomeViewController.mm; sourceTree = "<group>"; };
 		F7466F7E18244FAB004BA1FE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F7466F8418244FAB004BA1FE /* MySpotsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MySpotsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7466F8518244FAB004BA1FE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -107,6 +115,20 @@
 		F7466FD118248E37004BA1FE /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		F7466FD318248E45004BA1FE /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		F7466FD518248E4B004BA1FE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		F7466FDE182587E7004BA1FE /* HEGeoAR.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HEGeoAR.xib; sourceTree = "<group>"; };
+		F7466FDF182587E7004BA1FE /* HEGeoARViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEGeoARViewController.h; sourceTree = "<group>"; };
+		F7466FE0182587E7004BA1FE /* HEGeoARViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HEGeoARViewController.mm; sourceTree = "<group>"; };
+		F7466FE3182587F5004BA1FE /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		F7466FE4182587F5004BA1FE /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		F7466FE718258848004BA1FE /* CSWaypoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSWaypoint.h; sourceTree = "<group>"; };
+		F7466FE818258848004BA1FE /* CSWaypoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSWaypoint.m; sourceTree = "<group>"; };
+		F7466FEA18258E65004BA1FE /* ImageRes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ImageRes; sourceTree = "<group>"; };
+		F7466FEC18259864004BA1FE /* CSSpotCreationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSpotCreationViewController.h; sourceTree = "<group>"; };
+		F7466FED18259864004BA1FE /* CSSpotCreationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSpotCreationViewController.m; sourceTree = "<group>"; };
+		F7466FF518259C12004BA1FE /* CSSpotsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSpotsTableViewController.h; sourceTree = "<group>"; };
+		F7466FF618259C12004BA1FE /* CSSpotsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSpotsTableViewController.m; sourceTree = "<group>"; };
+		F7466FF818259CF6004BA1FE /* CSAboutUSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAboutUSViewController.h; sourceTree = "<group>"; };
+		F7466FF918259CF6004BA1FE /* CSAboutUSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAboutUSViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,9 +239,11 @@
 				F7466F7818244FAB004BA1FE /* iPhone.storyboard */,
 				F7466F7518244FAA004BA1FE /* CSAppDelegate.h */,
 				F7466F7618244FAA004BA1FE /* CSAppDelegate.m */,
-				F7466FCA18248CCB004BA1FE /* MetaioSDKBaseFiles */,
+				F7466FE618258818004BA1FE /* Models */,
 				F7466F9B18248852004BA1FE /* ViewControllers */,
+				F7466FCA18248CCB004BA1FE /* MetaioSDKBaseFiles */,
 				F7466F7E18244FAB004BA1FE /* Images.xcassets */,
+				F7466FEA18258E65004BA1FE /* ImageRes */,
 				F7466F6D18244FAA004BA1FE /* Supporting Files */,
 			);
 			path = MySpots;
@@ -228,6 +252,8 @@
 		F7466F6D18244FAA004BA1FE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F7466FE3182587F5004BA1FE /* Reachability.h */,
+				F7466FE4182587F5004BA1FE /* Reachability.m */,
 				F7466F6E18244FAA004BA1FE /* MySpots-Info.plist */,
 				F7466F6F18244FAA004BA1FE /* InfoPlist.strings */,
 				F7466F7218244FAA004BA1FE /* main.m */,
@@ -257,8 +283,14 @@
 		F7466F9B18248852004BA1FE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				F7466F7B18244FAB004BA1FE /* CSViewController.h */,
-				F7466F7C18244FAB004BA1FE /* CSViewController.mm */,
+				F7466F7B18244FAB004BA1FE /* CSHomeViewController.h */,
+				F7466F7C18244FAB004BA1FE /* CSHomeViewController.mm */,
+				F7466FEC18259864004BA1FE /* CSSpotCreationViewController.h */,
+				F7466FED18259864004BA1FE /* CSSpotCreationViewController.m */,
+				F7466FF518259C12004BA1FE /* CSSpotsTableViewController.h */,
+				F7466FF618259C12004BA1FE /* CSSpotsTableViewController.m */,
+				F7466FF818259CF6004BA1FE /* CSAboutUSViewController.h */,
+				F7466FF918259CF6004BA1FE /* CSAboutUSViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -266,12 +298,24 @@
 		F7466FCA18248CCB004BA1FE /* MetaioSDKBaseFiles */ = {
 			isa = PBXGroup;
 			children = (
+				F7466FDE182587E7004BA1FE /* HEGeoAR.xib */,
+				F7466FDF182587E7004BA1FE /* HEGeoARViewController.h */,
+				F7466FE0182587E7004BA1FE /* HEGeoARViewController.mm */,
 				F7466FCB18248D31004BA1FE /* EAGLView.h */,
 				F7466FCC18248D31004BA1FE /* EAGLView.mm */,
 				F7466FCD18248D31004BA1FE /* MetaioSDKViewController.h */,
 				F7466FCE18248D31004BA1FE /* MetaioSDKViewController.mm */,
 			);
 			name = MetaioSDKBaseFiles;
+			sourceTree = "<group>";
+		};
+		F7466FE618258818004BA1FE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F7466FE718258848004BA1FE /* CSWaypoint.h */,
+				F7466FE818258848004BA1FE /* CSWaypoint.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,9 +398,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7466FEB18258E65004BA1FE /* ImageRes in Resources */,
 				F7466F7F18244FAB004BA1FE /* Images.xcassets in Resources */,
 				F7466F7118244FAA004BA1FE /* InfoPlist.strings in Resources */,
 				F7466F7A18244FAB004BA1FE /* iPhone.storyboard in Resources */,
+				F7466FE1182587E7004BA1FE /* HEGeoAR.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,11 +421,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7466FE918258848004BA1FE /* CSWaypoint.m in Sources */,
+				F7466FE2182587E7004BA1FE /* HEGeoARViewController.mm in Sources */,
 				F7466F7718244FAA004BA1FE /* CSAppDelegate.m in Sources */,
+				F7466FEE18259864004BA1FE /* CSSpotCreationViewController.m in Sources */,
 				F7466FD018248D31004BA1FE /* MetaioSDKViewController.mm in Sources */,
+				F7466FE5182587F5004BA1FE /* Reachability.m in Sources */,
 				F7466F7318244FAA004BA1FE /* main.m in Sources */,
-				F7466F7D18244FAB004BA1FE /* CSViewController.mm in Sources */,
+				F7466F7D18244FAB004BA1FE /* CSHomeViewController.mm in Sources */,
 				F7466FCF18248D31004BA1FE /* EAGLView.mm in Sources */,
+				F7466FFA18259CF6004BA1FE /* CSAboutUSViewController.m in Sources */,
+				F7466FF718259C12004BA1FE /* CSSpotsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,6 +671,7 @@
 				F7466F9718244FAB004BA1FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F7466F9818244FAB004BA1FE /* Build configuration list for PBXNativeTarget "MySpotsTests" */ = {
 			isa = XCConfigurationList;
@@ -627,6 +680,7 @@
 				F7466F9A18244FAB004BA1FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
