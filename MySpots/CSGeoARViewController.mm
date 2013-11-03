@@ -97,15 +97,12 @@
     metaio::LLACoordinate currentPosition = m_sensors->getLocation();
     if( currentPosition.accuracy > 0.0f )
     {
-        float offset = 0.0002;
-        // let's create some positions around us
-        metaio::LLACoordinate target = metaio::LLACoordinate(currentPosition.latitude + offset, currentPosition.longitude + offset, currentPosition.altitude, currentPosition.accuracy);
-
+        metaio::LLACoordinate target = metaio::LLACoordinate(self.spot.latitude, self.spot.longitude, currentPosition.altitude, currentPosition.accuracy);
         
         
         // load a few billboards
-        targetImage = [self getBillboardImageForTitle:@"North"];
-		targetBillBoard = m_metaioSDK->createGeometryFromCGImage("North", [targetImage CGImage], true);
+        targetImage = [self getBillboardImageForTitle:self.spot.name];
+		targetBillBoard = m_metaioSDK->createGeometryFromCGImage([self.spot.name UTF8String], [targetImage CGImage], true);
         targetBillBoard->setTranslationLLA(target);
         targetBillBoard->setLLALimitsEnabled(true);
         billboardGroup->addBillboard(targetBillBoard);
@@ -238,7 +235,7 @@
     [title drawInRect:CGRectMake(border, border,
                                  bgImage.size.width - 2 * border,
                                  bgImage.size.height - 2 * border )
-             withFont:[UIFont systemFontOfSize:20*scaleFactor]];
+             withFont:[UIFont systemFontOfSize:7*scaleFactor]];
     
     // retrieve the screenshot from the current context
     UIImage* blendetImage = UIGraphicsGetImageFromCurrentImageContext();

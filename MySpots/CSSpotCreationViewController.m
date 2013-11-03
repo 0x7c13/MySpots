@@ -27,6 +27,8 @@
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) URBAlertView *alertView;
+@property (weak, nonatomic) IBOutlet UIView *upperBgView;
+@property (weak, nonatomic) IBOutlet UIView *lowerBgView;
 
 @end
 
@@ -84,6 +86,19 @@
 	}];
 	
 	self.alertView = alertView;
+    
+    self.upperBgView.backgroundColor = [UIColor clearColor];
+    UIToolbar* bgToolbar = [[UIToolbar alloc] initWithFrame:self.upperBgView.frame];
+    bgToolbar.barStyle = UIBarStyleBlack;
+    bgToolbar.translucent = YES;
+    bgToolbar.backgroundColor = [UIColor clearColor];
+    [self.upperBgView.superview insertSubview:bgToolbar belowSubview:self.upperBgView];
+    
+    self.lowerBgView.backgroundColor = [UIColor clearColor];
+    UIToolbar* bgToolbar2 = [[UIToolbar alloc] initWithFrame:self.lowerBgView.frame];
+    bgToolbar2.tintColor = [[UIColor clearColor] colorWithAlphaComponent:0.5];
+    bgToolbar.barStyle = UIBarStyleDefault;
+    [self.lowerBgView.superview insertSubview:bgToolbar2 belowSubview:self.lowerBgView];
 }
 
 - (void)didReceiveMemoryWarning

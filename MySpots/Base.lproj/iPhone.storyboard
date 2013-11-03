@@ -23,22 +23,22 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hFD-Eh-TgA">
-                                <rect key="frame" x="188" y="193" width="112" height="46"/>
+                                <rect key="frame" x="188" y="193" width="132" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7RR-SG-iQg">
-                                <rect key="frame" x="156" y="373" width="144" height="46"/>
+                                <rect key="frame" x="156" y="373" width="164" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dqZ-7z-xRg">
-                                <rect key="frame" x="126" y="250" width="174" height="46"/>
+                                <rect key="frame" x="126" y="250" width="199" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jqb-Qr-Grv">
-                                <rect key="frame" x="85" y="313" width="215" height="46"/>
+                                <rect key="frame" x="85" y="313" width="235" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -54,7 +54,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ujm-47-sxV">
-                                <rect key="frame" x="126" y="250" width="165" height="46"/>
+                                <rect key="frame" x="135" y="250" width="165" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="29"/>
                                 <state key="normal" title="Add A Spot">
@@ -65,7 +65,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6i-WK-cRl">
-                                <rect key="frame" x="188" y="190" width="103" height="52"/>
+                                <rect key="frame" x="197" y="190" width="103" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="29"/>
                                 <state key="normal" title="Sign in">
@@ -76,7 +76,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5NL-oT-Ccg">
-                                <rect key="frame" x="92" y="310" width="199" height="52"/>
+                                <rect key="frame" x="101" y="310" width="199" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="29"/>
                                 <state key="normal" title="View My Spots">
@@ -87,7 +87,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mlj-iP-XFw">
-                                <rect key="frame" x="162" y="370" width="129" height="52"/>
+                                <rect key="frame" x="171" y="370" width="129" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="29"/>
                                 <state key="normal" title="About Us">
@@ -370,6 +370,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Lw0-DO-hJb">
+                                <rect key="frame" x="0.0" y="0.0" width="326" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </mapView>
+                            <view opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OrA-3j-nrb">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="174"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="noT-iD-jCw">
+                                <rect key="frame" x="0.0" y="394" width="320" height="174"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Creat A Spot" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOR-bS-Wfy">
                                 <rect key="frame" x="20" y="30" width="280" height="82"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -421,10 +435,6 @@
                                     <action selector="createButtonPressed:" destination="1PI-aK-09u" eventType="touchUpInside" id="bWs-sg-Ahy"/>
                                 </connections>
                             </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Lw0-DO-hJb">
-                                <rect key="frame" x="20" y="173" width="280" height="227"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            </mapView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SPc-Gh-zfg">
                                 <rect key="frame" x="258" y="455" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -495,19 +505,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.80000001192092896" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="TTt-4f-0bI"/>
                     <connections>
                         <outlet property="blueTag" destination="SPc-Gh-zfg" id="ZYs-Ih-hzP"/>
                         <outlet property="grayTag" destination="1Qp-FU-utd" id="SL9-6F-k9H"/>
                         <outlet property="greenTag" destination="22G-Ua-lK8" id="tcR-au-Tvl"/>
+                        <outlet property="lowerBgView" destination="noT-iD-jCw" id="nVL-iY-ITH"/>
                         <outlet property="mapView" destination="Lw0-DO-hJb" id="rSj-4w-rNw"/>
                         <outlet property="pinkTag" destination="vKl-xK-ggZ" id="2Us-3o-vKx"/>
                         <outlet property="redTag" destination="Q99-iO-t7O" id="fUW-Ec-ymW"/>
                         <outlet property="spotNameTextField" destination="NNX-Ad-5wo" id="1PR-8p-meR"/>
                         <outlet property="tagView" destination="hNr-PF-6bv" id="wVm-dB-TAh"/>
                         <outlet property="timeLabel" destination="7r5-PZ-9Zx" id="NNj-hO-iw5"/>
+                        <outlet property="upperBgView" destination="OrA-3j-nrb" id="ssD-FN-HPo"/>
                         <outlet property="yellowTag" destination="P2X-Fi-Co5" id="DxD-TI-zuo"/>
                     </connections>
                 </viewController>

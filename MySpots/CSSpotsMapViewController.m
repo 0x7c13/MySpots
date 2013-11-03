@@ -97,7 +97,7 @@
         point.coordinate = coords;
         point.title = spot.name;
         //The data isnt set in the json. This is dummycoded so it works
-        point.subtitle = @"Info goes here";
+        point.subtitle = spot.time;
         [self.mapView addAnnotation:point];
     }
 }

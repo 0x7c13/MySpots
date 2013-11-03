@@ -35,6 +35,12 @@
     [self getData];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [EAGLContext setCurrentContext:nil];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -97,7 +103,7 @@
     [EAGLContext setCurrentContext:nil];
     CSGeoARViewController * VC = [[CSGeoARViewController alloc] initWithNibName:@"CSGeoAR" bundle:nil];
     VC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    //VC.spot = [self.spots objectAtIndex:self.spotsTable.indexPathForSelectedRow.row];
+    VC.spot = [self.spots objectAtIndex:self.spotsTable.indexPathForSelectedRow.row];
     
     [self presentViewController:VC animated:YES completion:nil];
     
