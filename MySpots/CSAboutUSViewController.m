@@ -6,9 +6,12 @@
 //  Copyright (c) 2013 CodeStrikers. All rights reserved.
 //
 
+#import "CSUtilities.h"
 #import "CSAboutUSViewController.h"
 
 @interface CSAboutUSViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *codeStrikersImage;
+@property (weak, nonatomic) IBOutlet UIView *csBgView;
 
 @end
 
@@ -27,6 +30,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    [CSUtilities addShadowToUIView:self.csBgView];
 }
 
 - (void)didReceiveMemoryWarning

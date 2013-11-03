@@ -6,9 +6,12 @@
 //  Copyright (c) 2013 CodeStrikers. All rights reserved.
 //
 
+#import "CSUtilities.h"
 #import "CSSpotsMapViewController.h"
 
 @interface CSSpotsMapViewController ()
+
+@property (weak, nonatomic) IBOutlet UIView *upperBgView;
 
 @end
 
@@ -33,6 +36,8 @@
     CSDataHandler *handler = [CSDataHandler sharedInstance];
     handler.delegate = self;
     [handler getSpots];
+    
+    [CSUtilities addShadowToUIView:self.upperBgView];
     
 }
 

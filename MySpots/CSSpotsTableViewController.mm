@@ -12,6 +12,7 @@
 @interface CSSpotsTableViewController ()
 
 @property (nonatomic, strong) NSMutableArray *spots;
+@property (weak, nonatomic) IBOutlet UIView *upperBgView;
 
 @end
 
@@ -33,6 +34,8 @@
     
     // get spots data from disk or web
     [self getData];
+    
+    [CSUtilities addShadowToUIView:self.upperBgView];
 }
 
 - (void)viewDidAppear:(BOOL)animated

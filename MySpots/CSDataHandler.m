@@ -94,22 +94,38 @@
     NSArray* latestWaypoints = json;
     
     for (NSDictionary *latestWaypoint in latestWaypoints) {
-           
-        NSInteger ID = [[latestWaypoint objectForKey:@"id"] integerValue];
+        
         double lat = [[latestWaypoint objectForKey:@"lat"] doubleValue];
         double lon = [[latestWaypoint objectForKey:@"lon"] doubleValue];
-        double altitude = [[latestWaypoint objectForKey:@"altitude"] doubleValue];
-        double range = [[latestWaypoint objectForKey:@"range"] doubleValue];
-        NSString *link = [NSString stringWithString:[latestWaypoint objectForKey:@"link"]];
+
         NSString *stadiumName = [NSString stringWithString:[latestWaypoint objectForKey:@"stadium_name"]];
-        NSString *schoolName = [NSString stringWithString:[latestWaypoint objectForKey:@"school_name"]];
-        NSString *imageURL = [NSString stringWithString:[latestWaypoint objectForKey:@"imageurl"]];
-        NSString *city = [NSString stringWithString:[latestWaypoint objectForKey:@"city"]];
-        NSString *state = [NSString stringWithString:[latestWaypoint objectForKey:@"state"]];
-        NSString *wps = @"";
 
-
-        NSString *tagColor = [NSString stringWithString:[CSUtilities hexStringFromColor:[UIColor grayColor]]];
+        NSString *tagColor;
+        
+        int rand = arc4random()%6;
+        
+        switch (rand) {
+            case 0:
+                tagColor = @"FF6666";
+                break;
+            case 1:
+                tagColor = @"FFFF00";
+                break;
+            case 2:
+                tagColor = @"CCCCCC";
+                break;
+            case 3:
+                tagColor = @"66FF66";
+                break;
+            case 4:
+                tagColor = @"FF6FCF";
+                break;
+            case 5:
+                tagColor = @"66CCFF";
+                break;
+            default:
+                break;
+        }
         
         CSSpot *newSpot = [[CSSpot alloc]initWithName:stadiumName time:@"" longitude:lon latitude:lat tagColor:tagColor];
          

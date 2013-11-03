@@ -23,22 +23,22 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hFD-Eh-TgA">
-                                <rect key="frame" x="188" y="193" width="132" height="46"/>
+                                <rect key="frame" x="188" y="190" width="132" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7RR-SG-iQg">
-                                <rect key="frame" x="156" y="373" width="164" height="46"/>
+                                <rect key="frame" x="156" y="370" width="164" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dqZ-7z-xRg">
-                                <rect key="frame" x="126" y="250" width="199" height="46"/>
+                                <rect key="frame" x="126" y="250" width="194" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jqb-Qr-Grv">
-                                <rect key="frame" x="85" y="313" width="235" height="46"/>
+                                <rect key="frame" x="85" y="310" width="235" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -65,7 +65,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6i-WK-cRl">
-                                <rect key="frame" x="197" y="190" width="103" height="52"/>
+                                <rect key="frame" x="197" y="187" width="103" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="29"/>
                                 <state key="normal" title="Sign in">
@@ -76,7 +76,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5NL-oT-Ccg">
-                                <rect key="frame" x="101" y="310" width="199" height="52"/>
+                                <rect key="frame" x="101" y="307" width="199" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="29"/>
                                 <state key="normal" title="View My Spots">
@@ -87,7 +87,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mlj-iP-XFw">
-                                <rect key="frame" x="171" y="370" width="129" height="52"/>
+                                <rect key="frame" x="171" y="367" width="129" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="29"/>
                                 <state key="normal" title="About Us">
@@ -115,17 +115,21 @@
                     </view>
                     <connections>
                         <outlet property="aboutUsBgView" destination="7RR-SG-iQg" id="BDz-NH-lWB"/>
+                        <outlet property="aboutUsButton" destination="Mlj-iP-XFw" id="w2A-ES-VTJ"/>
                         <outlet property="accountLabel" destination="Osa-gs-2xN" id="2k3-BN-cJc"/>
                         <outlet property="addASpotBgView" destination="dqZ-7z-xRg" id="bIg-G5-ZSE"/>
+                        <outlet property="addASpotButton" destination="ujm-47-sxV" id="NaL-Bx-h9z"/>
                         <outlet property="codeStrikersBgView" destination="k6A-gK-jbV" id="47h-cJ-RFD"/>
                         <outlet property="loginButton" destination="sb7-hA-pbq" id="TT8-gU-qlk"/>
                         <outlet property="loginViewBG" destination="jSv-zT-WHM" id="WCf-iI-GRf"/>
                         <outlet property="passwordTextField" destination="fu1-wx-T9H" id="Fxp-s7-SHw"/>
                         <outlet property="popupView" destination="80B-Rb-9su" id="jov-vm-Qat"/>
                         <outlet property="signinBgView" destination="hFD-Eh-TgA" id="rvg-7j-GzW"/>
+                        <outlet property="signinButton" destination="E6i-WK-cRl" id="QT5-fE-vkk"/>
                         <outlet property="titleBgView" destination="9OX-kH-2c3" id="cWf-GH-Nu3"/>
                         <outlet property="usernameTextField" destination="xfX-U0-vgT" id="6bW-8X-cw6"/>
                         <outlet property="viewMySpotsBgView" destination="Jqb-Qr-Grv" id="5YM-rv-lKl"/>
+                        <outlet property="viewMySpotsButton" destination="5NL-oT-Ccg" id="FoN-wu-6HZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -202,7 +206,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Spot Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xM-oM-mVr">
-                                                    <rect key="frame" x="45" y="13" width="231" height="33"/>
+                                                    <rect key="frame" x="50" y="13" width="250" height="33"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="20"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -226,8 +230,13 @@
                                     <outlet property="delegate" destination="mZM-35-0fh" id="EtG-nr-w0g"/>
                                 </connections>
                             </tableView>
+                            <view opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jgP-e8-d4v">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zth-7z-dlx">
-                                <rect key="frame" x="13" y="30" width="35" height="52"/>
+                                <rect key="frame" x="13" y="30" width="45" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="29"/>
                                 <state key="normal" title="&lt;">
@@ -237,18 +246,19 @@
                                     <action selector="exitButtonPressed:" destination="mZM-35-0fh" eventType="touchUpInside" id="lWd-jE-Tmk"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="View My Spots" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fY0-N6-5EP">
-                                <rect key="frame" x="40" y="30" width="280" height="53"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Spots" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fY0-N6-5EP">
+                                <rect key="frame" x="45" y="30" width="273" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="35"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" red="0.40000000000000002" green="0.59999999999999998" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Spots List" id="yOO-V7-dAx"/>
                     <connections>
                         <outlet property="spotsTable" destination="4At-Pl-Bxd" id="Loy-wr-bkG"/>
+                        <outlet property="upperBgView" destination="jgP-e8-d4v" id="UId-0f-VcC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igW-4i-0xq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -290,8 +300,13 @@
                                 <rect key="frame" x="0.0" y="90" width="320" height="429"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
+                            <view opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WL4-Nv-cik">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acr-ha-jy4">
-                                <rect key="frame" x="13" y="30" width="35" height="52"/>
+                                <rect key="frame" x="13" y="30" width="46" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="29"/>
                                 <state key="normal" title="&lt;">
@@ -301,18 +316,19 @@
                                     <action selector="exitButtonPressed:" destination="fbB-fc-GI1" eventType="touchUpInside" id="Tpg-Dd-Daa"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="View My Spots" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2f-aA-h7f">
-                                <rect key="frame" x="40" y="30" width="280" height="53"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Spots" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2f-aA-h7f">
+                                <rect key="frame" x="45" y="30" width="273" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="35"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" red="0.40000000000000002" green="0.59999999999999998" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Spots Map" id="3yC-gj-ccn"/>
                     <connections>
                         <outlet property="mapView" destination="nMw-p3-Pel" id="5bu-Z9-P1g"/>
+                        <outlet property="upperBgView" destination="WL4-Nv-cik" id="bh7-3F-x3o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yQj-1f-hrb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -331,8 +347,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q36-OQ-txv">
-                                <rect key="frame" x="20" y="496" width="169" height="52"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q36-OQ-txv">
+                                <rect key="frame" x="20" y="496" width="128" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="29"/>
                                 <state key="normal" title="Go Back">
@@ -344,15 +360,28 @@
                                     <action selector="exitButtonPressed:" destination="GoW-kQ-t3O" eventType="touchUpInside" id="xeR-ek-M89"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About US" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RT1-F0-dGb">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About us" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RT1-F0-dGb">
                                 <rect key="frame" x="20" y="41" width="280" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="35"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JAh-BQ-tFP">
+                                <rect key="frame" x="10" y="108" width="300" height="352"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ImageRes/CodeStrikers.png" translatesAutoresizingMaskIntoConstraints="NO" id="Iwh-nt-9sO">
+                                <rect key="frame" x="10" y="108" width="300" height="352"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="codeStrikersImage" destination="Iwh-nt-9sO" id="faC-9W-PSX"/>
+                        <outlet property="csBgView" destination="JAh-BQ-tFP" id="rYP-IP-9Df"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2b2-bu-iUQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -384,13 +413,35 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Creat A Spot" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOR-bS-Wfy">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTP-hM-bhL">
+                                <rect key="frame" x="20" y="500" width="112" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="25"/>
+                                <state key="normal" title="Go Back">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="exitButtonPressed:" destination="1PI-aK-09u" eventType="touchUpInside" id="iPW-3u-wWF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o09-Ed-gVw">
+                                <rect key="frame" x="207" y="500" width="93" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="25"/>
+                                <state key="normal" title="Create">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="createButtonPressed:" destination="1PI-aK-09u" eventType="touchUpInside" id="bWs-sg-Ahy"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create A Spot" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOR-bS-Wfy">
                                 <rect key="frame" x="20" y="30" width="280" height="82"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="35"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Spot Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3RY-Zl-Lfy">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Spotname:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3RY-Zl-Lfy">
                                 <rect key="frame" x="20" y="100" width="147" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="20"/>
@@ -402,7 +453,7 @@
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tag Color:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yyp-4r-ZOd">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TagColor:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yyp-4r-ZOd">
                                 <rect key="frame" x="20" y="408" width="105" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="20"/>
@@ -413,28 +464,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTP-hM-bhL">
-                                <rect key="frame" x="20" y="496" width="117" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="29"/>
-                                <state key="normal" title="Go Back">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="exitButtonPressed:" destination="1PI-aK-09u" eventType="touchUpInside" id="iPW-3u-wWF"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o09-Ed-gVw">
-                                <rect key="frame" x="192" y="496" width="96" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="29"/>
-                                <state key="normal" title="Create">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="createButtonPressed:" destination="1PI-aK-09u" eventType="touchUpInside" id="bWs-sg-Ahy"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SPc-Gh-zfg">
                                 <rect key="frame" x="258" y="455" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -559,6 +588,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ImageRes/CodeStrikers.png" width="640" height="960"/>
         <image name="ImageRes/login_bg.png" width="640" height="960"/>
         <image name="ImageRes/login_button.png" width="640" height="960"/>
         <image name="ImageRes/login_field.png" width="640" height="960"/>

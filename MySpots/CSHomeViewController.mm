@@ -25,6 +25,10 @@
 @property (weak, nonatomic) IBOutlet UIView *codeStrikersBgView;
 
 
+@property (weak, nonatomic) IBOutlet UIButton *signinButton;
+@property (weak, nonatomic) IBOutlet UIButton *addASpotButton;
+@property (weak, nonatomic) IBOutlet UIButton *viewMySpotsButton;
+@property (weak, nonatomic) IBOutlet UIButton *aboutUsButton;
 
 
 @end
@@ -65,9 +69,12 @@
     [CSUtilities addShadowToUIView:self.codeStrikersBgView];
 }
 
+
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+
     
     CSUser *currentUser = [CSUser sharedInstance];
     if(currentUser.isGuest) {
@@ -203,7 +210,9 @@
 
 - (IBAction)signinButtonPressed:(id)sender {
     
+    
     [self.popManagerVC presentView:self.popupView withBackgroundColor:nil popupAnimationStyle:ASDepthModalAnimationShrink];
+
 }
 
 - (IBAction)usernameTextFieldTouchDown:(id)sender {
