@@ -6,6 +6,9 @@
 //  Copyright (c) 2013 CodeStrikers. All rights reserved.
 //
 
+#import "CSDataHandler.h"
+#import "CSSpot.h"
+#import "URBAlertView.h"
 #import "CSSpotCreationViewController.h"
 
 @interface CSSpotCreationViewController ()
@@ -21,6 +24,9 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UITextField *spotNameTextField;
+
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) URBAlertView *alertView;
 
 @end
 
@@ -65,6 +71,19 @@
     self.timeLabel.text = dateInStringFormated;
     
     [self initSpot];
+    
+    URBAlertView *alertView = [[URBAlertView alloc] initWithTitle:@"Warnning:" message:@"Spot Name Cannot be empty!"];
+	alertView.blurBackground = NO;
+	[alertView addButtonWithTitle:@"OK"];
+	[alertView setHandlerBlock:^(NSInteger buttonIndex, URBAlertView *alertView) {
+        // do stuff here
+		[self.alertView hideWithCompletionBlock:^{
+            if (buttonIndex == 0) {
+            }
+		}];
+	}];
+	
+	self.alertView = alertView;
 }
 
 - (void)didReceiveMemoryWarning
@@ -80,14 +99,14 @@
 
 - (void)initSpot
 {
-    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
-    locationManager.delegate = self;
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    locationManager.distanceFilter = kCLDistanceFilterNone;
+    _locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    self.locationManager.distanceFilter = kCLDistanceFilterNone;
     
-    [locationManager startUpdatingLocation];
+    [self.locationManager startUpdatingLocation];
     
-    CLLocationCoordinate2D coords = CLLocationCoordinate2DMake(locationManager.location.coordinate.latitude, locationManager.location.coordinate.longitude);
+    CLLocationCoordinate2D coords = CLLocationCoordinate2DMake(self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude);
     MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
     point.coordinate = coords;
     [self.mapView addAnnotation:point];
@@ -161,6 +180,28 @@
 - (IBAction)blueTagPressed:(id)sender {
     self.tagView.backgroundColor = self.blueTag.backgroundColor;
     //NSLog(@"%@", [CSUtilities hexStringFromColor:self.blueTag.backgroundColor]);
+}
+
+
+- (IBAction)createButtonPressed:(id)sender {
+    
+    if ([self.spotNameTextField.text isEqualToString:@""]) {
+        [self.alertView showWithAnimation:URBAlertAnimationDefault];
+    }else {
+        NSDate *currentDateTime = [NSDate date];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"EEE,MM-dd-yyyy HH:mm:ss"];
+        NSString *dateInStringFormated = [dateFormatter stringFromDate:currentDateTime];
+        
+        CSSpot *newSpot = [[CSSpot alloc] initWithName:self.spotNameTextField.text
+                                                  time:dateInStringFormated
+                                             longitude:self.locationManager.location.coordinate.longitude
+                                              latitude:self.locationManager.location.coordinate.latitude
+                                              tagColor:[CSUtilities hexStringFromColor:self.tagView.backgroundColor]];
+        CSDataHandler *dataHandler = [CSDataHandler sharedInstance];
+        [dataHandler updateWithNewSpot:newSpot];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 

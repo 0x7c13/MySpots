@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 CodeStrikers. All rights reserved.
 //
 
+#import "CSUtilities.h"
 #import "CSUser.h"
 #import "MetaioSDKViewController.h"
 #import "EAGLView.h"
@@ -15,7 +16,16 @@
     BOOL welcomeAnimationExecuted;
 }
 
+@property (weak, nonatomic) IBOutlet UIView *titleBgView;
 @property (weak, nonatomic) IBOutlet UILabel *accountLabel;
+@property (weak, nonatomic) IBOutlet UIView *signinBgView;
+@property (weak, nonatomic) IBOutlet UIView *addASpotBgView;
+@property (weak, nonatomic) IBOutlet UIView *viewMySpotsBgView;
+@property (weak, nonatomic) IBOutlet UIView *aboutUsBgView;
+@property (weak, nonatomic) IBOutlet UIView *codeStrikersBgView;
+
+
+
 
 @end
 
@@ -46,6 +56,13 @@
     self.popupView.layer.rasterizationScale = [[UIScreen mainScreen] scale];
     
     welcomeAnimationExecuted = NO;
+    
+    [CSUtilities addShadowToUIView:self.titleBgView];
+    [CSUtilities addShadowToUIView:self.signinBgView];
+    [CSUtilities addShadowToUIView:self.addASpotBgView];
+    [CSUtilities addShadowToUIView:self.viewMySpotsBgView];
+    [CSUtilities addShadowToUIView:self.aboutUsBgView];
+    [CSUtilities addShadowToUIView:self.codeStrikersBgView];
 }
 
 - (void)viewDidAppear:(BOOL)animated

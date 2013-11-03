@@ -61,6 +61,8 @@
 		F74670091825CFA2004BA1FE /* ASDepthModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F74670081825CFA2004BA1FE /* ASDepthModalViewController.m */; };
 		F746700C1825DF31004BA1FE /* CSSpotsMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F746700B1825DF31004BA1FE /* CSSpotsMapViewController.m */; };
 		F746700F18260AC9004BA1FE /* CSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = F746700E18260AC9004BA1FE /* CSUser.m */; };
+		F74670171826179B004BA1FE /* URBAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = F74670161826179B004BA1FE /* URBAlertView.m */; };
+		F7467019182618B9004BA1FE /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7467018182618B9004BA1FE /* Accelerate.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +149,9 @@
 		F746700B1825DF31004BA1FE /* CSSpotsMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSpotsMapViewController.m; sourceTree = "<group>"; };
 		F746700D18260AC9004BA1FE /* CSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSUser.h; sourceTree = "<group>"; };
 		F746700E18260AC9004BA1FE /* CSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSUser.m; sourceTree = "<group>"; };
+		F74670151826179B004BA1FE /* URBAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URBAlertView.h; sourceTree = "<group>"; };
+		F74670161826179B004BA1FE /* URBAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URBAlertView.m; sourceTree = "<group>"; };
+		F7467018182618B9004BA1FE /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7467019182618B9004BA1FE /* Accelerate.framework in Frameworks */,
 				F7466FD618248E4B004BA1FE /* libz.dylib in Frameworks */,
 				F7466FD418248E45004BA1FE /* libxml2.dylib in Frameworks */,
 				F7466FD218248E37004BA1FE /* libsqlite3.0.dylib in Frameworks */,
@@ -219,6 +225,8 @@
 		F7466F6518244FAA004BA1FE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F7467018182618B9004BA1FE /* Accelerate.framework */,
+				F74670141826179B004BA1FE /* URBAlertView */,
 				F74670061825CFA2004BA1FE /* ASDepthModal */,
 				F7466FD518248E4B004BA1FE /* libz.dylib */,
 				F7466FD318248E45004BA1FE /* libxml2.dylib */,
@@ -373,6 +381,16 @@
 			path = MySpots/ASDepthModal;
 			sourceTree = "<group>";
 		};
+		F74670141826179B004BA1FE /* URBAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				F74670151826179B004BA1FE /* URBAlertView.h */,
+				F74670161826179B004BA1FE /* URBAlertView.m */,
+			);
+			name = URBAlertView;
+			path = MySpots/URBAlertView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -489,6 +507,7 @@
 				F7466F7318244FAA004BA1FE /* main.m in Sources */,
 				F7466F7D18244FAB004BA1FE /* CSHomeViewController.mm in Sources */,
 				F74670051825A5D5004BA1FE /* CSUtilities.m in Sources */,
+				F74670171826179B004BA1FE /* URBAlertView.m in Sources */,
 				F746700F18260AC9004BA1FE /* CSUser.m in Sources */,
 				F7466FCF18248D31004BA1FE /* EAGLView.mm in Sources */,
 				F7466FFA18259CF6004BA1FE /* CSAboutUSViewController.m in Sources */,

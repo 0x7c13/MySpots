@@ -22,7 +22,7 @@ typedef enum {
 
 @protocol CSDataHandlerDelegate;
 
-@interface CSDataHandler : NSObject
+@interface CSDataHandler : NSObject <NSURLConnectionDelegate>
 
 @property (nonatomic, readonly) BOOL spotsLoaded;
 
@@ -35,6 +35,8 @@ typedef enum {
 
 + (NSMutableArray *)loadSpotsFromDisk;
 + (void)writeSpotsToDisk:(NSMutableArray *)spots;
++ (void)uploadSpotsToServer;
+- (void)updateWithNewSpot:(CSSpot *)newSpot;
 - (void)getSpots;
 
 @end

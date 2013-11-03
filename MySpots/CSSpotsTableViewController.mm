@@ -116,6 +116,7 @@
     [self.spotsTable reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
 	//[self.HUD hide:YES];
 
+    [CSDataHandler uploadSpotsToServer];
 }
 
 -(void)connectionFailed

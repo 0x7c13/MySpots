@@ -171,6 +171,13 @@
     return spots;
 }
 
+- (void)updateWithNewSpot:(CSSpot *)newSpot
+{
+    [self.spots addObject:newSpot];
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.spots];
+    [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"flyingeek"];
+}
+
 #pragma --- additional useful private methods
 
 //
@@ -190,6 +197,33 @@
 //    }
 //}
 
+
++ (void)uploadSpotsToServer
+{
+    NSError* error = nil;
+    
+    NSDictionary* jsonDict = @{@"id":@"613", @"username": @"wangting", @"password":@"321", @"tagname":@"spot1", @"tagcolor":@"FF6666", @"longitude":@(38.33333), @"latitude":@(83.33333)};
+    
+    NSArray *aryOfJson = @[jsonDict];
+    
+    NSData* postData = [NSJSONSerialization dataWithJSONObject:aryOfJson options:kNilOptions error:&error];
+    
+    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+    
+    NSString *jsonStr = @"[{\"id\":\"613\"}]";
+    
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://coderhosting.com:8983/solr/collection1/update?commit=true"]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:postData];
+    //[request setHTTPBody:[jsonStr dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [connection start];
+    
+}
 
 
 
