@@ -41,7 +41,6 @@
 		F7466FC118248A21004BA1FE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7466FC018248A21004BA1FE /* AudioToolbox.framework */; };
 		F7466FC318248A25004BA1FE /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7466FC218248A25004BA1FE /* CFNetwork.framework */; };
 		F7466FC518248A2B004BA1FE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7466FC418248A2B004BA1FE /* QuartzCore.framework */; };
-		F7466FC918248C91004BA1FE /* metaioSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7466FC818248C91004BA1FE /* metaioSDK.framework */; };
 		F7466FCF18248D31004BA1FE /* EAGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7466FCC18248D31004BA1FE /* EAGLView.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F7466FD018248D31004BA1FE /* MetaioSDKViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7466FCE18248D31004BA1FE /* MetaioSDKViewController.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F7466FD218248E37004BA1FE /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F7466FD118248E37004BA1FE /* libsqlite3.0.dylib */; };
@@ -63,6 +62,7 @@
 		F746700F18260AC9004BA1FE /* CSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = F746700E18260AC9004BA1FE /* CSUser.m */; };
 		F74670171826179B004BA1FE /* URBAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = F74670161826179B004BA1FE /* URBAlertView.m */; };
 		F7467019182618B9004BA1FE /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7467018182618B9004BA1FE /* Accelerate.framework */; };
+		F75704741826644600C1B877 /* metaioSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F75704731826644600C1B877 /* metaioSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,7 +115,6 @@
 		F7466FC018248A21004BA1FE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		F7466FC218248A25004BA1FE /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		F7466FC418248A2B004BA1FE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		F7466FC818248C91004BA1FE /* metaioSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = metaioSDK.framework; sourceTree = "<group>"; };
 		F7466FCB18248D31004BA1FE /* EAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAGLView.h; sourceTree = "<group>"; };
 		F7466FCC18248D31004BA1FE /* EAGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EAGLView.mm; sourceTree = "<group>"; };
 		F7466FCD18248D31004BA1FE /* MetaioSDKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetaioSDKViewController.h; sourceTree = "<group>"; };
@@ -152,6 +151,7 @@
 		F74670151826179B004BA1FE /* URBAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URBAlertView.h; sourceTree = "<group>"; };
 		F74670161826179B004BA1FE /* URBAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URBAlertView.m; sourceTree = "<group>"; };
 		F7467018182618B9004BA1FE /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		F75704731826644600C1B877 /* metaioSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = metaioSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,11 +159,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F75704741826644600C1B877 /* metaioSDK.framework in Frameworks */,
 				F7467019182618B9004BA1FE /* Accelerate.framework in Frameworks */,
 				F7466FD618248E4B004BA1FE /* libz.dylib in Frameworks */,
 				F7466FD418248E45004BA1FE /* libxml2.dylib in Frameworks */,
 				F7466FD218248E37004BA1FE /* libsqlite3.0.dylib in Frameworks */,
-				F7466FC918248C91004BA1FE /* metaioSDK.framework in Frameworks */,
 				F7466F6918244FAA004BA1FE /* CoreGraphics.framework in Frameworks */,
 				F7466FC518248A2B004BA1FE /* QuartzCore.framework in Frameworks */,
 				F7466FC318248A25004BA1FE /* CFNetwork.framework in Frameworks */,
@@ -225,13 +225,13 @@
 		F7466F6518244FAA004BA1FE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F75704731826644600C1B877 /* metaioSDK.framework */,
 				F7467018182618B9004BA1FE /* Accelerate.framework */,
 				F74670141826179B004BA1FE /* URBAlertView */,
 				F74670061825CFA2004BA1FE /* ASDepthModal */,
 				F7466FD518248E4B004BA1FE /* libz.dylib */,
 				F7466FD318248E45004BA1FE /* libxml2.dylib */,
 				F7466FD118248E37004BA1FE /* libsqlite3.0.dylib */,
-				F7466FC818248C91004BA1FE /* metaioSDK.framework */,
 				F7466FC418248A2B004BA1FE /* QuartzCore.framework */,
 				F7466FC218248A25004BA1FE /* CFNetwork.framework */,
 				F7466FC018248A21004BA1FE /* AudioToolbox.framework */,
@@ -651,8 +651,9 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SRCROOT)/\"",
+					"\\\"$(SRCROOT)/\\\"",
 					"$(inherited)",
+					/Users/FlyinGeek/Developer/MySpots,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MySpots/MySpots-Prefix.pch";
@@ -674,8 +675,9 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SRCROOT)/\"",
+					"\\\"$(SRCROOT)/\\\"",
 					"$(inherited)",
+					/Users/FlyinGeek/Developer/MySpots,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MySpots/MySpots-Prefix.pch";

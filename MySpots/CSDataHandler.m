@@ -8,6 +8,7 @@
 
 #import "CSDataHandler.h"
 #import "Reachability.h"
+#import "CSUser.h"
 
 #define SPOTS_CAPACITY 20
 
@@ -55,7 +56,7 @@
             NSData* data = [NSData dataWithContentsOfURL:
                             SpotsURL options:NSDataReadingUncached error:&error];
             if (!error) {
-                [self performSelectorOnMainThread:@selector(getHEWaypoints:)
+                [self performSelectorOnMainThread:@selector(getCSSpots:)
                                        withObject:data waitUntilDone:YES];
             }
             else {
@@ -70,11 +71,11 @@
     }
     else if (option == getWaypointsFromDisk)
     {
-        //...
+        //self.spots = [NSMutableArray arrayWithArray:[CSDataHandler loadSpotsFromDisk]];
     }
 }
 
-- (void)getHEWaypoints:(NSData *)responseData {
+- (void)getCSSpots:(NSData *)responseData {
     
     //parse out the json data
     NSError* error;
@@ -118,6 +119,8 @@
     self.spotsLoaded = YES;
 
     if ([self.delegate respondsToSelector:@selector(spotsLoaded:)]) {
+    
+        [CSDataHandler writeSpotsToDisk:self.spots];
         [self.delegate spotsLoaded:self.spots];
     }
 
@@ -159,23 +162,33 @@
 
 + (void)writeSpotsToDisk:(NSMutableArray *)spots
 {
-    //Saving it
+    CSUser *currentUser = [CSUser sharedInstance];
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:spots];
-    [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"flyingeek"];
+    [[NSUserDefaults standardUserDefaults] setObject:data forKey:[currentUser getUsername]];
 }
 
 + (NSMutableArray *)loadSpotsFromDisk
 {
-    NSData *spotsData = [[NSUserDefaults standardUserDefaults] objectForKey:@"flyingeek"];
+    CSUser *currentUser = [CSUser sharedInstance];
+    NSData *spotsData = [[NSUserDefaults standardUserDefaults] objectForKey:[currentUser getUsername]];
     NSMutableArray *spots = [NSKeyedUnarchiver unarchiveObjectWithData:spotsData];
     return spots;
 }
 
 - (void)updateWithNewSpot:(CSSpot *)newSpot
 {
+    CSUser *currentUser = [CSUser sharedInstance];
     [self.spots addObject:newSpot];
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.spots];
-    [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"flyingeek"];
+    [[NSUserDefaults standardUserDefaults] setObject:data forKey:[currentUser getUsername]];
+    
+    [CSDataHandler uploadSpotsToServer:self.spots];
+}
+
+- (void)deleteSpot:(CSSpot *)delSpot
+{
+    [self.spots removeObject:delSpot];
+    [CSDataHandler uploadSpotsToServer:self.spots];
 }
 
 #pragma --- additional useful private methods
@@ -198,11 +211,35 @@
 //}
 
 
-+ (void)uploadSpotsToServer
++ (void)uploadSpotsToServer:(NSMutableArray *)spots
 {
+    CSUser *currentUser = [CSUser sharedInstance];
+    
     NSError* error = nil;
     
-    NSDictionary* jsonDict = @{@"id":@"613", @"username": @"wangting", @"password":@"321", @"tagname":@"spot1", @"tagcolor":@"FF6666", @"longitude":@(38.33333), @"latitude":@(83.33333)};
+    NSMutableDictionary *jsonDict = [[NSMutableDictionary alloc]init];
+
+    
+    NSMutableArray *tagNames = [[NSMutableArray alloc]initWithCapacity:SPOTS_CAPACITY];
+    NSMutableArray *tagColors = [[NSMutableArray alloc]initWithCapacity:SPOTS_CAPACITY];
+    NSMutableArray *longitudes = [[NSMutableArray alloc]initWithCapacity:SPOTS_CAPACITY];
+    NSMutableArray *latitudes = [[NSMutableArray alloc]initWithCapacity:SPOTS_CAPACITY];
+    
+    for (CSSpot *spot in spots) {
+        [tagNames addObject:spot.name];
+        [tagColors addObject:spot.tagColor];
+        [longitudes addObject:[NSNumber numberWithFloat:spot.longitude]];
+        [latitudes addObject:[NSNumber numberWithFloat:spot.latitude]];
+    }
+    
+    
+    [jsonDict setValue:[currentUser getUsername] forKey:@"id"];
+    [jsonDict setValue:[currentUser getUsername] forKey:@"username"];
+    [jsonDict setValue:[currentUser getPassword] forKey:@"password"];
+    [jsonDict setValue:tagNames forKey:@"tagname"];
+    [jsonDict setValue:tagColors forKey:@"tagcolor"];
+    [jsonDict setValue:longitudes forKey:@"longitude"];
+    [jsonDict setValue:latitudes forKey:@"latitude"];
     
     NSArray *aryOfJson = @[jsonDict];
     
@@ -210,15 +247,12 @@
     
     NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
     
-    NSString *jsonStr = @"[{\"id\":\"613\"}]";
-    
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://coderhosting.com:8983/solr/collection1/update?commit=true"]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
     [request setHTTPMethod:@"POST"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:postData];
-    //[request setHTTPBody:[jsonStr dataUsingEncoding:NSUTF8StringEncoding]];
     
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     [connection start];

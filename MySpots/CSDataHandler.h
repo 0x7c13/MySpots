@@ -35,8 +35,9 @@ typedef enum {
 
 + (NSMutableArray *)loadSpotsFromDisk;
 + (void)writeSpotsToDisk:(NSMutableArray *)spots;
-+ (void)uploadSpotsToServer;
++ (void)uploadSpotsToServer:(NSMutableArray *)spots;
 - (void)updateWithNewSpot:(CSSpot *)newSpot;
+- (void)deleteSpot:(CSSpot *)delSpot;
 - (void)getSpots;
 
 @end

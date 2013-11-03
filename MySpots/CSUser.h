@@ -16,6 +16,7 @@
                  password:(NSString *)password;
 
 - (NSString *)getUsername;
+- (NSString *)getPassword;
 
 + (id)sharedInstance;
 

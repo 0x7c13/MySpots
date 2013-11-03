@@ -97,26 +97,50 @@
     [EAGLContext setCurrentContext:nil];
     CSGeoARViewController * VC = [[CSGeoARViewController alloc] initWithNibName:@"CSGeoAR" bundle:nil];
     VC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    VC.spot = [self.spots objectAtIndex:self.spotsTable.indexPathForSelectedRow.row];
+    //VC.spot = [self.spots objectAtIndex:self.spotsTable.indexPathForSelectedRow.row];
     
     [self presentViewController:VC animated:YES completion:nil];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return YES if you want the specified item to be editable.
+    return YES;
+}
+
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        //add code here for when you hit delete
+        
+        CSSpotCell *delCell = (CSSpotCell *)[self.spotsTable cellForRowAtIndexPath:indexPath];
+        CSSpot *delSpot;
+        for (CSSpot *spot in self.spots) {
+            if ([spot.name isEqualToString:delCell.spotName.text]) {
+                delSpot = spot;
+            }
+        }
+        
+        if(delSpot) {
+            CSDataHandler *handler = [CSDataHandler sharedInstance];
+            [handler deleteSpot:delSpot];
+            [self.spots removeObject:delSpot];
+        }
+        
+        [self.spotsTable deleteRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil] withRowAnimation:UITableViewRowAnimationFade];
+        
+    }
+}
+
+
 #pragma HEWebDataHandler protocal
 
 - (void)spotsLoaded:(NSMutableArray *)spots
 {
-    [CSDataHandler writeSpotsToDisk:spots];
-    
-    NSMutableArray *newSpots = [NSMutableArray arrayWithArray:[CSDataHandler loadSpotsFromDisk]];
-    
-    self.spots = newSpots;
+    self.spots = spots;
     [self.spotsTable reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
 	//[self.HUD hide:YES];
-
-    [CSDataHandler uploadSpotsToServer];
 }
 
 -(void)connectionFailed

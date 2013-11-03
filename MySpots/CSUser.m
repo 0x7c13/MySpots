@@ -66,8 +66,19 @@
         return self.username;
     }
     else {
-        return @"Unknown Username";
+        return @"Unknown User";
     }
 }
+
+- (NSString *)getPassword
+{
+    if (!self.isGuest) {
+        return self.password;
+    }
+    else {
+        return @"Unknown User";
+    }
+}
+
 
 @end
