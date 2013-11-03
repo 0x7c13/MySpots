@@ -135,34 +135,33 @@
 
 - (IBAction)grayTagPressed:(id)sender {
     self.tagView.backgroundColor = self.grayTag.backgroundColor;
-    NSLog(@"%@", [CSUtilities colorToWeb:self.grayTag.backgroundColor]);
+    //NSLog(@"%@", [CSUtilities hexStringFromColor:self.grayTag.backgroundColor]);
 }
 
 - (IBAction)redTagPressed:(id)sender {
     self.tagView.backgroundColor = self.redTag.backgroundColor;
-    NSLog(@"%@", [CSUtilities colorToWeb:self.redTag.backgroundColor]);
+    //NSLog(@"%@", [CSUtilities hexStringFromColor:self.redTag.backgroundColor]);
 }
 
 - (IBAction)greenTagPressed:(id)sender {
     self.tagView.backgroundColor = self.greenTag.backgroundColor;
-    NSLog(@"%@", [CSUtilities colorToWeb:self.greenTag.backgroundColor]);
+    //NSLog(@"%@", [CSUtilities hexStringFromColor:self.greenTag.backgroundColor]);
 }
 
 - (IBAction)pinkTagPressed:(id)sender {
     self.tagView.backgroundColor = self.pinkTag.backgroundColor;
-    NSLog(@"%@", [CSUtilities colorToWeb:self.pinkTag.backgroundColor]);
+    //NSLog(@"%@", [CSUtilities hexStringFromColor:self.pinkTag.backgroundColor]);
 }
 
 - (IBAction)yellowTagPressed:(id)sender {
     self.tagView.backgroundColor = self.yellowTag.backgroundColor;
-    NSLog(@"%@", [CSUtilities colorToWeb:self.yellowTag.backgroundColor]);
+    //NSLog(@"%@", [CSUtilities hexStringFromColor:self.yellowTag.backgroundColor]);
 }
 
 - (IBAction)blueTagPressed:(id)sender {
     self.tagView.backgroundColor = self.blueTag.backgroundColor;
-    NSLog(@"%@", [CSUtilities colorToWeb:self.blueTag.backgroundColor]);
+    //NSLog(@"%@", [CSUtilities hexStringFromColor:self.blueTag.backgroundColor]);
 }
-
 
 
 #pragma delegates

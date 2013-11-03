@@ -75,29 +75,23 @@
     }
 }
 
-+ (NSString*)colorToWeb:(UIColor*)color
++ (NSString *)hexStringFromColor:(UIColor *)color
 {
-    NSString *webColor = nil;
-    
-    // This method only works for RGB colors
-    if (color &&
-        CGColorGetNumberOfComponents(color.CGColor) == 4)
-    {
-        // Get the red, green and blue components
-        const CGFloat *components = CGColorGetComponents(color.CGColor);
-        
-        // These components range from 0.0 till 1.0 and need to be converted to 0 till 255
-        CGFloat red, green, blue;
-        red = roundf(components[0] * 255.0);
-        green = roundf(components[1] * 255.0);
-        blue = roundf(components[2] * 255.0);
-        
-        // Convert with %02x (use 02 to always get two chars)
-        webColor = [[NSString alloc]initWithFormat:@"%02x%02x%02x", (int)red, (int)green, (int)blue];
-    }
-    
-    return webColor;
+    const size_t totalComponents = CGColorGetNumberOfComponents(color.CGColor);
+    const CGFloat * components = CGColorGetComponents(color.CGColor);
+    return [NSString stringWithFormat:@"%02X%02X%02X",
+            (int)(255 * components[MIN(0,totalComponents-2)]),
+            (int)(255 * components[MIN(1,totalComponents-2)]),
+            (int)(255 * components[MIN(2,totalComponents-2)])];
 }
 
++ (UIColor *)colorFromHexString:(NSString *)hexString
+{
+    unsigned rgbValue = 0;
+    NSScanner *scanner = [NSScanner scannerWithString:hexString];
+    [scanner setScanLocation:0];
+    [scanner scanHexInt:&rgbValue];
+    return [UIColor colorWithRed:((rgbValue & 0xFF0000) >> 16)/255.0 green:((rgbValue & 0xFF00) >> 8)/255.0 blue:(rgbValue & 0xFF)/255.0 alpha:1.0];
+}
 
 @end

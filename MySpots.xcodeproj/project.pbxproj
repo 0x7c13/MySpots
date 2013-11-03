@@ -301,6 +301,9 @@
 		F7466F9B18248852004BA1FE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F7466FDE182587E7004BA1FE /* CSGeoAR.xib */,
+				F7466FDF182587E7004BA1FE /* CSGeoARViewController.h */,
+				F7466FE0182587E7004BA1FE /* CSGeoARViewController.mm */,
 				F7466F7B18244FAB004BA1FE /* CSHomeViewController.h */,
 				F7466F7C18244FAB004BA1FE /* CSHomeViewController.mm */,
 				F7466FEC18259864004BA1FE /* CSSpotCreationViewController.h */,
@@ -318,9 +321,6 @@
 		F7466FCA18248CCB004BA1FE /* MetaioSDKBaseFiles */ = {
 			isa = PBXGroup;
 			children = (
-				F7466FDE182587E7004BA1FE /* CSGeoAR.xib */,
-				F7466FDF182587E7004BA1FE /* CSGeoARViewController.h */,
-				F7466FE0182587E7004BA1FE /* CSGeoARViewController.mm */,
 				F7466FCB18248D31004BA1FE /* EAGLView.h */,
 				F7466FCC18248D31004BA1FE /* EAGLView.mm */,
 				F7466FCD18248D31004BA1FE /* MetaioSDKViewController.h */,

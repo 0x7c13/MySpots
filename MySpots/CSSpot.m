@@ -13,13 +13,13 @@
 - (id)initWithName:(NSString *)name
          longitude:(float)longitude
           latitude:(float)latitude
-          tagColor:(UIColor *)color
+          tagColor:(NSString *)color
 {
     if(self = [super init]) {
         _name = [NSString stringWithString:name];
         _longitude = longitude;
         _latitude = latitude;
-        _tagColor = color;
+        _tagColor = [NSString stringWithString:color];
     }
     
     return self;

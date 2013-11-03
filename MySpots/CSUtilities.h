@@ -23,6 +23,7 @@
 + (void)addShadowToUIView: (UIView *)view;
 + (void)addShadowToUIImageView: (UIImageView *)view;
 + (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize;
-+ (NSString*)colorToWeb:(UIColor*)color;
++ (UIColor *)colorFromHexString:(NSString *)hexString;
++ (NSString *)hexStringFromColor:(UIColor *)color;
 
 @end

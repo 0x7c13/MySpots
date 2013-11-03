@@ -108,7 +108,9 @@
         NSString *wps = @"";
 
 
-        CSSpot *newSpot = [[CSSpot alloc]initWithName:stadiumName longitude:lon latitude:lat tagColor:[UIColor grayColor]];
+        NSString *tagColor = [NSString stringWithString:[CSUtilities hexStringFromColor:[UIColor grayColor]]];
+        
+        CSSpot *newSpot = [[CSSpot alloc]initWithName:stadiumName longitude:lon latitude:lat tagColor:tagColor];
          
         [self.spots addObject:newSpot];
     }

@@ -82,11 +82,11 @@
     
     CSSpot *spot = [self.spots objectAtIndex:indexPath.row];
     cell.spotName.text = [NSString stringWithFormat:@"%@", spot.name];
-    cell.tagColor = spot.tagColor;
+    cell.tagColor = [CSUtilities colorFromHexString:spot.tagColor];
 
     cell.tagView.layer.cornerRadius= 20.0/2;
     cell.tagView.clipsToBounds = YES;
-    cell.tagView.backgroundColor = spot.tagColor;
+    cell.tagView.backgroundColor = [CSUtilities colorFromHexString:spot.tagColor];
     //[CSUtilities addShadowToUIImageView:cell.viewForBaselineLayout];
     return cell;
 }

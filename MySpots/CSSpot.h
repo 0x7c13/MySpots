@@ -13,11 +13,11 @@
 @property (copy, nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) float longitude;
 @property (nonatomic, readonly) float latitude;
-@property (nonatomic, readonly) UIColor *tagColor;
+@property (nonatomic, readonly) NSString *tagColor;
 
 -(id) initWithName:(NSString *)name
          longitude:(float)longitude
           latitude:(float)latitude
-          tagColor:(UIColor *)color;
+          tagColor:(NSString *)color;
 
 @end

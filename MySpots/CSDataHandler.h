@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "CSSpot.h"
+#import "CSUtilities.h"
 
 #define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
 
