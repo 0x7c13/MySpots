@@ -73,10 +73,18 @@
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Osa-gs-2xN">
+                                <rect key="frame" x="25" y="124" width="272" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="accountLabel" destination="Osa-gs-2xN" id="2k3-BN-cJc"/>
                         <outlet property="loginButton" destination="sb7-hA-pbq" id="TT8-gU-qlk"/>
                         <outlet property="loginViewBG" destination="jSv-zT-WHM" id="WCf-iI-GRf"/>
                         <outlet property="passwordTextField" destination="fu1-wx-T9H" id="Fxp-s7-SHw"/>
@@ -215,7 +223,7 @@
         <scene sceneID="GLz-RJ-faH">
             <objects>
                 <tabBarController definesPresentationContext="YES" id="IcI-yC-Xj8" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="nZN-Hr-p8I">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>

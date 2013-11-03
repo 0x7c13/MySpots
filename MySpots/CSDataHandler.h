@@ -32,6 +32,9 @@ typedef enum {
 + (id)sharedInstance;
 + (BOOL)existNetworkConnection;
 
+
++ (NSMutableArray *)loadSpotsFromDisk;
++ (void)writeSpotsToDisk:(NSMutableArray *)spots;
 - (void)getSpots;
 
 @end

@@ -6,11 +6,16 @@
 //  Copyright (c) 2013 CodeStrikers. All rights reserved.
 //
 
+#import "CSUser.h"
 #import "MetaioSDKViewController.h"
 #import "EAGLView.h"
 #import "CSHomeViewController.h"
 
-@interface CSHomeViewController ()
+@interface CSHomeViewController () {
+    BOOL welcomeAnimationExecuted;
+}
+
+@property (weak, nonatomic) IBOutlet UILabel *accountLabel;
 
 @end
 
@@ -40,6 +45,34 @@
     self.popupView.layer.shouldRasterize = YES;
     self.popupView.layer.rasterizationScale = [[UIScreen mainScreen] scale];
     
+    welcomeAnimationExecuted = NO;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    CSUser *currentUser = [CSUser sharedInstance];
+    if(currentUser.isGuest) {
+        self.accountLabel.text = @"";
+        welcomeAnimationExecuted = NO;
+    }
+    else {
+        if (!welcomeAnimationExecuted) {
+            self.accountLabel.alpha = 0.0f;
+            self.accountLabel.text = [NSString stringWithFormat:@"Welcome, %@", [currentUser getUsername]];
+            
+            [UIView animateWithDuration:0.5
+                                  delay:0.0
+                                options:UIViewAnimationOptionAllowUserInteraction
+                             animations:^{ self.accountLabel.alpha = 1.0f; }
+                             completion:^(BOOL finished) {
+                                 self.accountLabel.alpha = 1.0f;
+                                welcomeAnimationExecuted = YES;
+                             }];
+            
+        }
+    }
 }
 
 - (IBAction)loginButtonPressed:(id)sender {
@@ -53,14 +86,20 @@
     }
 }
 
-
 - (BOOL)loginCheck
 {
 
     if (![self.usernameTextField.text isEqualToString:@""] && ![self.passwordTextField.text isEqualToString:@""]) {
         
-            // check username and password
-        return YES;
+        CSUser *currentUser = [CSUser sharedInstance];
+        if (currentUser.isGuest) {
+            if([currentUser loginWithUsername:self.usernameTextField.text password:self.passwordTextField.text]) {
+                return YES;
+            }else {
+                return NO;
+            }
+        }
+        else return NO;
     }
 
 

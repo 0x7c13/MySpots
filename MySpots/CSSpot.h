@@ -8,14 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CSSpot : NSObject
+@interface CSSpot : NSObject <NSCoding>
 
 @property (copy, nonatomic, readonly) NSString *name;
+@property (copy, nonatomic, readonly) NSString *time;
 @property (nonatomic, readonly) float longitude;
 @property (nonatomic, readonly) float latitude;
-@property (nonatomic, readonly) NSString *tagColor;
+@property (copy, nonatomic, readonly) NSString *tagColor;
 
 -(id) initWithName:(NSString *)name
+              time:(NSString *)time
          longitude:(float)longitude
           latitude:(float)latitude
           tagColor:(NSString *)color;

@@ -110,7 +110,7 @@
 
         NSString *tagColor = [NSString stringWithString:[CSUtilities hexStringFromColor:[UIColor grayColor]]];
         
-        CSSpot *newSpot = [[CSSpot alloc]initWithName:stadiumName longitude:lon latitude:lat tagColor:tagColor];
+        CSSpot *newSpot = [[CSSpot alloc]initWithName:stadiumName time:@"" longitude:lon latitude:lat tagColor:tagColor];
          
         [self.spots addObject:newSpot];
     }
@@ -157,6 +157,19 @@
     return YES;
 }
 
++ (void)writeSpotsToDisk:(NSMutableArray *)spots
+{
+    //Saving it
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:spots];
+    [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"flyingeek"];
+}
+
++ (NSMutableArray *)loadSpotsFromDisk
+{
+    NSData *spotsData = [[NSUserDefaults standardUserDefaults] objectForKey:@"flyingeek"];
+    NSMutableArray *spots = [NSKeyedUnarchiver unarchiveObjectWithData:spotsData];
+    return spots;
+}
 
 #pragma --- additional useful private methods
 

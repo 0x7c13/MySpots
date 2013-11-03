@@ -60,6 +60,7 @@
 		F74670051825A5D5004BA1FE /* CSUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = F74670041825A5D5004BA1FE /* CSUtilities.m */; };
 		F74670091825CFA2004BA1FE /* ASDepthModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F74670081825CFA2004BA1FE /* ASDepthModalViewController.m */; };
 		F746700C1825DF31004BA1FE /* CSSpotsMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F746700B1825DF31004BA1FE /* CSSpotsMapViewController.m */; };
+		F746700F18260AC9004BA1FE /* CSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = F746700E18260AC9004BA1FE /* CSUser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +145,8 @@
 		F74670081825CFA2004BA1FE /* ASDepthModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASDepthModalViewController.m; sourceTree = "<group>"; };
 		F746700A1825DF31004BA1FE /* CSSpotsMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSpotsMapViewController.h; sourceTree = "<group>"; };
 		F746700B1825DF31004BA1FE /* CSSpotsMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSpotsMapViewController.m; sourceTree = "<group>"; };
+		F746700D18260AC9004BA1FE /* CSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSUser.h; sourceTree = "<group>"; };
+		F746700E18260AC9004BA1FE /* CSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSUser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,6 +337,8 @@
 			children = (
 				F7466FE718258848004BA1FE /* CSSpot.h */,
 				F7466FE818258848004BA1FE /* CSSpot.m */,
+				F746700D18260AC9004BA1FE /* CSUser.h */,
+				F746700E18260AC9004BA1FE /* CSUser.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -484,6 +489,7 @@
 				F7466F7318244FAA004BA1FE /* main.m in Sources */,
 				F7466F7D18244FAB004BA1FE /* CSHomeViewController.mm in Sources */,
 				F74670051825A5D5004BA1FE /* CSUtilities.m in Sources */,
+				F746700F18260AC9004BA1FE /* CSUser.m in Sources */,
 				F7466FCF18248D31004BA1FE /* EAGLView.mm in Sources */,
 				F7466FFA18259CF6004BA1FE /* CSAboutUSViewController.m in Sources */,
 				F7466FF718259C12004BA1FE /* CSSpotsTableViewController.mm in Sources */,
