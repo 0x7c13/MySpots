@@ -42,7 +42,7 @@
 }
 
 - (IBAction)exitButtonPressed:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.parentViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)getData
@@ -94,9 +94,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [EAGLContext setCurrentContext:nil];
+    CSGeoARViewController * VC = [[CSGeoARViewController alloc] initWithNibName:@"CSGeoAR" bundle:nil];
+    VC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    VC.spot = [self.spots objectAtIndex:self.spotsTable.indexPathForSelectedRow.row];
+    
+    [self presentViewController:VC animated:YES completion:nil];
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-
 
 #pragma HEWebDataHandler protocal
 

@@ -7,12 +7,14 @@
 //
 
 #import "CSAppDelegate.h"
+#import "CSUtilities.h"
 
 @implementation CSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [CSUtilities initSetup];
     return YES;
 }
 							

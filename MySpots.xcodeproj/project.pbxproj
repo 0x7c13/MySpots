@@ -48,17 +48,18 @@
 		F7466FD418248E45004BA1FE /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F7466FD318248E45004BA1FE /* libxml2.dylib */; };
 		F7466FD618248E4B004BA1FE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F7466FD518248E4B004BA1FE /* libz.dylib */; };
 		F7466FE1182587E7004BA1FE /* CSGeoAR.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7466FDE182587E7004BA1FE /* CSGeoAR.xib */; };
-		F7466FE2182587E7004BA1FE /* CSGeoARViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7466FE0182587E7004BA1FE /* CSGeoARViewController.mm */; };
+		F7466FE2182587E7004BA1FE /* CSGeoARViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7466FE0182587E7004BA1FE /* CSGeoARViewController.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F7466FE5182587F5004BA1FE /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F7466FE4182587F5004BA1FE /* Reachability.m */; };
 		F7466FE918258848004BA1FE /* CSSpot.m in Sources */ = {isa = PBXBuildFile; fileRef = F7466FE818258848004BA1FE /* CSSpot.m */; };
 		F7466FEB18258E65004BA1FE /* ImageRes in Resources */ = {isa = PBXBuildFile; fileRef = F7466FEA18258E65004BA1FE /* ImageRes */; };
 		F7466FEE18259864004BA1FE /* CSSpotCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7466FED18259864004BA1FE /* CSSpotCreationViewController.m */; };
-		F7466FF718259C12004BA1FE /* CSSpotsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7466FF618259C12004BA1FE /* CSSpotsTableViewController.m */; };
+		F7466FF718259C12004BA1FE /* CSSpotsTableViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7466FF618259C12004BA1FE /* CSSpotsTableViewController.mm */; };
 		F7466FFA18259CF6004BA1FE /* CSAboutUSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7466FF918259CF6004BA1FE /* CSAboutUSViewController.m */; };
 		F7466FFE18259FBE004BA1FE /* CSDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F7466FFD18259FBE004BA1FE /* CSDataHandler.m */; };
 		F74670021825A3A5004BA1FE /* CSSpotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F74670011825A3A4004BA1FE /* CSSpotCell.m */; };
 		F74670051825A5D5004BA1FE /* CSUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = F74670041825A5D5004BA1FE /* CSUtilities.m */; };
 		F74670091825CFA2004BA1FE /* ASDepthModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F74670081825CFA2004BA1FE /* ASDepthModalViewController.m */; };
+		F746700C1825DF31004BA1FE /* CSSpotsMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F746700B1825DF31004BA1FE /* CSSpotsMapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,7 +131,7 @@
 		F7466FEC18259864004BA1FE /* CSSpotCreationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSpotCreationViewController.h; sourceTree = "<group>"; };
 		F7466FED18259864004BA1FE /* CSSpotCreationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSpotCreationViewController.m; sourceTree = "<group>"; };
 		F7466FF518259C12004BA1FE /* CSSpotsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSpotsTableViewController.h; sourceTree = "<group>"; };
-		F7466FF618259C12004BA1FE /* CSSpotsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSpotsTableViewController.m; sourceTree = "<group>"; };
+		F7466FF618259C12004BA1FE /* CSSpotsTableViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CSSpotsTableViewController.mm; sourceTree = "<group>"; };
 		F7466FF818259CF6004BA1FE /* CSAboutUSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAboutUSViewController.h; sourceTree = "<group>"; };
 		F7466FF918259CF6004BA1FE /* CSAboutUSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAboutUSViewController.m; sourceTree = "<group>"; };
 		F7466FFC18259FBE004BA1FE /* CSDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSDataHandler.h; sourceTree = "<group>"; };
@@ -141,6 +142,8 @@
 		F74670041825A5D5004BA1FE /* CSUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSUtilities.m; sourceTree = "<group>"; };
 		F74670071825CFA2004BA1FE /* ASDepthModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASDepthModalViewController.h; sourceTree = "<group>"; };
 		F74670081825CFA2004BA1FE /* ASDepthModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASDepthModalViewController.m; sourceTree = "<group>"; };
+		F746700A1825DF31004BA1FE /* CSSpotsMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSpotsMapViewController.h; sourceTree = "<group>"; };
+		F746700B1825DF31004BA1FE /* CSSpotsMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSpotsMapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,9 +306,11 @@
 				F7466FEC18259864004BA1FE /* CSSpotCreationViewController.h */,
 				F7466FED18259864004BA1FE /* CSSpotCreationViewController.m */,
 				F7466FF518259C12004BA1FE /* CSSpotsTableViewController.h */,
-				F7466FF618259C12004BA1FE /* CSSpotsTableViewController.m */,
+				F7466FF618259C12004BA1FE /* CSSpotsTableViewController.mm */,
 				F7466FF818259CF6004BA1FE /* CSAboutUSViewController.h */,
 				F7466FF918259CF6004BA1FE /* CSAboutUSViewController.m */,
+				F746700A1825DF31004BA1FE /* CSSpotsMapViewController.h */,
+				F746700B1825DF31004BA1FE /* CSSpotsMapViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -467,6 +472,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F74670091825CFA2004BA1FE /* ASDepthModalViewController.m in Sources */,
+				F746700C1825DF31004BA1FE /* CSSpotsMapViewController.m in Sources */,
 				F7466FE918258848004BA1FE /* CSSpot.m in Sources */,
 				F7466FE2182587E7004BA1FE /* CSGeoARViewController.mm in Sources */,
 				F7466F7718244FAA004BA1FE /* CSAppDelegate.m in Sources */,
@@ -480,7 +486,7 @@
 				F74670051825A5D5004BA1FE /* CSUtilities.m in Sources */,
 				F7466FCF18248D31004BA1FE /* EAGLView.mm in Sources */,
 				F7466FFA18259CF6004BA1FE /* CSAboutUSViewController.m in Sources */,
-				F7466FF718259C12004BA1FE /* CSSpotsTableViewController.m in Sources */,
+				F7466FF718259C12004BA1FE /* CSSpotsTableViewController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

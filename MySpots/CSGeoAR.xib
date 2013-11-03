@@ -7,7 +7,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MetaioSDKViewController">
             <connections>
-                <outlet property="closeButton" destination="35" id="37"/>
                 <outlet property="glView" destination="8" id="33"/>
                 <outlet property="view" destination="20" id="32"/>
             </connections>

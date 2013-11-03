@@ -112,7 +112,7 @@
         // Create radar object
         m_radar = m_metaioSDK->createRadar();
         m_radar->setBackgroundTexture([[[NSBundle mainBundle] pathForResource:@"radar" ofType:@"png" inDirectory:@"ImageRes"] UTF8String]);
-        m_radar->setObjectsDefaultTexture([[[NSBundle mainBundle] pathForResource:@"radarPointYellow" ofType:@"png" inDirectory:@"ImageRes"] UTF8String]);
+        m_radar->setObjectsDefaultTexture([[[NSBundle mainBundle] pathForResource:@"yellow" ofType:@"png" inDirectory:@"ImageRes"] UTF8String]);
         m_radar->setRelativeToScreen(metaio::IGeometry::ANCHOR_TL);
         
         // Add geometries to the radar
@@ -157,8 +157,8 @@
 	{
         metaio::LLACoordinate modelCoordinate = model->getTranslationLLA();
 		NSLog(@"You picked a model at location %f, %f!", modelCoordinate.latitude, modelCoordinate.longitude);
-        m_radar->setObjectsDefaultTexture([[[NSBundle mainBundle] pathForResource:@"radarPointYellow" ofType:@"png" inDirectory:@"ImageRes"] UTF8String]);
-        m_radar->setObjectTexture(model, [[[NSBundle mainBundle] pathForResource:@"radarPointRed" ofType:@"png" inDirectory:@"ImageRes"] UTF8String]);
+        m_radar->setObjectsDefaultTexture([[[NSBundle mainBundle] pathForResource:@"yellow" ofType:@"png" inDirectory:@"ImageRes"] UTF8String]);
+        m_radar->setObjectTexture(model, [[[NSBundle mainBundle] pathForResource:@"red" ofType:@"png" inDirectory:@"ImageRes"] UTF8String]);
         
         /*
         if (self.waypoint.latitude == modelCoordinate.latitude && self.waypoint.longitude == modelCoordinate.longitude) {
@@ -280,5 +280,8 @@ double convertToRadians(double val) {
     return angle * RADIO;
 }
 
-
+- (void)onBtnClosePushed:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

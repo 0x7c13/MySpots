@@ -135,26 +135,32 @@
 
 - (IBAction)grayTagPressed:(id)sender {
     self.tagView.backgroundColor = self.grayTag.backgroundColor;
+    NSLog(@"%@", [CSUtilities colorToWeb:self.grayTag.backgroundColor]);
 }
 
 - (IBAction)redTagPressed:(id)sender {
     self.tagView.backgroundColor = self.redTag.backgroundColor;
+    NSLog(@"%@", [CSUtilities colorToWeb:self.redTag.backgroundColor]);
 }
 
 - (IBAction)greenTagPressed:(id)sender {
     self.tagView.backgroundColor = self.greenTag.backgroundColor;
+    NSLog(@"%@", [CSUtilities colorToWeb:self.greenTag.backgroundColor]);
 }
 
 - (IBAction)pinkTagPressed:(id)sender {
     self.tagView.backgroundColor = self.pinkTag.backgroundColor;
+    NSLog(@"%@", [CSUtilities colorToWeb:self.pinkTag.backgroundColor]);
 }
 
 - (IBAction)yellowTagPressed:(id)sender {
     self.tagView.backgroundColor = self.yellowTag.backgroundColor;
+    NSLog(@"%@", [CSUtilities colorToWeb:self.yellowTag.backgroundColor]);
 }
 
 - (IBAction)blueTagPressed:(id)sender {
     self.tagView.backgroundColor = self.blueTag.backgroundColor;
+    NSLog(@"%@", [CSUtilities colorToWeb:self.blueTag.backgroundColor]);
 }
 
 
@@ -164,19 +170,15 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
+    [textField resignFirstResponder];
+    
     // When the user presses return, take focus away from the text field so that the keyboard is dismissed.
-    /*
-    NSTimeInterval animationDuration = 0.30f;
+    NSTimeInterval animationDuration = 0.20f;
     [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
     [UIView setAnimationDuration:animationDuration];
-    CGRect rect = CGRectMake(0.0f, 20.0f, self.view.frame.size.width, self.view.frame.size.height);
-    self.view.frame = rect;
     [UIView commitAnimations];
-     */
-    [textField resignFirstResponder];
     return YES;
 }
-
 
 
 

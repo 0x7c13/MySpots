@@ -53,7 +53,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="mZM-35-0fh" kind="modal" id="uAF-aJ-Jvw"/>
+                                    <segue destination="IcI-yC-Xj8" kind="modal" id="S8y-40-tyv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mlj-iP-XFw">
@@ -133,7 +133,7 @@
             </objects>
             <point key="canvasLocation" x="102" y="143"/>
         </scene>
-        <!--Spots Table View Controller-->
+        <!--Spots Table View Controller - Spot List-->
         <scene sceneID="eWL-Xt-0zV">
             <objects>
                 <viewController id="mZM-35-0fh" customClass="CSSpotsTableViewController" sceneMemberID="viewController">
@@ -146,7 +146,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="61" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="4At-Pl-Bxd">
-                                <rect key="frame" x="0.0" y="90" width="320" height="398"/>
+                                <rect key="frame" x="0.0" y="90" width="320" height="429"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -183,19 +183,18 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zth-7z-dlx">
-                                <rect key="frame" x="20" y="496" width="169" height="52"/>
+                                <rect key="frame" x="13" y="30" width="35" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="29"/>
-                                <state key="normal" title="Go Back">
+                                <state key="normal" title="&lt;">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="exitButtonPressed:" destination="1PI-aK-09u" eventType="touchUpInside" id="dnD-0I-nYY"/>
                                     <action selector="exitButtonPressed:" destination="mZM-35-0fh" eventType="touchUpInside" id="lWd-jE-Tmk"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="View My Spots" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fY0-N6-5EP">
-                                <rect key="frame" x="20" y="30" width="280" height="53"/>
+                                <rect key="frame" x="40" y="30" width="280" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="35"/>
                                 <nil key="highlightedColor"/>
@@ -203,13 +202,78 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Spot List" id="yOO-V7-dAx"/>
                     <connections>
                         <outlet property="spotsTable" destination="4At-Pl-Bxd" id="Loy-wr-bkG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igW-4i-0xq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="734" y="379"/>
+            <point key="canvasLocation" x="1270" y="-13"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="GLz-RJ-faH">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="IcI-yC-Xj8" sceneMemberID="viewController">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="nZN-Hr-p8I">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="mZM-35-0fh" kind="relationship" relationship="viewControllers" id="aaz-nK-fAN"/>
+                        <segue destination="fbB-fc-GI1" kind="relationship" relationship="viewControllers" id="100-pd-HxS"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Xb-Tb-eiS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="734" y="371"/>
+        </scene>
+        <!--Spots Map View Controller - Spots Map-->
+        <scene sceneID="8YK-c2-qgq">
+            <objects>
+                <viewController id="fbB-fc-GI1" customClass="CSSpotsMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yAZ-Op-aOh"/>
+                        <viewControllerLayoutGuide type="bottom" id="FfJ-HG-Qld"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LrA-X3-DBe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="nMw-p3-Pel">
+                                <rect key="frame" x="0.0" y="84" width="320" height="435"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acr-ha-jy4">
+                                <rect key="frame" x="13" y="30" width="35" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="29"/>
+                                <state key="normal" title="&lt;">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="exitButtonPressed:" destination="fbB-fc-GI1" eventType="touchUpInside" id="Tpg-Dd-Daa"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="View My Spots" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2f-aA-h7f">
+                                <rect key="frame" x="40" y="30" width="280" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="35"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Spots Map" id="3yC-gj-ccn"/>
+                    <connections>
+                        <outlet property="mapView" destination="nMw-p3-Pel" id="5bu-Z9-P1g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yQj-1f-hrb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1270" y="695"/>
         </scene>
         <!--AboutUS View Controller-->
         <scene sceneID="Y0I-bu-OP2">

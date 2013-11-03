@@ -9,6 +9,7 @@
 #import "CSSpot.h"
 #import "CSSpotCell.h"
 #import "CSDataHandler.h"
+#import "CSGeoARViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import <UIKit/UIKit.h>
 

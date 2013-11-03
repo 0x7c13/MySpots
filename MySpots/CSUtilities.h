@@ -17,13 +17,12 @@
 
 @interface CSUtilities : NSObject
 
++ (void)initSetup;
 + (BOOL)isRunningOniOS7; // check current system version == iOS7
 + (BOOL)currentDeviceIs4InchiPhone;
-
-// HE image
 + (void)addShadowToUIView: (UIView *)view;
 + (void)addShadowToUIImageView: (UIImageView *)view;
 + (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize;
-
++ (NSString*)colorToWeb:(UIColor*)color;
 
 @end
