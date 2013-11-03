@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ASDepthModalViewController.h"
 
-@interface CSHomeViewController : UIViewController
+@interface CSHomeViewController : UIViewController <ASDepthModalViewControllerDelegate>
 
+@property (weak, nonatomic) IBOutlet UIView *popupView;
+@property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIImageView *loginViewBG;
+
+@property (strong, nonatomic) ASDepthModalViewController *popManagerVC;
 @end

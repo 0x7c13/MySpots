@@ -1,19 +1,19 @@
 //
-//  CSWaypoint.m
+//  CSSpot.m
 //  MySpots
 //
 //  Created by FlyinGeek on 11/2/13.
 //  Copyright (c) 2013 CodeStrikers. All rights reserved.
 //
 
-#import "CSWaypoint.h"
+#import "CSSpot.h"
 
-@implementation CSWaypoint
+@implementation CSSpot
 
 - (id)initWithName:(NSString *)name
          longitude:(float)longitude
           latitude:(float)latitude
-          tagColor:(CGColorRef)color
+          tagColor:(UIColor *)color
 {
     if(self = [super init]) {
         _name = [NSString stringWithString:name];

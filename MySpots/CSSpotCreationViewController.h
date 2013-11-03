@@ -6,8 +6,11 @@
 //  Copyright (c) 2013 CodeStrikers. All rights reserved.
 //
 
+#import <MapKit/MapKit.h>
 #import <UIKit/UIKit.h>
 
-@interface CSSpotCreationViewController : UIViewController
+@interface CSSpotCreationViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UITextFieldDelegate>
+
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @end

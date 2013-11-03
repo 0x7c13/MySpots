@@ -47,14 +47,18 @@
 		F7466FD218248E37004BA1FE /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F7466FD118248E37004BA1FE /* libsqlite3.0.dylib */; };
 		F7466FD418248E45004BA1FE /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F7466FD318248E45004BA1FE /* libxml2.dylib */; };
 		F7466FD618248E4B004BA1FE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F7466FD518248E4B004BA1FE /* libz.dylib */; };
-		F7466FE1182587E7004BA1FE /* HEGeoAR.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7466FDE182587E7004BA1FE /* HEGeoAR.xib */; };
-		F7466FE2182587E7004BA1FE /* HEGeoARViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7466FE0182587E7004BA1FE /* HEGeoARViewController.mm */; };
+		F7466FE1182587E7004BA1FE /* CSGeoAR.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7466FDE182587E7004BA1FE /* CSGeoAR.xib */; };
+		F7466FE2182587E7004BA1FE /* CSGeoARViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7466FE0182587E7004BA1FE /* CSGeoARViewController.mm */; };
 		F7466FE5182587F5004BA1FE /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F7466FE4182587F5004BA1FE /* Reachability.m */; };
-		F7466FE918258848004BA1FE /* CSWaypoint.m in Sources */ = {isa = PBXBuildFile; fileRef = F7466FE818258848004BA1FE /* CSWaypoint.m */; };
+		F7466FE918258848004BA1FE /* CSSpot.m in Sources */ = {isa = PBXBuildFile; fileRef = F7466FE818258848004BA1FE /* CSSpot.m */; };
 		F7466FEB18258E65004BA1FE /* ImageRes in Resources */ = {isa = PBXBuildFile; fileRef = F7466FEA18258E65004BA1FE /* ImageRes */; };
 		F7466FEE18259864004BA1FE /* CSSpotCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7466FED18259864004BA1FE /* CSSpotCreationViewController.m */; };
 		F7466FF718259C12004BA1FE /* CSSpotsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7466FF618259C12004BA1FE /* CSSpotsTableViewController.m */; };
 		F7466FFA18259CF6004BA1FE /* CSAboutUSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7466FF918259CF6004BA1FE /* CSAboutUSViewController.m */; };
+		F7466FFE18259FBE004BA1FE /* CSDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F7466FFD18259FBE004BA1FE /* CSDataHandler.m */; };
+		F74670021825A3A5004BA1FE /* CSSpotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F74670011825A3A4004BA1FE /* CSSpotCell.m */; };
+		F74670051825A5D5004BA1FE /* CSUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = F74670041825A5D5004BA1FE /* CSUtilities.m */; };
+		F74670091825CFA2004BA1FE /* ASDepthModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F74670081825CFA2004BA1FE /* ASDepthModalViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,13 +119,13 @@
 		F7466FD118248E37004BA1FE /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		F7466FD318248E45004BA1FE /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		F7466FD518248E4B004BA1FE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		F7466FDE182587E7004BA1FE /* HEGeoAR.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HEGeoAR.xib; sourceTree = "<group>"; };
-		F7466FDF182587E7004BA1FE /* HEGeoARViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEGeoARViewController.h; sourceTree = "<group>"; };
-		F7466FE0182587E7004BA1FE /* HEGeoARViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HEGeoARViewController.mm; sourceTree = "<group>"; };
+		F7466FDE182587E7004BA1FE /* CSGeoAR.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CSGeoAR.xib; sourceTree = "<group>"; };
+		F7466FDF182587E7004BA1FE /* CSGeoARViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSGeoARViewController.h; sourceTree = "<group>"; };
+		F7466FE0182587E7004BA1FE /* CSGeoARViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CSGeoARViewController.mm; sourceTree = "<group>"; };
 		F7466FE3182587F5004BA1FE /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		F7466FE4182587F5004BA1FE /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		F7466FE718258848004BA1FE /* CSWaypoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSWaypoint.h; sourceTree = "<group>"; };
-		F7466FE818258848004BA1FE /* CSWaypoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSWaypoint.m; sourceTree = "<group>"; };
+		F7466FE718258848004BA1FE /* CSSpot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSpot.h; sourceTree = "<group>"; };
+		F7466FE818258848004BA1FE /* CSSpot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSpot.m; sourceTree = "<group>"; };
 		F7466FEA18258E65004BA1FE /* ImageRes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ImageRes; sourceTree = "<group>"; };
 		F7466FEC18259864004BA1FE /* CSSpotCreationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSpotCreationViewController.h; sourceTree = "<group>"; };
 		F7466FED18259864004BA1FE /* CSSpotCreationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSpotCreationViewController.m; sourceTree = "<group>"; };
@@ -129,6 +133,14 @@
 		F7466FF618259C12004BA1FE /* CSSpotsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSpotsTableViewController.m; sourceTree = "<group>"; };
 		F7466FF818259CF6004BA1FE /* CSAboutUSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAboutUSViewController.h; sourceTree = "<group>"; };
 		F7466FF918259CF6004BA1FE /* CSAboutUSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAboutUSViewController.m; sourceTree = "<group>"; };
+		F7466FFC18259FBE004BA1FE /* CSDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSDataHandler.h; sourceTree = "<group>"; };
+		F7466FFD18259FBE004BA1FE /* CSDataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSDataHandler.m; sourceTree = "<group>"; };
+		F74670001825A3A4004BA1FE /* CSSpotCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSpotCell.h; sourceTree = "<group>"; };
+		F74670011825A3A4004BA1FE /* CSSpotCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSpotCell.m; sourceTree = "<group>"; };
+		F74670031825A5D5004BA1FE /* CSUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSUtilities.h; sourceTree = "<group>"; };
+		F74670041825A5D5004BA1FE /* CSUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSUtilities.m; sourceTree = "<group>"; };
+		F74670071825CFA2004BA1FE /* ASDepthModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASDepthModalViewController.h; sourceTree = "<group>"; };
+		F74670081825CFA2004BA1FE /* ASDepthModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASDepthModalViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +213,7 @@
 		F7466F6518244FAA004BA1FE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F74670061825CFA2004BA1FE /* ASDepthModal */,
 				F7466FD518248E4B004BA1FE /* libz.dylib */,
 				F7466FD318248E45004BA1FE /* libxml2.dylib */,
 				F7466FD118248E37004BA1FE /* libsqlite3.0.dylib */,
@@ -239,6 +252,8 @@
 				F7466F7818244FAB004BA1FE /* iPhone.storyboard */,
 				F7466F7518244FAA004BA1FE /* CSAppDelegate.h */,
 				F7466F7618244FAA004BA1FE /* CSAppDelegate.m */,
+				F7466FFF1825A38C004BA1FE /* Cells */,
+				F7466FFB18259FAF004BA1FE /* Utilities */,
 				F7466FE618258818004BA1FE /* Models */,
 				F7466F9B18248852004BA1FE /* ViewControllers */,
 				F7466FCA18248CCB004BA1FE /* MetaioSDKBaseFiles */,
@@ -298,9 +313,9 @@
 		F7466FCA18248CCB004BA1FE /* MetaioSDKBaseFiles */ = {
 			isa = PBXGroup;
 			children = (
-				F7466FDE182587E7004BA1FE /* HEGeoAR.xib */,
-				F7466FDF182587E7004BA1FE /* HEGeoARViewController.h */,
-				F7466FE0182587E7004BA1FE /* HEGeoARViewController.mm */,
+				F7466FDE182587E7004BA1FE /* CSGeoAR.xib */,
+				F7466FDF182587E7004BA1FE /* CSGeoARViewController.h */,
+				F7466FE0182587E7004BA1FE /* CSGeoARViewController.mm */,
 				F7466FCB18248D31004BA1FE /* EAGLView.h */,
 				F7466FCC18248D31004BA1FE /* EAGLView.mm */,
 				F7466FCD18248D31004BA1FE /* MetaioSDKViewController.h */,
@@ -312,10 +327,40 @@
 		F7466FE618258818004BA1FE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F7466FE718258848004BA1FE /* CSWaypoint.h */,
-				F7466FE818258848004BA1FE /* CSWaypoint.m */,
+				F7466FE718258848004BA1FE /* CSSpot.h */,
+				F7466FE818258848004BA1FE /* CSSpot.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		F7466FFB18259FAF004BA1FE /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F74670031825A5D5004BA1FE /* CSUtilities.h */,
+				F74670041825A5D5004BA1FE /* CSUtilities.m */,
+				F7466FFC18259FBE004BA1FE /* CSDataHandler.h */,
+				F7466FFD18259FBE004BA1FE /* CSDataHandler.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		F7466FFF1825A38C004BA1FE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F74670001825A3A4004BA1FE /* CSSpotCell.h */,
+				F74670011825A3A4004BA1FE /* CSSpotCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		F74670061825CFA2004BA1FE /* ASDepthModal */ = {
+			isa = PBXGroup;
+			children = (
+				F74670071825CFA2004BA1FE /* ASDepthModalViewController.h */,
+				F74670081825CFA2004BA1FE /* ASDepthModalViewController.m */,
+			);
+			name = ASDepthModal;
+			path = MySpots/ASDepthModal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,7 +447,7 @@
 				F7466F7F18244FAB004BA1FE /* Images.xcassets in Resources */,
 				F7466F7118244FAA004BA1FE /* InfoPlist.strings in Resources */,
 				F7466F7A18244FAB004BA1FE /* iPhone.storyboard in Resources */,
-				F7466FE1182587E7004BA1FE /* HEGeoAR.xib in Resources */,
+				F7466FE1182587E7004BA1FE /* CSGeoAR.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,14 +466,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7466FE918258848004BA1FE /* CSWaypoint.m in Sources */,
-				F7466FE2182587E7004BA1FE /* HEGeoARViewController.mm in Sources */,
+				F74670091825CFA2004BA1FE /* ASDepthModalViewController.m in Sources */,
+				F7466FE918258848004BA1FE /* CSSpot.m in Sources */,
+				F7466FE2182587E7004BA1FE /* CSGeoARViewController.mm in Sources */,
 				F7466F7718244FAA004BA1FE /* CSAppDelegate.m in Sources */,
 				F7466FEE18259864004BA1FE /* CSSpotCreationViewController.m in Sources */,
 				F7466FD018248D31004BA1FE /* MetaioSDKViewController.mm in Sources */,
+				F7466FFE18259FBE004BA1FE /* CSDataHandler.m in Sources */,
+				F74670021825A3A5004BA1FE /* CSSpotCell.m in Sources */,
 				F7466FE5182587F5004BA1FE /* Reachability.m in Sources */,
 				F7466F7318244FAA004BA1FE /* main.m in Sources */,
 				F7466F7D18244FAB004BA1FE /* CSHomeViewController.mm in Sources */,
+				F74670051825A5D5004BA1FE /* CSUtilities.m in Sources */,
 				F7466FCF18248D31004BA1FE /* EAGLView.mm in Sources */,
 				F7466FFA18259CF6004BA1FE /* CSAboutUSViewController.m in Sources */,
 				F7466FF718259C12004BA1FE /* CSSpotsTableViewController.m in Sources */,

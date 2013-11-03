@@ -1,5 +1,5 @@
 //
-//  HEGeoARViewController.h
+//  CSGeoARViewController.h
 //  MySpots
 //
 //  Created by FlyinGeek on 11/2/13.
@@ -11,14 +11,14 @@
 #import <CoreLocation/CoreLocation.h>
 #import <CoreMotion/CoreMotion.h>
 
-#import "CSWaypoint.h"
+#import "CSSpot.h"
 
 namespace metaio
 {
     class IGeometry;   // forward declaration
 }
 
-@interface HEGeoARViewController : MetaioSDKViewController <CLLocationManagerDelegate>
+@interface CSGeoARViewController : MetaioSDKViewController <CLLocationManagerDelegate>
 {
     metaio::IBillboardGroup*   billboardGroup;   //!< Our default billboard group
     metaio::IGeometry* targetBillboard;
@@ -30,7 +30,7 @@ namespace metaio
 }
 
 @property (nonatomic, retain) CLLocation* currentLocation;
-@property (strong, nonatomic, readwrite) CSWaypoint *waypoint;
+@property (strong, nonatomic, readwrite) CSSpot *spot;
 
 
 @end

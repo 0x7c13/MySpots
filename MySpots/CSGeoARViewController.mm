@@ -1,5 +1,5 @@
 //
-//  HEGeoARViewController.m
+//  CSGeoARViewController.m
 //  MySpots
 //
 //  Created by FlyinGeek on 11/2/13.
@@ -7,15 +7,15 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
-#import "HEGeoARViewController.h"
+#import "CSGeoARViewController.h"
 #import "EAGLView.h"
 #include <metaioSDK/SensorsComponentIOS.h>
 
-@interface HEGeoARViewController ()
+@interface CSGeoARViewController ()
 - (UIImage*) getBillboardImageForTitle: (NSString*) title;
 @end
 
-@implementation HEGeoARViewController
+@implementation CSGeoARViewController
 @synthesize currentLocation;
 
 
@@ -51,7 +51,7 @@
     metaio::LLACoordinate currentPosition = m_sensors->getLocation();
     
     // let's create some positions around us
-    metaio::LLACoordinate target= metaio::LLACoordinate(self.waypoint.latitude,self.waypoint.longitude, currentLocation.altitude, currentPosition.accuracy);
+    metaio::LLACoordinate target= metaio::LLACoordinate(self.spot.latitude,self.spot.longitude, currentLocation.altitude, currentPosition.accuracy);
     
     if (targetBillboard)
     {
@@ -99,12 +99,12 @@
     if( currentPosition.accuracy > 0.0f )
     {
         // Creat the waypoints
-        metaio::LLACoordinate target = metaio::LLACoordinate(self.waypoint.latitude, self.waypoint.longitude, currentLocation.altitude, currentPosition.accuracy);
+        metaio::LLACoordinate target = metaio::LLACoordinate(self.spot.latitude, self.spot.longitude, currentLocation.altitude, currentPosition.accuracy);
         
 
         // load a few billboards
-        targetImage = [self getBillboardImageForTitle:self.waypoint.name];
-        targetBillboard = m_metaioSDK->createGeometryFromCGImage("North", [targetImage CGImage], true);
+        targetImage = [self getBillboardImageForTitle:self.spot.name];
+        targetBillboard = m_metaioSDK->createGeometryFromCGImage("target", [targetImage CGImage], true);
         targetBillboard->setTranslationLLA(target);
         targetBillboard->setLLALimitsEnabled(true);
         billboardGroup->addBillboard(targetBillboard);
