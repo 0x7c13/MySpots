@@ -8,6 +8,12 @@
 namespace metaio
 {
 
+/**
+ * This class encapulates a single geometry and provides additional 
+ * functionalities such as selecting geometries, applying geometry
+ * transformations etc. It it used in conjunction with the GestureHandler
+ * class for the implementation of gestures on geometries.
+ */
 class METAIO_DLL_API GeometryExtension
 {
     // a pointer to the geometry

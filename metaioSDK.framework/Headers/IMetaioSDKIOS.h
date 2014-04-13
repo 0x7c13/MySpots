@@ -5,6 +5,7 @@
 
 #include "IMetaioSDK.h"
 #include "MobileStructs.h"
+#include "DeviceInfoIOS.h"
 #import <CoreGraphics/CoreGraphics.h>
 #import <UIKit/UIKit.h>
 
@@ -90,7 +91,7 @@
 
 /**
  * Callback that delivers screenshot as new ImageStruct.
- * The image struct buffer must be deleted by the application.
+ * The image struct buffer will be released after this call returns.
  * Note: This callback is called on the render thread.
  *
  * \param image Screenshot image
@@ -241,30 +242,33 @@ namespace metaio
      * \code
      * ImageStruct imageContent;
      * CGContextRef context = nil;
+	 * CGColorSpaceRef colorSpace = nil;
      * 
-     * beginGetDataForCGImage(image, &imageContent, &context);
+     * beginGetDataForCGImage(image, &imageContent, &context, &colorSpace);
      * 
      *  // use data
      *  // ....
-     * endGetData(&context);
+     * endGetData(&context, &colorSpace);
      *
      * \endcode
      *
      * \param image the source image
      * \param[out] imageContent after the call this will point to a struct containing the image content
      * \param[out] context after the call this will point to the created CGContext. This has to be deleted again by calling endGetData
+	 * \param[out] rgbColorSpace after the call this will point to the created ColorSpace. This has to be deleted again by calling endGetData
      * 
      * \sa endGetData to delegate the context again
      */
-     void beginGetDataForCGImage(CGImage* image, ImageStruct* imageContent, CGContextRef* context);
+     void beginGetDataForCGImage(CGImage* image, ImageStruct* imageContent, CGContextRef* context, CGColorSpaceRef* rgbColorSpace);
     
     
     /** Frees the image context that was created with beginGetDataForCGImage
      * \param context the context to free
+	 * \param rgbColorSpace the colorspace to free
      * 
      * \sa beginGetDataForCGImage to get data from a CGImage
      */
-    void endGetData(CGContextRef* context);
+    void endGetData(CGContextRef* context, CGColorSpaceRef* rgbColorSpace);
 
 
 	/**
@@ -274,36 +278,6 @@ namespace metaio
 	* \return a pointer to an ARMobileSystem instance
 	*/
 	IMetaioSDKIOS* CreateMetaioSDKIOS(const stlcompat::String& signature);
-
-
-	/** Enumeration of iOS Devices
-	 */
-	enum E_IOS_DEVICETYPE
-	{
-		EID_IPHONEOLD__UNSUPPORTED, // pre-3GS, not supported anymore
-		EID_IPHONE3GS,
-		EID_IPHONE4,
-		EID_IPHONE4S,
-		EID_IPHONE5,
-		EID_IPHONE5C,
-		EID_IPHONE5S,
-		EID_IPAD__UNSUPPORTED, // unsupported, no camera
-		EID_IPAD2,
-		EID_IPAD3,
-		EID_IPAD4,
-		EID_IPADMINI,
-		EID_IPODOLD__UNSUPPORTED, // unsupported, no camera
-		EID_IPOD4,
-		EID_IPOD5,
-		EID_UNKNOWNIPHONE,
-		EID_UNKNOWNIPAD,
-		EID_UNKNOWNIPOD
-	};
-	
-	/** Retrieve the current device type
-	 * \return the device type of the current device. EID_UNKNOWN if its a new/unknown device
-	 */
-	E_IOS_DEVICETYPE getDeviceType();
 	
 	
 	/** Convert a UIInterface orientation to a ESCREEN_ROTATION to use with the SDK
