@@ -48,7 +48,7 @@
     
     NSLog(@"%@", [FileManager imageFilePathWithFileName:nil]);
 
-    [Utilities addBackgroundImageToView:self.masterView withImageName:@"bg_1.jpg"];
+    [Utilities addBackgroundImageToView:self.masterView withImageName:@"bg_2.jpg"];
     
     CGFloat locationY = DEVICE_IS_4INCH_IPHONE ? 310 : 260;
     
@@ -66,12 +66,12 @@
                           centerImage:@"circle"
                           centerBackground:nil
                           subImages:^(DCPathButton *dc){
-                              [dc subButtonImage:@"spot" withTag:0];
-                              [dc subButtonImage:@"camera_new" withTag:1];
-                              [dc subButtonImage:@"maps" withTag:2];
-                              [dc subButtonImage:@"twitter_new" withTag:3];
-                              [dc subButtonImage:@"download" withTag:4];
-                              [dc subButtonImage:@"facebook_new" withTag:5];
+                              [dc subButtonImage:@"spot_c" withTag:0];
+                              [dc subButtonImage:@"camera_c" withTag:1];
+                              [dc subButtonImage:@"maps_c" withTag:2];
+                              [dc subButtonImage:@"twitter_c" withTag:3];
+                              [dc subButtonImage:@"download_c" withTag:4];
+                              [dc subButtonImage:@"facebook_c" withTag:5];
                           }
                           subImageBackground:nil
                           inLocationX:160 locationY:locationY toParentView:self.buttonView];

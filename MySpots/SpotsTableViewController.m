@@ -13,6 +13,7 @@
 #import "UIViewController+CWPopup.h"
 #import "JDStatusBarNotification.h"
 #import "SpotsManager.h"
+#import "SpotsMapViewController.h"
 
 #import "Spot.h"
 #import "TextSpot.h"
@@ -23,10 +24,11 @@
 #import "ImageViewController.h"
 #import "AudioViewController.h"
 
-@interface SpotsTableViewController () <UITableViewDataSource, UITableViewDelegate, AudioViewControllerDelegate, ImageViewControllerDelegate, TextViewControllerDelegate>
+@interface SpotsTableViewController () <UITableViewDataSource, UITableViewDelegate, AudioViewControllerDelegate, ImageViewControllerDelegate, TextViewControllerDelegate, SpotsMapViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;
 @property (weak, nonatomic) IBOutlet ANBlurredTableView *tableView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *mapButton;
 
 @end
 
@@ -38,7 +40,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    //[Utilities addBackgroundImageToView:self.view withImageName:@"bg_1.jpg"];
+    [Utilities makeTransparentBarsForViewController:self];
+    
+    [self.navigationItem.leftBarButtonItem setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIFont fontWithName:@"Chalkduster" size:17.0f], UITextAttributeFont,nil]
+                                  forState:UIControlStateNormal];
+    
+    [self.mapButton setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIFont fontWithName:@"Chalkduster" size:17.0f], UITextAttributeFont,nil]
+                                       forState:UIControlStateNormal];
+    
+    
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithWhite:0.0 alpha:0.35f];
     self.useBlurForPopup = YES;
     
     // Stuff for populating our tableView.
@@ -54,15 +69,28 @@
     [_tableView setEndTintAlpha:0.75f];
     
     // Our background image. After this point, ANBlurredTableView takes over and renders the frames.
-    [_tableView setBackgroundImage:[UIImage imageNamed:@"bg_1.jpg"]];
+    [_tableView setBackgroundImage:[UIImage imageNamed:@"bg_2.jpg"]];
     
     // Offset our header for ~style~ reasons.
     [_tableView setContentInset:UIEdgeInsetsMake(0.0, 0, 0, 0)];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+}
+
+- (IBAction)mapButtonPressed:(id)sender {
+    
+    SpotsMapViewController *mapVC = [[SpotsMapViewController alloc]initWithNibName:@"SpotsMapViewController" bundle:nil];
+    mapVC.delegate = self;
+    [self presentPopupViewController:mapVC animated:YES completion:nil];
+}
+
 - (IBAction)backButtonPressed:(id)sender {
 
-    [self.tabBarController dismissNatGeoViewController];
+    [self.navigationController dismissNatGeoViewController];
 }
 
 
@@ -91,7 +119,7 @@
      initWithString:spot.name
      attributes:@
      {
-     NSFontAttributeName: [UIFont fontWithName:@"OpenSans" size:17.f]
+     NSFontAttributeName: [UIFont fontWithName:@"Chalkduster" size:17.f]
      }];
     CGRect rect = [attributedText boundingRectWithSize:(CGSize){320 - 40, CGFLOAT_MAX}
                                                options:NSStringDrawingUsesLineFragmentOrigin
@@ -103,16 +131,21 @@
         
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 0, cell.frame.size.width - 40, rect.size.height + 25)];
         titleLabel.textColor = [UIColor whiteColor];
-        titleLabel.font = [UIFont fontWithName:@"OpenSans" size:17.f];
+        titleLabel.font = [UIFont fontWithName:@"Chalkduster" size:18.f];
         titleLabel.tag = 1;
         titleLabel.numberOfLines = 10;
         [cell addSubview:titleLabel];
         
         UILabel *createDateLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, rect.size.height + 15, cell.frame.size.width - 40, 20)];
         createDateLabel.textColor = [UIColor whiteColor];
-        createDateLabel.font = [UIFont fontWithName:@"OpenSans" size:12.f];
+        createDateLabel.font = [UIFont fontWithName:@"OpenSans" size:13.f];
         createDateLabel.tag = 2;
         [cell addSubview:createDateLabel];
+        
+        UILabel *bottomLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, rect.size.height + 40, cell.frame.size.width - 40, 1)];
+        bottomLabel.backgroundColor = [UIColor colorWithWhite:1.0f alpha:0.5f];
+        bottomLabel.tag = 3;
+        [cell addSubview:bottomLabel];
     }
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];

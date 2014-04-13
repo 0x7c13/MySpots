@@ -53,11 +53,21 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
-    self.mediaFocusController = [[URBMediaFocusViewController alloc] init];
-	self.mediaFocusController.delegate = self;
     
     [Utilities addBackgroundImageToView:self.masterView withImageName:@"bg_1.jpg"];
+    [Utilities makeTransparentBarsForViewController:self];
+    
+    [self.doneButton setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIFont fontWithName:@"Chalkduster" size:20.0f], UITextAttributeFont,nil]
+                                       forState:UIControlStateNormal];
+    [self.addMoreButton setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIFont fontWithName:@"Chalkduster" size:20.0f], UITextAttributeFont,nil]
+                                       forState:UIControlStateNormal];
+    
+    self.mediaFocusController = [[URBMediaFocusViewController alloc] init];
+	self.mediaFocusController.delegate = self;
     
     canExit = NO;
     isEncrypting = NO;

@@ -46,17 +46,32 @@
     
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlackTranslucent];
-    [[UIToolbar appearance] setBarStyle:UIBarStyleBlackTranslucent];
+    [[UIToolbar appearance] setBarStyle:UIBarStyleBlack];
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    NSDictionary *navbarTitleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                               [UIFont fontWithName:@"Chalkduster" size:20.f], UITextAttributeFont,
+                                               [UIColor whiteColor],UITextAttributeTextColor,
+                                               [UIColor blackColor], UITextAttributeTextShadowColor,
+                                               [NSValue valueWithUIOffset:UIOffsetMake(-1, 0)], UITextAttributeTextShadowOffset, nil];
+    [[UINavigationBar appearance] setTitleVerticalPositionAdjustment:1.f forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setTitleTextAttributes:navbarTitleTextAttributes];
     [[UITabBarItem appearance] setTitleTextAttributes:@{
                                                         UITextAttributeTextColor: [UIColor whiteColor],
                                                         UITextAttributeTextShadowColor: [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.5],
                                                         UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetMake(0, -0.5)],
-                                                        UITextAttributeFont: [UIFont fontWithName:@"STHeitiSC-Medium" size:16.0],
+                                                        UITextAttributeFont: [UIFont fontWithName:@"Chalkduster" size:17.0],
                                                         } forState:UIControlStateNormal];
     [[UITabBarItem appearance] setTitlePositionAdjustment:UIOffsetMake(0.0, -14.0)];
-    [[UITabBar appearance] setBarStyle:UIBarStyleBlack];
+    [[UITabBar appearance] setBarStyle:UIBarStyleBlackTranslucent];
+    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:
+     @{UITextAttributeTextColor:[UIColor whiteColor],
+       UITextAttributeTextShadowOffset:[NSValue valueWithUIOffset:UIOffsetMake(0, 1)],
+       UITextAttributeTextShadowColor:[UIColor whiteColor],
+       UITextAttributeFont:[UIFont fontWithName:@"Chalkduster" size:17.0]
+       } forState:UIControlStateNormal];
+    
+
     
     // Remember to configure your audio session
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];

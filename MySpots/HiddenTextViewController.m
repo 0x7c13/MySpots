@@ -42,6 +42,11 @@
     // Do any additional setup after loading the view.
     
     [Utilities addBackgroundImageToView:self.masterView withImageName:@"bg_1.jpg"];
+    [Utilities makeTransparentBarsForViewController:self];
+    [self.doneButton setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIFont fontWithName:@"Chalkduster" size:20.0f], UITextAttributeFont,nil]
+                                       forState:UIControlStateNormal];
     
     canExit = NO;
     isKeyboardShown = NO;

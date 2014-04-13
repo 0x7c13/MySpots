@@ -27,6 +27,7 @@
     // Do any additional setup after loading the view.
     
     [Utilities addBackgroundImageToView:self.view withImageName:@"bg_1.jpg"];
+    [Utilities makeTransparentBarsForViewController:self];
     
     [self.imageButton.layer addSublayer:[Utilities addDashedBorderToView:self.imageButton
                                                                withColor:[UIColor flatWhiteColor].CGColor]];

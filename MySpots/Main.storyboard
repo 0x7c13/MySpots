@@ -14,14 +14,14 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a Spot" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8hJ-K6-nP1">
-                                <rect key="frame" x="20" y="67" width="280" height="68"/>
+                                <rect key="frame" x="20" y="61" width="280" height="101"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="KLA-YP-6HJ">
-                                <rect key="frame" x="50" y="160" width="220" height="300"/>
+                                <rect key="frame" x="50" y="176" width="220" height="284"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="90"/>
@@ -34,7 +34,7 @@
                                 </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="1RA-fg-WC2">
-                                <rect key="frame" x="27" y="143" width="266" height="334"/>
+                                <rect key="frame" x="27" y="162" width="266" height="317"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="vXY-gu-yU4" id="CCO-Xe-GGi"/>
@@ -44,7 +44,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems>
-                        <barButtonItem width="210" style="plain" systemItem="fixedSpace" id="EAw-iK-Jd6"/>
+                        <barButtonItem width="195" style="plain" systemItem="fixedSpace" id="EAw-iK-Jd6"/>
                         <barButtonItem title="Next Step" id="nIe-Ga-lKH">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -139,14 +139,14 @@
                                 <action selector="addMoreButtonPressed:" destination="G8Y-i3-MOv" id="mdv-0E-3Io"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem width="49" style="plain" systemItem="fixedSpace" id="cSk-0L-26x"/>
+                        <barButtonItem width="20" style="plain" systemItem="fixedSpace" id="cSk-0L-26x"/>
                         <barButtonItem systemItem="trash" id="N2x-Og-T10">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="trashButtonPressed:" destination="G8Y-i3-MOv" id="ZP9-i6-y63"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem width="80" style="plain" systemItem="fixedSpace" id="aJU-hO-2ay"/>
+                        <barButtonItem width="50" style="plain" systemItem="fixedSpace" id="aJU-hO-2ay"/>
                         <barButtonItem title="Done" id="yaP-f4-hYw">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -217,74 +217,6 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="196"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="D8l-D7-tqZ">
-            <objects>
-                <tabBarController definesPresentationContext="YES" id="5k6-p7-fNd" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="xJA-Uh-zSP">
-                        <rect key="frame" x="129" y="330" width="163" height="49"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="DvK-WY-hgg" kind="relationship" relationship="viewControllers" id="Dp9-77-ERS"/>
-                        <segue destination="Ju8-xG-jur" kind="relationship" relationship="viewControllers" id="cMc-9e-5KJ"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JPV-oZ-w94" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="0.0" y="875"/>
-        </scene>
-        <!--Spots Map View Controller - Map View-->
-        <scene sceneID="ddI-5b-ZvI">
-            <objects>
-                <viewController id="uVI-l9-PYE" customClass="SpotsMapViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="VRG-h3-Egp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" id="o6p-8V-Q2T" userLabel="MasterView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="RPi-4h-UtP">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="uVI-l9-PYE" id="vZq-y2-Ep0"/>
-                                        </connections>
-                                    </mapView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Map View" id="Myu-tK-Pu2">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="CWB-Db-Fzm">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="backButtonPressed:" destination="uVI-l9-PYE" id="MJN-bn-UIM"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="q4S-PA-zvf">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="refreshButtonPressed:" destination="uVI-l9-PYE" id="REg-sc-GDJ"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="backButton" destination="CWB-Db-Fzm" id="PfZ-uf-nnh"/>
-                        <outlet property="mapView" destination="RPi-4h-UtP" id="WBV-mR-8XU"/>
-                        <outlet property="masterView" destination="o6p-8V-Q2T" id="ggm-3u-SQo"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="f0B-bA-V4A" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="968" y="1205"/>
-        </scene>
         <!--Home View Controller-->
         <scene sceneID="9ee-F0-0kD">
             <objects>
@@ -335,7 +267,7 @@
                         <outlet property="masterView" destination="63P-Zj-CE2" id="tRL-P9-5mA"/>
                         <segue destination="vXZ-lx-hvc" kind="custom" identifier="cameraSegue" customClass="MHNatGeoSegue" id="2bV-eo-Jeb"/>
                         <segue destination="JyW-7q-Qto" kind="custom" identifier="createMarkerSegue" customClass="MHNatGeoSegue" id="hW0-pW-zNn"/>
-                        <segue destination="5k6-p7-fNd" kind="custom" identifier="spotsSegue" customClass="MHNatGeoSegue" id="hLh-Uh-vxT"/>
+                        <segue destination="DvK-WY-hgg" kind="custom" identifier="spotsSegue" customClass="MHNatGeoSegue" id="v0Q-vP-mL3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cbY-yW-Hm5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -395,7 +327,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RQ7-U9-ENB">
-                                <rect key="frame" x="100" y="285" width="120" height="45"/>
+                                <rect key="frame" x="100" y="290" width="120" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
                                 <state key="normal" title="Image">
@@ -407,7 +339,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PwL-9w-0wE">
-                                <rect key="frame" x="100" y="360" width="120" height="45"/>
+                                <rect key="frame" x="100" y="370" width="120" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
                                 <state key="normal" title="Voice">
@@ -501,7 +433,7 @@
                         </connections>
                     </view>
                     <toolbarItems>
-                        <barButtonItem width="245" style="plain" systemItem="fixedSpace" id="GAk-rX-hCh"/>
+                        <barButtonItem width="230" style="plain" systemItem="fixedSpace" id="GAk-rX-hCh"/>
                         <barButtonItem title="Done" id="8n0-jH-sXb">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -579,7 +511,7 @@
                         <gestureRecognizers/>
                     </view>
                     <toolbarItems>
-                        <barButtonItem width="245" style="plain" systemItem="fixedSpace" id="ps3-7J-GUs"/>
+                        <barButtonItem width="230" style="plain" systemItem="fixedSpace" id="ps3-7J-GUs"/>
                         <barButtonItem title="Done" id="6Sn-lT-fdL">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -619,9 +551,9 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iSv-Vk-iLY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="536" y="547"/>
+            <point key="canvasLocation" x="0.0" y="885"/>
         </scene>
-        <!--Spots Table View Controller - List View-->
+        <!--Spots Table View Controller - My Spots-->
         <scene sceneID="IcT-Tj-V2u">
             <objects>
                 <viewController id="GGL-Lz-8EI" customClass="SpotsTableViewController" sceneMemberID="viewController">
@@ -629,10 +561,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="bpb-v8-nwD" customClass="ANBlurredTableView">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="bpb-v8-nwD" customClass="ANBlurredTableView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="contentInset" minX="0.0" minY="66" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="dataSource" destination="GGL-Lz-8EI" id="S03-1g-uPG"/>
                                     <outlet property="delegate" destination="GGL-Lz-8EI" id="a3n-Lb-TEV"/>
@@ -641,41 +574,29 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="List View" id="x0P-fC-8g2">
+                    <navigationItem key="navigationItem" title="My Spots" id="x0P-fC-8g2">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="e7W-j9-v5O">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="backButtonPressed:" destination="GGL-Lz-8EI" id="Gej-Ew-Vyg"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Map" id="rEr-om-YLB">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="mapButtonPressed:" destination="GGL-Lz-8EI" id="Dcs-Lc-SDg"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="backButton" destination="e7W-j9-v5O" id="k3a-zA-gjF"/>
+                        <outlet property="mapButton" destination="rEr-om-YLB" id="KDI-Ow-MOa"/>
                         <outlet property="tableView" destination="bpb-v8-nwD" id="l5V-ph-eDr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fKh-Lp-O6z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="968" y="547"/>
-        </scene>
-        <!--Navigation Controller - Map View-->
-        <scene sceneID="xYR-Sp-XE4">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ju8-xG-jur" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map View" id="gur-ui-tq9"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CP9-H3-dec">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="uVI-l9-PYE" kind="relationship" relationship="rootViewController" id="WA3-BI-me0"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pR1-Nl-FdW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="536" y="1199"/>
+            <point key="canvasLocation" x="432" y="885"/>
         </scene>
     </scenes>
     <resources>

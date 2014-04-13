@@ -100,7 +100,7 @@
 + (void)addBackgroundImageToView:(UIView *)view withImageName:(NSString *)name
 {
     UIImageView *background = [[UIImageView alloc] initWithFrame:view.frame];
-    background.image = [UIImage imageNamed:name];
+    background.image = [UIImage imageNamed:@"bg_2.jpg"];
     [view insertSubview:background atIndex:0];
 }
 
@@ -118,5 +118,22 @@
     return image;
 }
 
++ (void)makeTransparentBarsForViewController:(UIViewController *)viewController {
+    
+    [viewController.navigationItem.leftBarButtonItem setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIFont fontWithName:@"Chalkduster" size:17.0f], UITextAttributeFont,nil]
+                                                         forState:UIControlStateNormal];
+    
+    [viewController.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    viewController.navigationController.navigationBar.shadowImage = [UIImage new];
+    viewController.navigationController.navigationBar.translucent = YES;
+    UIView *navigationBarBottomLine = [[UIView alloc] initWithFrame:CGRectMake(15, 64, 320-30, 1)];
+    navigationBarBottomLine.backgroundColor = [UIColor colorWithWhite:1.0f alpha:0.5f];
+    [viewController.view addSubview:navigationBarBottomLine];
+    
+    [viewController.navigationController.toolbar setBackgroundImage:[[UIImage alloc] init] forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsDefault];
+
+}
 
 @end

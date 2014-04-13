@@ -54,7 +54,12 @@
     [[NSFileManager defaultManager] removeItemAtPath:[FileManager voiceFilePathWithFileName:kAudioFileName] error:nil];
     
     [Utilities addBackgroundImageToView:self.masterView withImageName:@"bg_1.jpg"];
-
+    [Utilities makeTransparentBarsForViewController:self];
+    [self.doneButton setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIFont fontWithName:@"Chalkduster" size:20.0f], UITextAttributeFont,nil]
+                                       forState:UIControlStateNormal];
+    
     self.voiceControlButton.layer.cornerRadius = 15;
     
     self.progressView.borderTintColor = [UIColor whiteColor];

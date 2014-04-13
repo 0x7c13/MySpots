@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol SpotsMapViewControllerDelegate;
+
 @interface SpotsMapViewController : UIViewController
+@property (nonatomic, weak) id<SpotsMapViewControllerDelegate> delegate;
+@end
+
+
+@protocol SpotsMapViewControllerDelegate <NSObject>
+
+@required
+- (void) dismissViewController;
 
 @end

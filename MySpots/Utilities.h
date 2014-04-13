@@ -20,4 +20,6 @@
 + (UIImage *)snapshotViewForView:(UIView *)view;
 + (void)addBackgroundImageToView:(UIView *)view withImageName:(NSString *)name;
 
++ (void)makeTransparentBarsForViewController:(UIViewController *)viewController;
+    
 @end

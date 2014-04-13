@@ -34,14 +34,21 @@
 
 @implementation SpotCreationViewController
 
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     [Utilities addBackgroundImageToView:self.view withImageName:@"bg_1.jpg"];
-
+    [Utilities makeTransparentBarsForViewController:self];
+    
     self.addSpotButton.layer.cornerRadius = 10;
+    [self.nextStepButton setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIFont fontWithName:@"Chalkduster" size:20.0f], UITextAttributeFont,nil]
+                         forState:UIControlStateNormal];
+    
     
     // 3.5-inch iPhone tweaks
     {
@@ -114,7 +121,6 @@
                     NSLog(@"%@, %f, %f", strongCurrentAddress, weakSelf.locationManager.location.coordinate.latitude, weakSelf.locationManager.location.coordinate.longitude);
                     
                     [weakSelf performSegueWithIdentifier:@"spotChosenSegue" sender:weakSelf];
-                    
                 }];
             } else {
                 [alertView hideWithAnimation:URBAlertAnimationDefault completionBlock:^{
@@ -200,13 +206,13 @@
                                     NSString *address = place.thoroughfare;
                                     NSString *postalCode = place.postalCode;
                                     
-                                    self.spotAddressLabel.font = [UIFont systemFontOfSize:17];
+                                    self.spotAddressLabel.numberOfLines = 3;
+                                    self.spotAddressLabel.font = [UIFont fontWithName:@"Chalkduster" size:17.f];
                                     _currentAddress = [NSString stringWithFormat:@"%@ %@ %@,%@,%@",addressNum, address, city, state, postalCode];
                                     NSLog(@"%@", self.currentAddress);
                                     
                                     self.spotAddressLabel.text = [@"You are now at: " stringByAppendingString:_currentAddress];
                                 }
-                                
                             });
                             
                         }];

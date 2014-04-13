@@ -8,15 +8,6 @@
 
 #import <MapKit/MapKit.h>
 
-#import "Spot.h"
-#import "TextSpot.h"
-#import "ImageSpot.h"
-#import "AudioSpot.h"
-
-#import "TextViewController.h"
-#import "ImageViewController.h"
-#import "AudioViewController.h"
-
 #import "SpotsManager.h"
 #import "SpotsMapViewController.h"
 
@@ -37,11 +28,10 @@
 
 @end
 
-@interface SpotsMapViewController () <CLLocationManagerDelegate, MKMapViewDelegate, ImageViewControllerDelegate, AudioViewControllerDelegate, TextViewControllerDelegate>
+@interface SpotsMapViewController () <CLLocationManagerDelegate, MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-@property (weak, nonatomic) IBOutlet UIView *masterView;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;
+@property (weak, nonatomic) IBOutlet UINavigationItem *navigationBar;
 
 @property (nonatomic) CLLocationManager *locationManager;
 
@@ -53,6 +43,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    UIToolbar *toolbarBackground = [[UIToolbar alloc] initWithFrame:self.view.frame];
+    [self.view addSubview:toolbarBackground];
+    [self.view sendSubviewToBack:toolbarBackground];
     
     self.useBlurForPopup = NO;
     
@@ -120,58 +114,9 @@
 //When the info button is clicked it will zoom into a smaller radius around point of interest
 - (void)mapView:(MKMapView *)mapView annotationView:(MKPointAnnotation *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-    if (![view isKindOfClass:[MyMKPinAnnotationView class]]) {
-        return;
-    }
-
-    Spot *targetSpot = [[SpotsManager sharedManager] spotByName:view.title];
-    
-    if ([targetSpot isKindOfClass:[TextSpot class]]) {
-        
-        TextViewController *textVC = [[TextViewController alloc] initWithNibName:@"TextViewController" bundle:nil];
-        [(TextSpot *)targetSpot decryptHiddenTextWithCompletionBlock:^(NSString *hiddenText){
-            textVC.hiddenText = hiddenText;
-        }];
-        textVC.spot = targetSpot;
-        textVC.delegate = self;
-        [self presentPopupViewController:textVC animated:YES completion:nil];
-        
-    } else if ([targetSpot isKindOfClass:[ImageSpot class]]) {
-        
-        [JDStatusBarNotification showWithStatus:@"Decrypting..." styleName:JDStatusBarStyleError];
-        
-        [(ImageSpot *)targetSpot decryptHiddenImagesWithCompletionBlock:^(NSArray *images){
-            
-            ImageViewController *imageVC = [[ImageViewController alloc] initWithNibName:@"ImageViewController" bundle:nil];
-            imageVC.hiddenImages = images;
-            imageVC.spot = targetSpot;
-            imageVC.delegate = self;
-            [self presentPopupViewController:imageVC animated:YES completion:nil];
-            [JDStatusBarNotification showWithStatus:@"Decryption succeeded!" dismissAfter:1.0f styleName:JDStatusBarStyleSuccess];
-        }];
-    } else if ([targetSpot isKindOfClass:[AudioSpot class]]) {
-        
-        [JDStatusBarNotification showWithStatus:@"Decrypting..." styleName:JDStatusBarStyleError];
-        
-        [(AudioSpot *)targetSpot decryptHiddenAudioWithCompletionBlock:^(NSData *hiddenAudioData){
-            
-            AudioViewController *audioVC = [[AudioViewController alloc] initWithNibName:@"AudioViewController" bundle:nil];
-            audioVC.hiddenAudioData = hiddenAudioData;
-            audioVC.spot = targetSpot;
-            audioVC.delegate = self;
-            [self presentPopupViewController:audioVC animated:YES completion:nil];
-            [JDStatusBarNotification showWithStatus:@"Decryption succeeded!" dismissAfter:1.0f styleName:JDStatusBarStyleSuccess];
-        }];
-    }
-    
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(view.coordinate, 100, 100);
     [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
 
-}
-
-- (void)dismissViewController
-{
-    [self dismissPopupViewControllerAnimated:YES completion:nil];
 }
 
 - (void)setupSpots
@@ -215,5 +160,12 @@
 {
     self.mapView.showsUserLocation = YES;
 }
+
+- (IBAction)quitButtonPressed:(id)sender {
+    if (self.delegate) {
+        [self.delegate dismissViewController];
+    }
+}
+
 @end
 

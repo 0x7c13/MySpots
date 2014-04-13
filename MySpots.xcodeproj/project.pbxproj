@@ -204,6 +204,14 @@
 		F7466FE5182587F5004BA1FE /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F7466FE4182587F5004BA1FE /* Reachability.m */; };
 		F7466FEB18258E65004BA1FE /* ImageRes in Resources */ = {isa = PBXBuildFile; fileRef = F7466FEA18258E65004BA1FE /* ImageRes */; };
 		F7467019182618B9004BA1FE /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7467018182618B9004BA1FE /* Accelerate.framework */; };
+		F770C95218FB12A300120723 /* bg_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F770C95118FB12A300120723 /* bg_2.jpg */; };
+		F770C95718FB168B00120723 /* maps_c.png in Resources */ = {isa = PBXBuildFile; fileRef = F770C95318FB168B00120723 /* maps_c.png */; };
+		F770C95818FB168B00120723 /* spot_c.png in Resources */ = {isa = PBXBuildFile; fileRef = F770C95418FB168B00120723 /* spot_c.png */; };
+		F770C95918FB168B00120723 /* download_c.png in Resources */ = {isa = PBXBuildFile; fileRef = F770C95518FB168B00120723 /* download_c.png */; };
+		F770C95A18FB168B00120723 /* camera_c.png in Resources */ = {isa = PBXBuildFile; fileRef = F770C95618FB168B00120723 /* camera_c.png */; };
+		F770C95D18FB176B00120723 /* twitter_c.png in Resources */ = {isa = PBXBuildFile; fileRef = F770C95B18FB176B00120723 /* twitter_c.png */; };
+		F770C95E18FB176B00120723 /* facebook_c.png in Resources */ = {isa = PBXBuildFile; fileRef = F770C95C18FB176B00120723 /* facebook_c.png */; };
+		F770C96318FB3A6000120723 /* SpotsMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F770C96218FB3A6000120723 /* SpotsMapViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -518,6 +526,14 @@
 		F7466FEA18258E65004BA1FE /* ImageRes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ImageRes; sourceTree = "<group>"; };
 		F7467018182618B9004BA1FE /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		F75704731826644600C1B877 /* metaioSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = metaioSDK.framework; sourceTree = "<group>"; };
+		F770C95118FB12A300120723 /* bg_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_2.jpg; sourceTree = "<group>"; };
+		F770C95318FB168B00120723 /* maps_c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maps_c.png; sourceTree = "<group>"; };
+		F770C95418FB168B00120723 /* spot_c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spot_c.png; sourceTree = "<group>"; };
+		F770C95518FB168B00120723 /* download_c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = download_c.png; sourceTree = "<group>"; };
+		F770C95618FB168B00120723 /* camera_c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_c.png; sourceTree = "<group>"; };
+		F770C95B18FB176B00120723 /* twitter_c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_c.png; sourceTree = "<group>"; };
+		F770C95C18FB176B00120723 /* facebook_c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook_c.png; sourceTree = "<group>"; };
+		F770C96218FB3A6000120723 /* SpotsMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpotsMapViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -586,6 +602,13 @@
 		F73B267318F8EF260054CE2F /* UIRes */ = {
 			isa = PBXGroup;
 			children = (
+				F770C95B18FB176B00120723 /* twitter_c.png */,
+				F770C95C18FB176B00120723 /* facebook_c.png */,
+				F770C95318FB168B00120723 /* maps_c.png */,
+				F770C95418FB168B00120723 /* spot_c.png */,
+				F770C95518FB168B00120723 /* download_c.png */,
+				F770C95618FB168B00120723 /* camera_c.png */,
+				F770C95118FB12A300120723 /* bg_2.jpg */,
 				F73B283818F90C910054CE2F /* maps.png */,
 				F73B283918F90C910054CE2F /* spot.png */,
 				F73B267418F8EF260054CE2F /* back_button.png */,
@@ -1141,6 +1164,7 @@
 				F73B283F18FA51B60054CE2F /* SpotsTableViewController.m */,
 				F73B284118FA51C70054CE2F /* SpotsMapViewController.h */,
 				F73B284218FA51C70054CE2F /* SpotsMapViewController.m */,
+				F770C96218FB3A6000120723 /* SpotsMapViewController.xib */,
 			);
 			name = SpotsViewers;
 			sourceTree = "<group>";
@@ -1420,12 +1444,14 @@
 				F73B280918F8FF8F0054CE2F /* ImageViewController.xib in Resources */,
 				F73B269618F8EF260054CE2F /* google_plus.png in Resources */,
 				F73B27D218F8F13D0054CE2F /* NotificationBackgroundWarning@2x.png in Resources */,
+				F770C95A18FB168B00120723 /* camera_c.png in Resources */,
 				F73B283B18F90C910054CE2F /* spot.png in Resources */,
 				F73B27AA18F8F13D0054CE2F /* dc-center.png in Resources */,
 				F73B27F618F8F13D0054CE2F /* README.md in Resources */,
 				F73B27C918F8F13D0054CE2F /* NotificationBackgroundErrorIcon.png in Resources */,
 				F73B279E18F8F13D0054CE2F /* custom_1.png in Resources */,
 				F73B283A18F90C910054CE2F /* maps.png in Resources */,
+				F770C95E18FB176B00120723 /* facebook_c.png in Resources */,
 				F73B27D618F8F13D0054CE2F /* NotificationButtonBackground@2x.png in Resources */,
 				F73B27CA18F8F13D0054CE2F /* NotificationBackgroundErrorIcon@2x.png in Resources */,
 				F73B27EA18F8F13D0054CE2F /* PEPhotoCropEditor.bundle in Resources */,
@@ -1438,10 +1464,14 @@
 				F73B269518F8EF260054CE2F /* facebook_new.png in Resources */,
 				F73B27D318F8F13D0054CE2F /* NotificationBackgroundWarningIcon.png in Resources */,
 				F73B283318F90C2B0054CE2F /* OpenSans-BoldItalic.ttf in Resources */,
+				F770C96318FB3A6000120723 /* SpotsMapViewController.xib in Resources */,
+				F770C95918FB168B00120723 /* download_c.png in Resources */,
 				F73B27A918F8F13D0054CE2F /* dc-buttonBackground_.png in Resources */,
+				F770C95218FB12A300120723 /* bg_2.jpg in Resources */,
 				F73B268E18F8EF260054CE2F /* circle-1.png in Resources */,
 				F73B27CE18F8F13D0054CE2F /* NotificationBackgroundSuccess@2x.png in Resources */,
 				F73B269D18F8EF260054CE2F /* twitter.png in Resources */,
+				F770C95818FB168B00120723 /* spot_c.png in Resources */,
 				F73B283118F90C2B0054CE2F /* Merriweather-Bold.ttf in Resources */,
 				F73B27DE18F8F13D0054CE2F /* PhotoBorder@2x.png in Resources */,
 				F73B269318F8EF260054CE2F /* email.png in Resources */,
@@ -1450,6 +1480,7 @@
 				F73B27A118F8F13D0054CE2F /* custom_4.png in Resources */,
 				F73B27A818F8F13D0054CE2F /* dc-button_4.png in Resources */,
 				F73B269A18F8EF260054CE2F /* settings.png in Resources */,
+				F770C95718FB168B00120723 /* maps_c.png in Resources */,
 				F73B269818F8EF260054CE2F /* locker.png in Resources */,
 				F73B27C718F8F13D0054CE2F /* NotificationBackgroundError.png in Resources */,
 				F73B283518F90C2B0054CE2F /* OpenSans-Light.ttf in Resources */,
@@ -1461,6 +1492,7 @@
 				F73B268C18F8EF260054CE2F /* camera.png in Resources */,
 				F73B283618F90C2B0054CE2F /* OpenSans-LightItalic.ttf in Resources */,
 				F73B269118F8EF260054CE2F /* close_button.png in Resources */,
+				F770C95D18FB176B00120723 /* twitter_c.png in Resources */,
 				F73B280C18F8FF8F0054CE2F /* AudioViewController.xib in Resources */,
 				F73B27F718F8F13D0054CE2F /* release_notes.md in Resources */,
 				F73B27CF18F8F13D0054CE2F /* NotificationBackgroundSuccessIcon.png in Resources */,
