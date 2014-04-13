@@ -14,3 +14,18 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+
+#define kLengthOfKey 30
+#define kMarkerDefaultWidth 200.0f
+#define kImageDefaultWidth 640.0f
+#define kImageDefaultHeight 1136.0f
+
+#define kEncryptedFileSuffix @".myspots"
+#define kAudioFileName @"tmp.aac"
+
+#define DEVICE_IS_4INCH_IPHONE ([[UIScreen mainScreen] bounds].size.height == 568)
+
+#import "TestFlight.h"
+//#define NSLog TFLog
+#define NSLog(__FORMAT__, ...) TFLog((@"%s [Line %d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
