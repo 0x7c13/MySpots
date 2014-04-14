@@ -141,8 +141,9 @@
                                   [etActivity startAnimating];
                                   [self.view addSubview:etActivity];
 
-                                  [[SpotsManager sharedManager] addSpotWithText:self.textView.text
-                                                                completionBlock:^{
+                                  [[SpotsManager sharedManager] addSpot:[SpotsManager sharedManager].tempSpot
+                                                               withText:self.textView.text
+                                                        completionBlock:^{
                                                                                  
                                                                      [JDStatusBarNotification dismiss];
                                                                      [self uploadSpot];

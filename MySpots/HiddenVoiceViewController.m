@@ -216,14 +216,15 @@
                               
                                   NSData *audioData = [NSData dataWithContentsOfFile:[FileManager voiceFilePathWithFileName:kAudioFileName]];
                               
-                                  [[SpotsManager sharedManager] addSpotWithAudioData:audioData
-                                                                     completionBlock:^{
-                                                                         
-                                                                         [JDStatusBarNotification dismiss];
-                                                                         [self uploadSpot];
-                                                                         [etActivity removeFromSuperview];
-                                                                         [[NSFileManager defaultManager] removeItemAtPath:[FileManager voiceFilePathWithFileName:kAudioFileName] error:nil];
-                                                                    }];
+                                  [[SpotsManager sharedManager] addSpot:[SpotsManager sharedManager].tempSpot
+                                                          withAudioData:audioData
+                                                        completionBlock:^{
+                                                         
+                                                         [JDStatusBarNotification dismiss];
+                                                         [self uploadSpot];
+                                                         [etActivity removeFromSuperview];
+                                                         [[NSFileManager defaultManager] removeItemAtPath:[FileManager voiceFilePathWithFileName:kAudioFileName] error:nil];
+                                                    }];
                               
                               }];
                               

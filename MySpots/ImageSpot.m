@@ -38,19 +38,22 @@
         for (UIImage *image in hiddenImages) {
             
             UIImage *imageToSave = image;
+            
+            /*
             if (image.size.width > kImageDefaultWidth) {
                 imageToSave = [Utilities imageWithImage:image scaledToWidth:kImageDefaultWidth];
             }
             if (imageToSave.size.height > kImageDefaultHeight) {
                 imageToSave = [Utilities imageWithImage:image scaledToHeight:kImageDefaultHeight];
             }
+            */
             
             NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
             [formatter setDateFormat:@"yyyyMMddHHmmss"];
             [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
             NSString *stringFromDate = [formatter stringFromDate:[NSDate date]];
             
-            NSString *fileName = [[[image hashValue] stringByAppendingString:stringFromDate] stringByAppendingString:@".jpg"];
+            NSString *fileName = [[[imageToSave hashValue] stringByAppendingString:stringFromDate] stringByAppendingString:@".jpg"];
             [self.hiddenImagePaths addObject:[FileManager imageFilePathWithFileName:fileName]];
              
             [FileManager saveImageToDisk:imageToSave

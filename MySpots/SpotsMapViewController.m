@@ -148,12 +148,6 @@
     [self.mapView setVisibleMapRect:MKMapRectMake(zoomRect.origin.x - offset, zoomRect.origin.y - offset, zoomRect.size.width + 2*offset, zoomRect.size.height + 2*offset) animated:YES];
 }
 
-/*
-- (IBAction)resetView:(id)sender {
-    [self viewOfAllWaypoints];
-}
- */
-
 #pragma - CLLocationManagerDelegate
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations

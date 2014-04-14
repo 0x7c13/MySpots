@@ -125,13 +125,11 @@
                                                options:NSStringDrawingUsesLineFragmentOrigin
                                                context:nil];
     
-    
-    
     if (![cell viewWithTag:1]) {
         
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 0, cell.frame.size.width - 40, rect.size.height + 25)];
         titleLabel.textColor = [UIColor whiteColor];
-        titleLabel.font = [UIFont fontWithName:@"Chalkduster" size:18.f];
+        titleLabel.font = [UIFont fontWithName:@"Chalkduster" size:17.f];
         titleLabel.tag = 1;
         titleLabel.numberOfLines = 10;
         [cell addSubview:titleLabel];
@@ -147,6 +145,12 @@
         bottomLabel.tag = 3;
         [cell addSubview:bottomLabel];
     }
+    
+    [cell setFrame:CGRectMake(0, 0, self.tableView.frame.size.width, rect.size.height + 40)];
+    [cell viewWithTag:1].frame = CGRectMake(20, 0, cell.frame.size.width - 40, rect.size.height + 25);
+    [cell viewWithTag:2].frame = CGRectMake(20, rect.size.height + 15, cell.frame.size.width - 40, 20);
+    [cell viewWithTag:3].frame = CGRectMake(20, rect.size.height + 40, cell.frame.size.width - 40, 1);
+    
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"MM/dd yyyy hh:ss"];
@@ -166,7 +170,7 @@
      initWithString:spot.name
      attributes:@
      {
-     NSFontAttributeName: [UIFont fontWithName:@"OpenSans" size:17.f]
+     NSFontAttributeName: [UIFont fontWithName:@"Chalkduster" size:17.f]
      }];
     CGRect rect = [attributedText boundingRectWithSize:(CGSize){320 - 40, CGFLOAT_MAX}
                                                options:NSStringDrawingUsesLineFragmentOrigin

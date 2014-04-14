@@ -29,8 +29,6 @@
         _latitude = latitude;
         _longitude = longitude;
         _createDate = [NSDate date];
-        _key = [NSString randomAlphanumericStringWithLength:kLengthOfKey];
-    
     }
     return self;
 }

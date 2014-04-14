@@ -49,18 +49,21 @@
     return _sharedObject;
 }
 
-- (void)addSpotWithText:(NSString *)hiddenText completionBlock:(void (^)())completion
+- (void)addSpot:(Spot *)spot withText:(NSString *)hiddenText completionBlock:(void (^)())completion
 {
-    if (self.tempSpot == nil || [self containsSpotByName:self.tempSpot.name]) {
+    if (spot == nil || [self containsSpotByName:spot.name]) {
+        if (completion == nil) {
+            return;
+        }
         completion();
         return;
     }
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
-        [self.spots addObject:[[TextSpot alloc]initWithName:self.tempSpot.name
-                                                   latitude:self.tempSpot.latitude
-                                                  longitude:self.tempSpot.longitude
+        [self.spots addObject:[[TextSpot alloc]initWithName:spot.name
+                                                   latitude:spot.latitude
+                                                  longitude:spot.longitude
                                                  hiddenText:hiddenText]];
         
         NSData *spotsData = [NSKeyedArchiver archivedDataWithRootObject:self.spots];
@@ -69,23 +72,29 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            if (completion == nil) {
+                return;
+            }
             completion();
         });
     });
 }
 
--(void)addSpotWithImages:(NSArray *)hiddenImages completionBlock:(void (^)())completion
+-(void)addSpot:(Spot *)spot withImages:(NSArray *)hiddenImages completionBlock:(void (^)())completion
 {
-    if (self.tempSpot == nil || [self containsSpotByName:self.tempSpot.name]) {
+    if (spot == nil || [self containsSpotByName:spot.name]) {
+        if (completion == nil) {
+            return;
+        }
         completion();
         return;
     }
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
-        [self.spots addObject:[[ImageSpot alloc]initWithName:self.tempSpot.name
-                                                    latitude:self.tempSpot.latitude
-                                                   longitude:self.tempSpot.longitude
+        [self.spots addObject:[[ImageSpot alloc]initWithName:spot.name
+                                                    latitude:spot.latitude
+                                                   longitude:spot.longitude
                                                 hiddenImages:hiddenImages]];
         
         NSData *spotsData = [NSKeyedArchiver archivedDataWithRootObject:self.spots];
@@ -94,23 +103,29 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            if (completion == nil) {
+                return;
+            }
             completion();
         });
     });
 }
 
--(void)addSpotWithAudioData:(NSData *)hiddenAudioData completionBlock:(void (^)())completion
+-(void)addSpot:(Spot *)spot withAudioData:(NSData *)hiddenAudioData completionBlock:(void (^)())completion
 {
-    if (self.tempSpot == nil || [self containsSpotByName:self.tempSpot.name]) {
+    if (spot == nil || [self containsSpotByName:spot.name]) {
+        if (completion == nil) {
+            return;
+        }
         completion();
         return;
     }
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
-        [self.spots addObject:[[AudioSpot alloc]initWithName:self.tempSpot.name
-                                                    latitude:self.tempSpot.latitude
-                                                   longitude:self.tempSpot.longitude
+        [self.spots addObject:[[AudioSpot alloc]initWithName:spot.name
+                                                    latitude:spot.latitude
+                                                   longitude:spot.longitude
                                                  hiddenAudio:hiddenAudioData]];
         
         NSData *spotsData = [NSKeyedArchiver archivedDataWithRootObject:self.spots];
@@ -119,6 +134,9 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            if (completion == nil) {
+                return;
+            }
             completion();
         });
     });

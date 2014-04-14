@@ -14,7 +14,6 @@
 @property (copy, nonatomic, readonly) NSDate *createDate;
 @property (nonatomic, readonly) float longitude;
 @property (nonatomic, readonly) float latitude;
-@property (nonatomic, copy, readonly) NSString *key;
 
 - (instancetype) init __attribute__((unavailable("init not available")));
 

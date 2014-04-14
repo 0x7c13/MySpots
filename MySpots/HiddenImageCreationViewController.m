@@ -242,13 +242,14 @@
                                   [self.view addSubview:etActivity];
                                   [JDStatusBarNotification showWithStatus:@"Encrypting Data..." styleName:JDStatusBarStyleError];
                                   
-                                  [[SpotsManager sharedManager] addSpotWithImages:self.hiddenImages
-                                                                  completionBlock:^{
+                                  [[SpotsManager sharedManager] addSpot:[SpotsManager sharedManager].tempSpot
+                                                             withImages:self.hiddenImages
+                                                        completionBlock:^{
                                                                                  
                                                                      [JDStatusBarNotification dismiss];
                                                                      [self uploadSpot];
                                                                      [etActivity removeFromSuperview];
-                                                                }];
+                                                        }];
                               }];
 
                               

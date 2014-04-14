@@ -18,14 +18,17 @@
 
 - (instancetype) init __attribute__((unavailable("init not available")));
 
-- (void)addSpotWithText:(NSString *)hiddenText
-        completionBlock:(void (^)())completion;
+- (void)addSpot:(Spot *)spot
+       withText:(NSString *)hiddenText
+completionBlock:(void (^)())completion;
 
-- (void)addSpotWithImages:(NSArray *)hiddenImages
-          completionBlock:(void (^)())completion;
+- (void)addSpot:(Spot *)spot
+     withImages:(NSArray *)hiddenImages
+completionBlock:(void (^)())completion;
 
-- (void)addSpotWithAudioData:(NSData *)hiddenAudioData
-             completionBlock:(void (^)())completion;
+- (void)addSpot:(Spot *)spot
+  withAudioData:(NSData *)hiddenAudioData
+completionBlock:(void (^)())completion;
 
 - (void)removeSpotByName:(NSString *)name;
 
