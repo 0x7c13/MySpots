@@ -87,15 +87,6 @@
     
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
     
-    [[SpotsManager sharedManager] removeAllSpots];
-    
-    Spot *newSpot = [[Spot alloc] initWithName:@"testSpot" latitude:20.0 longitude:-20.0];
-    [[SpotsManager sharedManager] addSpot:newSpot withText:@"hello" completionBlock:nil];
-    
-    
-    Spot *newSpot2 = [[Spot alloc] initWithName:@"testSpot2" latitude:30 longitude:-30];
-    [[SpotsManager sharedManager] addSpot:newSpot2 withImages:@[[UIImage imageNamed:@"bg_1.jpg"]] completionBlock:nil];
-    
     return YES;
 }
 							

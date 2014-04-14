@@ -212,6 +212,7 @@
 		F770C95D18FB176B00120723 /* twitter_c.png in Resources */ = {isa = PBXBuildFile; fileRef = F770C95B18FB176B00120723 /* twitter_c.png */; };
 		F770C95E18FB176B00120723 /* facebook_c.png in Resources */ = {isa = PBXBuildFile; fileRef = F770C95C18FB176B00120723 /* facebook_c.png */; };
 		F770C96318FB3A6000120723 /* SpotsMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F770C96218FB3A6000120723 /* SpotsMapViewController.xib */; };
+		F770C96618FB5E7F00120723 /* SpotsCreationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F770C96518FB5E7F00120723 /* SpotsCreationTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -534,6 +535,8 @@
 		F770C95B18FB176B00120723 /* twitter_c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_c.png; sourceTree = "<group>"; };
 		F770C95C18FB176B00120723 /* facebook_c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook_c.png; sourceTree = "<group>"; };
 		F770C96218FB3A6000120723 /* SpotsMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpotsMapViewController.xib; sourceTree = "<group>"; };
+		F770C96418FB5E7F00120723 /* SpotsCreationTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotsCreationTests.h; sourceTree = "<group>"; };
+		F770C96518FB5E7F00120723 /* SpotsCreationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotsCreationTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1299,6 +1302,8 @@
 			children = (
 				F7466F9118244FAB004BA1FE /* MySpotsTests.m */,
 				F7466F8C18244FAB004BA1FE /* Supporting Files */,
+				F770C96418FB5E7F00120723 /* SpotsCreationTests.h */,
+				F770C96518FB5E7F00120723 /* SpotsCreationTests.m */,
 			);
 			path = MySpotsTests;
 			sourceTree = "<group>";
@@ -1613,6 +1618,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F770C96618FB5E7F00120723 /* SpotsCreationTests.m in Sources */,
 				F7466F9218244FAB004BA1FE /* MySpotsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
