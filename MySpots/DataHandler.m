@@ -84,7 +84,7 @@
                                                                                                          encoding:NSUTF8StringEncoding]];
                                     
                                          NSLog(@"Marker uploaded!");
-                                         completion(DataHandlerOptionSuccess,downloadURL, nil);
+                                         completion(DataHandlerOptionSuccess, downloadURL, nil);
                                          
                                      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                          

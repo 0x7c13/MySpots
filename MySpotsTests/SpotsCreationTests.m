@@ -35,16 +35,10 @@
         }];
 
     }];
-    
-    
 }
 
 - (void)testImageSpotCreationTests
 {
-    [[SpotsManager sharedManager] removeAllSpots];
-    
-    Spot *newSpot2 = [[Spot alloc] initWithName:@"testSpot2" latitude:30 longitude:-30];
-    [[SpotsManager sharedManager] addSpot:newSpot2 withImages:@[[UIImage imageNamed:@"bg_1.jpg"]] completionBlock:nil];
 }
 
 @end

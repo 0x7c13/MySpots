@@ -50,7 +50,7 @@
 
     [Utilities addBackgroundImageToView:self.masterView withImageName:@"bg_2.jpg"];
     
-    CGFloat locationY = DEVICE_IS_4INCH_IPHONE ? 310 : 260;
+    CGFloat locationY = DEVICE_IS_4INCH_IPHONE ? 300 : 260;
     
     self.LogoLabel.textColor = [UIColor flatWhiteColor];
     
@@ -108,7 +108,7 @@
     CGFloat yOffset = DEVICE_IS_4INCH_IPHONE ? 0 : -88;
 
     self.bottomLabel.frame = CGRectMake(-280, 510 + yOffset, 280, 40);
-    self.LogoLabel.frame = CGRectMake(320 + 280, 45, 280, 90);
+    self.LogoLabel.frame = CGRectMake(320 + 280, 35, 280, 90);
     self.dcPathButton.alpha = 0.0f;
     self.dcPathButton.userInteractionEnabled = NO;
     self.bottomLabel.alpha = 0.0f;
@@ -120,7 +120,7 @@
     [self stopHaloAnimation];
     if (!self.dcPathButton.userInteractionEnabled) return;
 
-    CGFloat locationY = DEVICE_IS_4INCH_IPHONE ? 310 : 260;
+    CGFloat locationY = DEVICE_IS_4INCH_IPHONE ? 300 : 260;
     self.halo = [PulsingHaloLayer layer];
     self.halo.position = CGPointMake(160, locationY);
     self.halo.radius = 130;
@@ -133,7 +133,7 @@
 {
     if (!self.imageView.hidden) return;
 
-    CGFloat locationY = DEVICE_IS_4INCH_IPHONE ? 310 : 260;
+    CGFloat locationY = DEVICE_IS_4INCH_IPHONE ? 300 : 260;
     PulsingHaloLayer *halo = [PulsingHaloLayer layer];
     halo.position = CGPointMake(160, locationY);
     halo.radius = 130;
@@ -165,7 +165,7 @@
     
     [UIView animateWithDuration:1.0f delay:0.0f options:UIViewAnimationOptionCurveEaseOut animations:^{
         
-        self.LogoLabel.frame = CGRectMake(20, 45, 280, 90);
+        self.LogoLabel.frame = CGRectMake(20, 35, 280, 90);
         self.bottomLabel.frame = CGRectMake(20, 510 + yOffset, 280, 40);
         self.bottomLabel.alpha = 1.0f;
     } completion:^(BOOL finished){

@@ -71,8 +71,6 @@
        UITextAttributeFont:[UIFont fontWithName:@"Chalkduster" size:17.0]
        } forState:UIControlStateNormal];
     
-
-    
     // Remember to configure your audio session
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     NSError *err = NULL;

@@ -40,7 +40,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [Utilities makeTransparentBarsForViewController:self];
+    //[Utilities makeTransparentBarsForViewController:self];
     
     [self.navigationItem.leftBarButtonItem setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:
@@ -65,7 +65,7 @@
     
     // We want to animate our background's alpha, so switch this to yes.
     [_tableView setAnimateTintAlpha:YES];
-    [_tableView setStartTintAlpha:0.35f];
+    [_tableView setStartTintAlpha:0.25f];
     [_tableView setEndTintAlpha:0.75f];
     
     // Our background image. After this point, ANBlurredTableView takes over and renders the frames.
@@ -73,6 +73,12 @@
     
     // Offset our header for ~style~ reasons.
     [_tableView setContentInset:UIEdgeInsetsMake(0.0, 0, 0, 0)];
+    
+    int viewHeight = 66;
+    UIView *headerBackground = [[UIView alloc] initWithFrame:CGRectMake(0,0,self.view.frame.size.width,viewHeight)];
+    headerBackground.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.3f];
+    //[self.view addSubview:headerBackground];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
