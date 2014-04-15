@@ -213,6 +213,7 @@
 		F770C95E18FB176B00120723 /* facebook_c.png in Resources */ = {isa = PBXBuildFile; fileRef = F770C95C18FB176B00120723 /* facebook_c.png */; };
 		F770C96318FB3A6000120723 /* SpotsMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F770C96218FB3A6000120723 /* SpotsMapViewController.xib */; };
 		F770C96618FB5E7F00120723 /* SpotsCreationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F770C96518FB5E7F00120723 /* SpotsCreationTests.m */; };
+		F781990F18FD88DA00A0D038 /* LocationBasedARViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = F781990D18FD88DA00A0D038 /* LocationBasedARViewController.mm */; };
 		F79C6F3618FC74190089B836 /* metaioSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F75704731826644600C1B877 /* metaioSDK.framework */; };
 		F79C6F4518FC7B8F0089B836 /* EAGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = F79C6F4218FC7B8F0089B836 /* EAGLView.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F79C6F4618FC7B8F0089B836 /* MetaioSDKViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = F79C6F4418FC7B8F0089B836 /* MetaioSDKViewController.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -540,6 +541,8 @@
 		F770C96218FB3A6000120723 /* SpotsMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpotsMapViewController.xib; sourceTree = "<group>"; };
 		F770C96418FB5E7F00120723 /* SpotsCreationTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotsCreationTests.h; sourceTree = "<group>"; };
 		F770C96518FB5E7F00120723 /* SpotsCreationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotsCreationTests.m; sourceTree = "<group>"; };
+		F781990D18FD88DA00A0D038 /* LocationBasedARViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LocationBasedARViewController.mm; sourceTree = "<group>"; };
+		F781990E18FD88DA00A0D038 /* LocationBasedARViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationBasedARViewController.h; sourceTree = "<group>"; };
 		F79C6F4118FC7B8F0089B836 /* EAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAGLView.h; sourceTree = "<group>"; };
 		F79C6F4218FC7B8F0089B836 /* EAGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EAGLView.mm; sourceTree = "<group>"; };
 		F79C6F4318FC7B8F0089B836 /* MetaioSDKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetaioSDKViewController.h; sourceTree = "<group>"; };
@@ -1356,6 +1359,8 @@
 		F797567A18FC7C8C00A48143 /* Tracking */ = {
 			isa = PBXGroup;
 			children = (
+				F781990D18FD88DA00A0D038 /* LocationBasedARViewController.mm */,
+				F781990E18FD88DA00A0D038 /* LocationBasedARViewController.h */,
 			);
 			name = Tracking;
 			sourceTree = "<group>";
@@ -1554,6 +1559,7 @@
 			files = (
 				F73B281B18F8FF9E0054CE2F /* SpotTypeChosenViewController.m in Sources */,
 				F73B27E518F8F13D0054CE2F /* UIWindow+SIUtils.m in Sources */,
+				F781990F18FD88DA00A0D038 /* LocationBasedARViewController.mm in Sources */,
 				F73B27C018F8F13D0054CE2F /* UIProgressView+AFNetworking.m in Sources */,
 				F73B280B18F8FF8F0054CE2F /* AudioViewController.m in Sources */,
 				F73B27B418F8F13D0054CE2F /* AFURLConnectionOperation.m in Sources */,

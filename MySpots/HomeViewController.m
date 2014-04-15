@@ -274,7 +274,7 @@
     
     if ([SpotsManager sharedManager].spots.count > 0) {
         
-        //[self performSegueWithIdentifier:@"cameraSegue" sender:nil];
+        [self performSegueWithIdentifier:@"cameraSegue" sender:nil];
         
     } else {
         SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"Oops" andMessage:@"No spots are found, please create one first!"];

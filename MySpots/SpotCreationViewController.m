@@ -173,8 +173,8 @@
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-    if (!(((CLLocation *)locations[0]).coordinate.latitude == 0.f && ((CLLocation *)locations[0]).coordinate.longitude == 0.f)) {
-        _currentLocation = locations[0];
+    if (!(((CLLocation *)[locations lastObject]).coordinate.latitude == 0.f && ((CLLocation *)locations[0]).coordinate.longitude == 0.f)) {
+        _currentLocation = [locations lastObject];
         [self updateCurrentAddress];
         self.nextStepButton.enabled = YES;
     }
