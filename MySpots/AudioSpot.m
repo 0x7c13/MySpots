@@ -28,7 +28,7 @@
 
     if (!(hiddenAudioData)) return nil;
     
-    if ((self = [super initWithName:name latitude:longitude longitude:longitude])) {
+    if ((self = [super initWithName:name latitude:latitude longitude:longitude])) {
         
         _keyOfHiddenAudio = [NSString randomAlphanumericStringWithLength:kLengthOfKey];
         

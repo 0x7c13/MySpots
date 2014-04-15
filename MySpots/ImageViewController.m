@@ -35,6 +35,12 @@
  
     self.navigationBar.topItem.title = self.spot.name;
     
+    [self.navigationBar setTitleTextAttributes:@{UITextAttributeTextColor:[UIColor whiteColor],
+                                                 UITextAttributeTextShadowOffset:[NSValue valueWithUIOffset:UIOffsetMake(0, 1)],
+                                                 UITextAttributeTextShadowColor:[UIColor whiteColor],
+                                                 UITextAttributeFont:[UIFont fontWithName:@"Chalkduster" size:13.0]
+                                                 }];
+    
     _photos = [[NSMutableArray alloc] initWithCapacity:self.hiddenImages.count];
     
     for (UIImage *image in self.hiddenImages) {

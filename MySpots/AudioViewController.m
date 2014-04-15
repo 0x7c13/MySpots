@@ -35,6 +35,11 @@
     [self.view sendSubviewToBack:toolbarBackground];
     
     self.navigationBar.topItem.title = self.spot.name;
+    [self.navigationBar setTitleTextAttributes:@{UITextAttributeTextColor:[UIColor whiteColor],
+                                                 UITextAttributeTextShadowOffset:[NSValue valueWithUIOffset:UIOffsetMake(0, 1)],
+                                                 UITextAttributeTextShadowColor:[UIColor whiteColor],
+                                                 UITextAttributeFont:[UIFont fontWithName:@"Chalkduster" size:13.0]
+                                                 }];
     
     NSError *error;
     _audioPlayer = [[AVAudioPlayer alloc] initWithData:self.hiddenAudioData error:&error];

@@ -29,6 +29,7 @@
 @property (nonatomic) CLGeocoder *geoCoder;
 @property (nonatomic) CLLocationManager *locationManager;
 @property (strong) NSString *currentAddress;
+@property (strong) CLLocation *currentLocation;
 
 @end
 
@@ -91,9 +92,10 @@
 
 - (IBAction)nextStepButtonPressed:(id)sender {
     
-    
     __weak typeof(self) weakSelf = self;
-    __strong typeof(_currentAddress) strongCurrentAddress = _currentAddress;
+    __block __strong typeof(_currentAddress) strongCurrentAddress = _currentAddress;
+    __block __strong typeof(_currentLocation) strongCurrentLocation = _currentLocation;
+    NSLog(@"%@", self.currentLocation);
     
     self.alertView = [URBAlertView dialogWithTitle:@"Give a name" message:@"Give a name to this spot:"];
     [self.alertView addButtonWithTitle:@"Cancel"];
@@ -116,7 +118,7 @@
             else if ([alertView textForTextFieldAtIndex:0].length == 0) {
                 
                 [alertView hideWithAnimation:URBAlertAnimationDefault completionBlock:^{
-                    [SpotsManager sharedManager].tempSpot = [[Spot alloc]initWithName:strongCurrentAddress latitude:weakSelf.locationManager.location.coordinate.latitude longitude:weakSelf.locationManager.location.coordinate.longitude];
+                    [SpotsManager sharedManager].tempSpot = [[Spot alloc]initWithName:strongCurrentAddress latitude:strongCurrentLocation.coordinate.latitude longitude:strongCurrentLocation.coordinate.longitude];
                     
                     NSLog(@"%@, %f, %f", strongCurrentAddress, weakSelf.locationManager.location.coordinate.latitude, weakSelf.locationManager.location.coordinate.longitude);
                     
@@ -125,9 +127,9 @@
             } else {
                 [alertView hideWithAnimation:URBAlertAnimationDefault completionBlock:^{
                     
-                    [SpotsManager sharedManager].tempSpot = [[Spot alloc]initWithName:[alertView textForTextFieldAtIndex:0] latitude:weakSelf.locationManager.location.coordinate.latitude longitude:weakSelf.locationManager.location.coordinate.longitude];
+                    [SpotsManager sharedManager].tempSpot = [[Spot alloc]initWithName:[alertView textForTextFieldAtIndex:0] latitude:strongCurrentLocation.coordinate.latitude longitude:strongCurrentLocation.coordinate.longitude];
                     
-                    NSLog(@"%@ %f, %f", [alertView textForTextFieldAtIndex:0], weakSelf.locationManager.location.coordinate.latitude, weakSelf.locationManager.location.coordinate.longitude);
+                    NSLog(@"%@ %f, %f", [alertView textForTextFieldAtIndex:0], strongCurrentLocation.coordinate.latitude, strongCurrentLocation.coordinate.longitude);
                     [weakSelf performSegueWithIdentifier:@"spotChosenSegue" sender:weakSelf];
                 }];
             }
@@ -171,11 +173,11 @@
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-    if (!self.nextStepButton.enabled) {
+    if (!(((CLLocation *)locations[0]).coordinate.latitude == 0.f && ((CLLocation *)locations[0]).coordinate.longitude == 0.f)) {
+        _currentLocation = locations[0];
+        [self updateCurrentAddress];
         self.nextStepButton.enabled = YES;
     }
-
-    [self updateCurrentAddress];
     
     self.mapView.showsUserLocation = YES;
     
@@ -185,7 +187,6 @@
     zoomRect = MKMapRectUnion(zoomRect, pointRect);
     
     [self.mapView setVisibleMapRect:zoomRect animated:YES];
-    
 }
 
 - (void)updateCurrentAddress {
@@ -208,8 +209,14 @@
                                     
                                     self.spotAddressLabel.numberOfLines = 3;
                                     self.spotAddressLabel.font = [UIFont fontWithName:@"Chalkduster" size:17.f];
-                                    _currentAddress = [NSString stringWithFormat:@"%@ %@ %@,%@,%@",addressNum, address, city, state, postalCode];
-                                    NSLog(@"%@", self.currentAddress);
+                                    
+                                    if (addressNum) {
+                                        _currentAddress = [NSString stringWithFormat:@"%@ %@ %@,%@,%@",addressNum, address, city, state, postalCode];
+                                        //NSLog(@"%@", self.currentAddress);
+                                    } else {
+                                        _currentAddress = [NSString stringWithFormat:@"%@ %@,%@,%@", address, city, state, postalCode];
+                                        //NSLog(@"%@", self.currentAddress);
+                                    }
                                     
                                     self.spotAddressLabel.text = [@"You are now at: " stringByAppendingString:_currentAddress];
                                 }
@@ -217,4 +224,7 @@
                             
                         }];
 }
+
+
+
 @end

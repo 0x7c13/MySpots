@@ -213,6 +213,9 @@
 		F770C95E18FB176B00120723 /* facebook_c.png in Resources */ = {isa = PBXBuildFile; fileRef = F770C95C18FB176B00120723 /* facebook_c.png */; };
 		F770C96318FB3A6000120723 /* SpotsMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F770C96218FB3A6000120723 /* SpotsMapViewController.xib */; };
 		F770C96618FB5E7F00120723 /* SpotsCreationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F770C96518FB5E7F00120723 /* SpotsCreationTests.m */; };
+		F79C6F3618FC74190089B836 /* metaioSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F75704731826644600C1B877 /* metaioSDK.framework */; };
+		F79C6F4518FC7B8F0089B836 /* EAGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = F79C6F4218FC7B8F0089B836 /* EAGLView.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F79C6F4618FC7B8F0089B836 /* MetaioSDKViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = F79C6F4418FC7B8F0089B836 /* MetaioSDKViewController.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -537,6 +540,10 @@
 		F770C96218FB3A6000120723 /* SpotsMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpotsMapViewController.xib; sourceTree = "<group>"; };
 		F770C96418FB5E7F00120723 /* SpotsCreationTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotsCreationTests.h; sourceTree = "<group>"; };
 		F770C96518FB5E7F00120723 /* SpotsCreationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotsCreationTests.m; sourceTree = "<group>"; };
+		F79C6F4118FC7B8F0089B836 /* EAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAGLView.h; sourceTree = "<group>"; };
+		F79C6F4218FC7B8F0089B836 /* EAGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EAGLView.mm; sourceTree = "<group>"; };
+		F79C6F4318FC7B8F0089B836 /* MetaioSDKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetaioSDKViewController.h; sourceTree = "<group>"; };
+		F79C6F4418FC7B8F0089B836 /* MetaioSDKViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MetaioSDKViewController.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -544,6 +551,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F79C6F3618FC74190089B836 /* metaioSDK.framework in Frameworks */,
 				F73B282818F909EB0054CE2F /* AssetsLibrary.framework in Frameworks */,
 				F7466FC518248A2B004BA1FE /* QuartzCore.framework in Frameworks */,
 				F7466FB3182489FE004BA1FE /* OpenGLES.framework in Frameworks */,
@@ -1285,6 +1293,7 @@
 		F7466F6D18244FAA004BA1FE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F79C6F4018FC7B8F0089B836 /* MetaioSDKBaseFiles */,
 				F73B282918F90C2B0054CE2F /* Fonts */,
 				F73B267318F8EF260054CE2F /* UIRes */,
 				F7466FE3182587F5004BA1FE /* Reachability.h */,
@@ -1320,6 +1329,7 @@
 		F7466F9B18248852004BA1FE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F797567A18FC7C8C00A48143 /* Tracking */,
 				F73B283D18FA516D0054CE2F /* SpotsViewers */,
 				F73B27FC18F8FF760054CE2F /* Home */,
 				F73B280D18F8FF950054CE2F /* SpotCreators */,
@@ -1341,6 +1351,24 @@
 				F73B26CD18F8EFDA0054CE2F /* AudioSpot.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		F797567A18FC7C8C00A48143 /* Tracking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Tracking;
+			sourceTree = "<group>";
+		};
+		F79C6F4018FC7B8F0089B836 /* MetaioSDKBaseFiles */ = {
+			isa = PBXGroup;
+			children = (
+				F79C6F4118FC7B8F0089B836 /* EAGLView.h */,
+				F79C6F4218FC7B8F0089B836 /* EAGLView.mm */,
+				F79C6F4318FC7B8F0089B836 /* MetaioSDKViewController.h */,
+				F79C6F4418FC7B8F0089B836 /* MetaioSDKViewController.mm */,
+			);
+			path = MetaioSDKBaseFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1579,6 +1607,7 @@
 				F73B279B18F8F13D0054CE2F /* DCCenterButton.m in Sources */,
 				F73B281F18F8FF9E0054CE2F /* CreatorViewController.m in Sources */,
 				F73B27BA18F8F13D0054CE2F /* FXBlurView.m in Sources */,
+				F79C6F4518FC7B8F0089B836 /* EAGLView.mm in Sources */,
 				F73B27E918F8F13D0054CE2F /* PECropViewController.m in Sources */,
 				F73B27ED18F8F13D0054CE2F /* LXActionSheet.m in Sources */,
 				F73B27DA18F8F13D0054CE2F /* PulsingHaloLayer.m in Sources */,
@@ -1602,6 +1631,7 @@
 				F73B27D818F8F13D0054CE2F /* TSBlurView.m in Sources */,
 				F73B281C18F8FF9E0054CE2F /* HiddenTextViewController.m in Sources */,
 				F73B27EB18F8F13D0054CE2F /* PEResizeControl.m in Sources */,
+				F79C6F4618FC7B8F0089B836 /* MetaioSDKViewController.mm in Sources */,
 				F73B26B718F8EFB60054CE2F /* NSString+Encryption.m in Sources */,
 				F73B26D018F8EFDA0054CE2F /* ImageSpot.m in Sources */,
 				F73B26C418F8EFCF0054CE2F /* FileManager.m in Sources */,
@@ -1745,19 +1775,18 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MySpots/MySpots-Prefix.pch";
 				INFOPLIST_FILE = "MySpots/MySpots-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					./MySpots,
 					"$(PROJECT_DIR)/MySpots/Libraries/GoogleAnalytics",
 					"$(PROJECT_DIR)/MySpots/Libraries/TestFlightSDK3",
 				);
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1772,19 +1801,18 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MySpots/MySpots-Prefix.pch";
 				INFOPLIST_FILE = "MySpots/MySpots-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					./MySpots,
 					"$(PROJECT_DIR)/MySpots/Libraries/GoogleAnalytics",
 					"$(PROJECT_DIR)/MySpots/Libraries/TestFlightSDK3",
 				);
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
