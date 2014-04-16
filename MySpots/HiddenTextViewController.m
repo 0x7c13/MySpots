@@ -8,7 +8,7 @@
 
 #import "Utilities.h"
 #import "SpotsManager.h"
-#import "DataHandler.h"
+#import "ShareHandler.h"
 #import "HiddenTextViewController.h"
 #import "UIColor+MLPFlatColors.h"
 #import "SIAlertView.h"
@@ -51,7 +51,7 @@
     canExit = NO;
     isKeyboardShown = NO;
     
-    self.textView.font = [UIFont fontWithName:@"OpenSans" size:15];
+    self.textView.font = [UIFont fontWithName:@"Chalkduster" size:15];
     self.textViewContainer.hidden = YES;
     
     self.progressView.borderTintColor = [UIColor whiteColor];
@@ -158,9 +158,9 @@
 
     alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
     alertView.backgroundStyle = SIAlertViewBackgroundStyleSolid;
-    alertView.titleFont = [UIFont fontWithName:@"OpenSans" size:25.0];
-    alertView.messageFont = [UIFont fontWithName:@"OpenSans" size:15.0];
-    alertView.buttonFont = [UIFont fontWithName:@"OpenSans" size:17.0];
+    alertView.titleFont = [UIFont fontWithName:@"Chalkduster" size:25.0];
+    alertView.messageFont = [UIFont fontWithName:@"Chalkduster" size:15.0];
+    alertView.buttonFont = [UIFont fontWithName:@"Chalkduster" size:17.0];
     
     [alertView show];
 }
@@ -215,38 +215,39 @@
                                   self.progressView.alpha = 1.0f;
                               }];
                               
-                              /*
-                              [DataHandler uploadSpot:[[SpotsManager sharedManager].spots lastObject]
-                                                 progress:^(NSUInteger bytesWritten, NSInteger totalBytesWritten){
-                                                     [self.progressView setProgress:(double)bytesWritten/(double)totalBytesWritten animated:YES];
-                                                 }
-                                          completionBlock:^(DataHandlerOption option, NSURL *spotURL, NSError *error){
-                                              
-                                              [etActivity removeFromSuperview];
-                                              [JDStatusBarNotification showWithStatus:@"spot uploaded!" dismissAfter:2.0f styleName:JDStatusBarStyleSuccess];
-                                              
-                                              [UIView animateWithDuration:0.3f animations:^{
-                                                  self.progressView.alpha = 0.0f;
-                                                  self.progressView.hidden = YES;
-                                              }];
-                                              
-                                              if (option == DataHandlerOptionSuccess) {
-                                                  
-                                                  NSLog(@"%@", spotURL);
-                                              } else {
-                                                  NSLog(@"%@", error.localizedDescription);
-                                              }
-                                              
-                                              [self showShareMenuWithDownloadURL:spotURL];
-                                          }];
-                               */
                               
+                              [ShareHandler uploadSpot:[[SpotsManager sharedManager].spots lastObject]
+                                              progress:^(NSUInteger bytesWritten, NSInteger totalBytesWritten){
+                                                     [self.progressView setProgress:(double)bytesWritten/(double)totalBytesWritten animated:YES];
+                                             }
+                                       completionBlock:^(ShareHandlerOption option, NSURL *spotURL, NSError *error){
+                                              
+                                                  [etActivity removeFromSuperview];
+                                                  
+                                                  [UIView animateWithDuration:0.3f animations:^{
+                                                      self.progressView.alpha = 0.0f;
+                                                      self.progressView.hidden = YES;
+                                                  }];
+                                                  
+                                                  if (option == ShareHandlerOptionSuccess) {
+                                                      
+                                                      NSLog(@"%@", spotURL);
+                                                      [self showShareMenuWithDownloadURL:spotURL];
+                                                      [JDStatusBarNotification showWithStatus:@"spot uploaded!" dismissAfter:2.0f styleName:JDStatusBarStyleSuccess];
+                                                      
+                                                  } else {
+                                                      NSLog(@"%@", error.localizedDescription);
+                                                      [JDStatusBarNotification showWithStatus:error.localizedDescription dismissAfter:2.0f styleName:JDStatusBarStyleError];
+                                                  }
+                                                
+                                          }];
+
                           }];
     alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
     alertView.backgroundStyle = SIAlertViewBackgroundStyleSolid;
-    alertView.titleFont = [UIFont fontWithName:@"OpenSans" size:25.0];
-    alertView.messageFont = [UIFont fontWithName:@"OpenSans" size:15.0];
-    alertView.buttonFont = [UIFont fontWithName:@"OpenSans" size:17.0];
+    alertView.titleFont = [UIFont fontWithName:@"Chalkduster" size:25.0];
+    alertView.messageFont = [UIFont fontWithName:@"Chalkduster" size:15.0];
+    alertView.buttonFont = [UIFont fontWithName:@"Chalkduster" size:17.0];
     
     [alertView show];
 }

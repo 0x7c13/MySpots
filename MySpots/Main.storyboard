@@ -112,10 +112,9 @@
                                         <rect key="frame" x="25" y="130" width="270" height="360"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </view>
-                                    <pageControl opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="uX8-OI-urW">
+                                    <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="uX8-OI-urW">
                                         <rect key="frame" x="0.0" y="490" width="320" height="37"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </pageControl>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -249,6 +248,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8hI-gm-RTD">
+                                <rect key="frame" x="36" y="511" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="share.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareButtonPressed:" destination="pBA-yG-0CC" eventType="touchUpInside" id="kcm-MQ-rer"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -259,6 +268,7 @@
                         <outlet property="buttonView" destination="JAM-jP-LHw" id="z0J-GT-6SP"/>
                         <outlet property="imageView" destination="4rb-6J-ztn" id="wDX-e4-zDe"/>
                         <outlet property="masterView" destination="63P-Zj-CE2" id="tRL-P9-5mA"/>
+                        <outlet property="shareButton" destination="8hI-gm-RTD" id="Vb5-m2-4MG"/>
                         <segue destination="vXZ-lx-hvc" kind="modal" identifier="cameraSegue" id="2bV-eo-Jeb"/>
                         <segue destination="JyW-7q-Qto" kind="custom" identifier="createMarkerSegue" customClass="MHNatGeoSegue" id="hW0-pW-zNn"/>
                         <segue destination="DvK-WY-hgg" kind="custom" identifier="spotsSegue" customClass="MHNatGeoSegue" id="v0Q-vP-mL3"/>
@@ -595,6 +605,7 @@
     </scenes>
     <resources>
         <image name="back_button.png" width="640" height="594"/>
+        <image name="share.png" width="512" height="512"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

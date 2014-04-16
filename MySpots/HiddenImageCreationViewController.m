@@ -8,7 +8,7 @@
 
 #import "Utilities.h"
 #import "SpotsManager.h"
-#import "DataHandler.h"
+#import "ShareHandler.h"
 #import "HiddenImageCreationViewController.h"
 #import "SWSnapshotStackView.h"
 #import "JDStatusBarNotification.h"
@@ -25,7 +25,7 @@
 #import "THProgressView.h"
 
 
-@interface HiddenImageCreationViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, PhotoStackViewDataSource, PhotoStackViewDelegate, URBMediaFocusViewControllerDelegate> {
+@interface HiddenImageCreationViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, PhotoStackViewDataSource, PhotoStackViewDelegate, URBMediaFocusViewControllerDelegate, UIActionSheetDelegate> {
     BOOL isEncrypting;
     BOOL canExit;
 }
@@ -127,7 +127,7 @@
         }];
     }
     [[self.photoStack topPhoto] genieInTransitionWithDuration:0.7
-                                              destinationRect:CGRectMake(135, self.view.frame.size.height - 40, 1, 1)
+                                              destinationRect:CGRectMake(140, self.view.frame.size.height - 40, 1, 1)
                                               destinationEdge:BCRectEdgeTop
                                                    completion:^{
                                                       
@@ -152,7 +152,7 @@
                                                            self.photoStack.hidden = YES;
                                                            self.trashButton.enabled = NO;
                                                            self.addMoreButton.enabled = NO;
-                                                           self.pageControl.alpha = 0.3f;
+                                                           self.pageControl.alpha = 1.0f;
                                                            self.addImageButton.alpha = 0.0f;
                                                            self.addImageButton.hidden = NO;
                                                            
@@ -167,27 +167,47 @@
 - (IBAction)addImageButtonPressed:(id)sender {
     
     if (isEncrypting) return;
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
-    picker.allowsEditing = NO;
-    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    picker.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     
-    [self presentViewController:picker animated:YES completion:nil];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Photo Library", @"Camera", nil];
+    [actionSheet showInView:self.view];
 }
 
 - (IBAction)addMoreButtonPressed:(id)sender {
     
     if (isEncrypting || self.hiddenImages.count == 0) return;
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
-    picker.allowsEditing = NO;
-    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    picker.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     
-    [self presentViewController:picker animated:YES completion:nil];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Photo Library", @"Camera", nil];
+    [actionSheet showInView:self.view];
 }
 
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0: {
+            UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+            picker.delegate = self;
+            picker.allowsEditing = NO;
+            picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            picker.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+            
+            [self presentViewController:picker animated:YES completion:nil];
+        } break;
+            
+        case 1: {
+            UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+            picker.delegate = self;
+            picker.allowsEditing = NO;
+            picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+            picker.cameraFlashMode = UIImagePickerControllerCameraFlashModeOff;
+            picker.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+            
+            [self presentViewController:picker animated:YES completion:nil];
+        } break;
+            
+        default:
+            break;
+    }
+}
 
 - (IBAction)doneButtonPressed:(id)sender {
     
@@ -256,9 +276,9 @@
     }];
     alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
     alertView.backgroundStyle = SIAlertViewBackgroundStyleSolid;
-    alertView.titleFont = [UIFont fontWithName:@"OpenSans" size:25.0];
-    alertView.messageFont = [UIFont fontWithName:@"OpenSans" size:15.0];
-    alertView.buttonFont = [UIFont fontWithName:@"OpenSans" size:17.0];
+    alertView.titleFont = [UIFont fontWithName:@"Chalkduster" size:25.0];
+    alertView.messageFont = [UIFont fontWithName:@"Chalkduster" size:15.0];
+    alertView.buttonFont = [UIFont fontWithName:@"Chalkduster" size:17.0];
     
     [alertView show];
 }
@@ -294,38 +314,38 @@
                                   self.progressView.alpha = 1.0f;
                               }];
                               
-                              /*
-                              [DataHandler uploadSpot:[[SpotsManager sharedManager].spots lastObject]
-                                                 progress:^(NSUInteger bytesWritten, NSInteger totalBytesWritten){
+
+                              [ShareHandler uploadSpot:[[SpotsManager sharedManager].spots lastObject]
+                                              progress:^(NSUInteger bytesWritten, NSInteger totalBytesWritten){
                                                      [self.progressView setProgress:(double)bytesWritten/(double)totalBytesWritten animated:YES];
-                                                 }
-                                          completionBlock:^(DataHandlerOption option, NSURL *spotURL, NSError *error){
+                                             }
+                                            completionBlock:^(ShareHandlerOption option, NSURL *spotURL, NSError *error){
                                   
-                                  [etActivity removeFromSuperview];
-                                  [JDStatusBarNotification showWithStatus:@"Spot uploaded!" dismissAfter:2.0f styleName:JDStatusBarStyleSuccess];
-                                  
-                                  [UIView animateWithDuration:0.3f animations:^{
-                                      self.progressView.alpha = 0.0f;
-                                      self.progressView.hidden = YES;
-                                  }];
-                                              
-                                  if (option == DataHandlerOptionSuccess) {
-                                      
-                                      NSLog(@"%@", spotURL);
-                                  } else {
-                                      NSLog(@"%@", error.localizedDescription);
-                                  }
-                                  
-                                  [self showShareMenuWithDownloadURL:spotURL];
-                              }];
-                               */
+                                                  [etActivity removeFromSuperview];
+                                                  [JDStatusBarNotification showWithStatus:@"Spot uploaded!" dismissAfter:2.0f styleName:JDStatusBarStyleSuccess];
+                                                  
+                                                  [UIView animateWithDuration:0.3f animations:^{
+                                                      self.progressView.alpha = 0.0f;
+                                                      self.progressView.hidden = YES;
+                                                  }];
+                                                              
+                                                  if (option == ShareHandlerOptionSuccess) {
+                                                      
+                                                      NSLog(@"%@", spotURL);
+                                                  } else {
+                                                      NSLog(@"%@", error.localizedDescription);
+                                                  }
+                                                  
+                                                  [self showShareMenuWithDownloadURL:spotURL];
+                                            }];
                               
-                          }];
+                            }];
+    
     alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
     alertView.backgroundStyle = SIAlertViewBackgroundStyleSolid;
-    alertView.titleFont = [UIFont fontWithName:@"OpenSans" size:25.0];
-    alertView.messageFont = [UIFont fontWithName:@"OpenSans" size:15.0];
-    alertView.buttonFont = [UIFont fontWithName:@"OpenSans" size:17.0];
+    alertView.titleFont = [UIFont fontWithName:@"Chalkduster" size:25.0];
+    alertView.messageFont = [UIFont fontWithName:@"Chalkduster" size:15.0];
+    alertView.buttonFont = [UIFont fontWithName:@"Chalkduster" size:17.0];
     
     [alertView show];
 }

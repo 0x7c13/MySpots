@@ -1,5 +1,5 @@
 //
-//  Constants.h
+//  WebAPIConstants.h
 //  CamLocker
 //
 //  Created by Jiaqi Liu on 4/5/14.
@@ -8,22 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Constants : NSObject
+@interface WebAPIConstants : NSObject
 
 extern NSString * const VERSION;
 
 /* API PATHS */
 extern NSString * const API_BASE_URL;
-extern NSString * const API_SHARE_MARKER;
-extern NSString * const API_GET_MARKER;
+extern NSString * const API_SHARE_SPOT;
+extern NSString * const API_GET_SPOT;
 
 /* PARAMS */
 extern NSString * const PARAM_DATA;
 extern NSString * const PARAM_DEVICE_ID;
-extern NSString * const PARAM_MARKER_NAME;
-extern NSString * const PARAM_MARKER_IMAGE;
-extern NSString * const PARAM_MARKER_KEY;
-extern NSString * const PARAM_MARKER_HIDDEN_CONTENT;
+extern NSString * const PARAM_SPOT_NAME;
+extern NSString * const PARAM_SPOT_INFO;
+extern NSString * const PARAM_SPOT_CONTENT;
 
 /* PUSH NOTIFICATION TYPES */
 

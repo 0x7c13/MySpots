@@ -203,7 +203,7 @@
         
     } else if ([targetSpot isKindOfClass:[ImageSpot class]]) {
         
-        [JDStatusBarNotification showWithStatus:@"Decrypting..." styleName:JDStatusBarStyleError];
+        //[JDStatusBarNotification showWithStatus:@"Decrypting..." styleName:JDStatusBarStyleError];
         
         [(ImageSpot *)targetSpot decryptHiddenImagesWithCompletionBlock:^(NSArray *images){
             
@@ -212,11 +212,11 @@
             imageVC.spot = targetSpot;
             imageVC.delegate = self;
             [self presentPopupViewController:imageVC animated:YES completion:nil];
-            [JDStatusBarNotification showWithStatus:@"Decryption succeeded!" dismissAfter:1.0f styleName:JDStatusBarStyleSuccess];
+            //[JDStatusBarNotification showWithStatus:@"Decryption succeeded!" dismissAfter:1.0f styleName:JDStatusBarStyleSuccess];
         }];
     } else if ([targetSpot isKindOfClass:[AudioSpot class]]) {
         
-        [JDStatusBarNotification showWithStatus:@"Decrypting..." styleName:JDStatusBarStyleError];
+        //[JDStatusBarNotification showWithStatus:@"Decrypting..." styleName:JDStatusBarStyleError];
         
         [(AudioSpot *)targetSpot decryptHiddenAudioWithCompletionBlock:^(NSData *hiddenAudioData){
             
@@ -225,7 +225,7 @@
             audioVC.spot = targetSpot;
             audioVC.delegate = self;
             [self presentPopupViewController:audioVC animated:YES completion:nil];
-            [JDStatusBarNotification showWithStatus:@"Decryption succeeded!" dismissAfter:1.0f styleName:JDStatusBarStyleSuccess];
+            //[JDStatusBarNotification showWithStatus:@"Decryption succeeded!" dismissAfter:1.0f styleName:JDStatusBarStyleSuccess];
         }];
     }
 }

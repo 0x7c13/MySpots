@@ -18,7 +18,7 @@
 #import <Social/Social.h>
 #import <MessageUI/MessageUI.h>
 
-@interface CreatorViewController () <CHTumblrMenuViewDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate>
+@interface CreatorViewController () <MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate>
 
 @end
 
@@ -36,7 +36,7 @@
     
     CHTumblrMenuView *menuView;
     menuView = [[CHTumblrMenuView alloc] init];
-    menuView.delegate = self;
+    //menuView.delegate = self;
     
     __weak typeof(self) weakSelf = self;
     [menuView addMenuItemWithTitle:@"Text" andIcon:[UIImage imageNamed:@"sms.png"] andSelectedBlock:^{
@@ -145,7 +145,7 @@
     
     CGFloat yOffset = DEVICE_IS_4INCH_IPHONE ? 0 : -30;
     
-    FBShimmeringView *shimmeringView = [[FBShimmeringView alloc] initWithFrame:CGRectMake(20, 95 + yOffset, 280, 150)];
+    FBShimmeringView *shimmeringView = [[FBShimmeringView alloc] initWithFrame:CGRectMake(20, 70 + yOffset, 280, 150)];
     UILabel *downloadCodeLabel = [[UILabel alloc] initWithFrame:shimmeringView.bounds];
     downloadCodeLabel.textAlignment = NSTextAlignmentCenter;
     downloadCodeLabel.font = [UIFont fontWithName:@"OpenSans" size:28];
@@ -205,11 +205,13 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+/*
 - (void)tumblrMenuViewDidDismiss
 {
     [SpotsManager sharedManager].tempSpot = nil;
     [self.navigationController dismissNatGeoViewController];
     self.navigationController.navigationBar.userInteractionEnabled = YES;
 }
+ */
 
 @end

@@ -17,7 +17,6 @@
 
 
 #define kLengthOfKey 30
-#define kMarkerDefaultWidth 200.0f
 #define kImageDefaultWidth 640.0f
 #define kImageDefaultHeight 1136.0f
 

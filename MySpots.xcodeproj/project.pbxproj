@@ -32,8 +32,8 @@
 		F73B269E18F8EF260054CE2F /* twitter_new.png in Resources */ = {isa = PBXBuildFile; fileRef = F73B268818F8EF260054CE2F /* twitter_new.png */; };
 		F73B269F18F8EF260054CE2F /* weibo.png in Resources */ = {isa = PBXBuildFile; fileRef = F73B268918F8EF260054CE2F /* weibo.png */; };
 		F73B26A118F8EF8D0054CE2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F73B26A018F8EF8D0054CE2F /* Main.storyboard */; };
-		F73B26A918F8EFA70054CE2F /* DataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F73B26A418F8EFA70054CE2F /* DataHandler.m */; };
-		F73B26AB18F8EFA70054CE2F /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = F73B26A818F8EFA70054CE2F /* Constants.m */; };
+		F73B26A918F8EFA70054CE2F /* ShareHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F73B26A418F8EFA70054CE2F /* ShareHandler.m */; };
+		F73B26AB18F8EFA70054CE2F /* WebAPIConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = F73B26A818F8EFA70054CE2F /* WebAPIConstants.m */; };
 		F73B26B518F8EFB60054CE2F /* NSData+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = F73B26AE18F8EFB60054CE2F /* NSData+Encryption.m */; };
 		F73B26B618F8EFB60054CE2F /* UIImage+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = F73B26B018F8EFB60054CE2F /* UIImage+Encryption.m */; };
 		F73B26B718F8EFB60054CE2F /* NSString+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = F73B26B218F8EFB60054CE2F /* NSString+Encryption.m */; };
@@ -214,6 +214,7 @@
 		F770C96318FB3A6000120723 /* SpotsMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F770C96218FB3A6000120723 /* SpotsMapViewController.xib */; };
 		F770C96618FB5E7F00120723 /* SpotsCreationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F770C96518FB5E7F00120723 /* SpotsCreationTests.m */; };
 		F781990F18FD88DA00A0D038 /* LocationBasedARViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = F781990D18FD88DA00A0D038 /* LocationBasedARViewController.mm */; };
+		F781991118FDB2A900A0D038 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = F781991018FDB2A900A0D038 /* share.png */; };
 		F79C6F3618FC74190089B836 /* metaioSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F75704731826644600C1B877 /* metaioSDK.framework */; };
 		F79C6F4518FC7B8F0089B836 /* EAGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = F79C6F4218FC7B8F0089B836 /* EAGLView.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F79C6F4618FC7B8F0089B836 /* MetaioSDKViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = F79C6F4418FC7B8F0089B836 /* MetaioSDKViewController.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -257,10 +258,10 @@
 		F73B268818F8EF260054CE2F /* twitter_new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_new.png; sourceTree = "<group>"; };
 		F73B268918F8EF260054CE2F /* weibo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weibo.png; sourceTree = "<group>"; };
 		F73B26A018F8EF8D0054CE2F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		F73B26A318F8EFA70054CE2F /* DataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataHandler.h; sourceTree = "<group>"; };
-		F73B26A418F8EFA70054CE2F /* DataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataHandler.m; sourceTree = "<group>"; };
-		F73B26A718F8EFA70054CE2F /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		F73B26A818F8EFA70054CE2F /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		F73B26A318F8EFA70054CE2F /* ShareHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareHandler.h; sourceTree = "<group>"; };
+		F73B26A418F8EFA70054CE2F /* ShareHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareHandler.m; sourceTree = "<group>"; };
+		F73B26A718F8EFA70054CE2F /* WebAPIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebAPIConstants.h; sourceTree = "<group>"; };
+		F73B26A818F8EFA70054CE2F /* WebAPIConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebAPIConstants.m; sourceTree = "<group>"; };
 		F73B26AD18F8EFB60054CE2F /* NSData+Encryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Encryption.h"; sourceTree = "<group>"; };
 		F73B26AE18F8EFB60054CE2F /* NSData+Encryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Encryption.m"; sourceTree = "<group>"; };
 		F73B26AF18F8EFB60054CE2F /* UIImage+Encryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Encryption.h"; sourceTree = "<group>"; };
@@ -543,6 +544,7 @@
 		F770C96518FB5E7F00120723 /* SpotsCreationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotsCreationTests.m; sourceTree = "<group>"; };
 		F781990D18FD88DA00A0D038 /* LocationBasedARViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LocationBasedARViewController.mm; sourceTree = "<group>"; };
 		F781990E18FD88DA00A0D038 /* LocationBasedARViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationBasedARViewController.h; sourceTree = "<group>"; };
+		F781991018FDB2A900A0D038 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
 		F79C6F4118FC7B8F0089B836 /* EAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAGLView.h; sourceTree = "<group>"; };
 		F79C6F4218FC7B8F0089B836 /* EAGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EAGLView.mm; sourceTree = "<group>"; };
 		F79C6F4318FC7B8F0089B836 /* MetaioSDKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetaioSDKViewController.h; sourceTree = "<group>"; };
@@ -616,6 +618,7 @@
 		F73B267318F8EF260054CE2F /* UIRes */ = {
 			isa = PBXGroup;
 			children = (
+				F781991018FDB2A900A0D038 /* share.png */,
 				F770C95B18FB176B00120723 /* twitter_c.png */,
 				F770C95C18FB176B00120723 /* facebook_c.png */,
 				F770C95318FB168B00120723 /* maps_c.png */,
@@ -654,10 +657,10 @@
 		F73B26A218F8EF9C0054CE2F /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				F73B26A318F8EFA70054CE2F /* DataHandler.h */,
-				F73B26A418F8EFA70054CE2F /* DataHandler.m */,
-				F73B26A718F8EFA70054CE2F /* Constants.h */,
-				F73B26A818F8EFA70054CE2F /* Constants.m */,
+				F73B26A318F8EFA70054CE2F /* ShareHandler.h */,
+				F73B26A418F8EFA70054CE2F /* ShareHandler.m */,
+				F73B26A718F8EFA70054CE2F /* WebAPIConstants.h */,
+				F73B26A818F8EFA70054CE2F /* WebAPIConstants.m */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -1487,6 +1490,7 @@
 				F73B27AA18F8F13D0054CE2F /* dc-center.png in Resources */,
 				F73B27F618F8F13D0054CE2F /* README.md in Resources */,
 				F73B27C918F8F13D0054CE2F /* NotificationBackgroundErrorIcon.png in Resources */,
+				F781991118FDB2A900A0D038 /* share.png in Resources */,
 				F73B279E18F8F13D0054CE2F /* custom_1.png in Resources */,
 				F73B283A18F90C910054CE2F /* maps.png in Resources */,
 				F770C95E18FB176B00120723 /* facebook_c.png in Resources */,
@@ -1576,7 +1580,7 @@
 				F73B26CF18F8EFDA0054CE2F /* TextSpot.m in Sources */,
 				F73B27B818F8F13D0054CE2F /* FBShimmeringLayer.m in Sources */,
 				F73B281A18F8FF9E0054CE2F /* SpotCreationViewController.m in Sources */,
-				F73B26AB18F8EFA70054CE2F /* Constants.m in Sources */,
+				F73B26AB18F8EFA70054CE2F /* WebAPIConstants.m in Sources */,
 				F73B27C118F8F13D0054CE2F /* UIRefreshControl+AFNetworking.m in Sources */,
 				F73B27C318F8F13D0054CE2F /* MHNatGeoSegue.m in Sources */,
 				F732390518FA9D3D008BF09B /* UIImage+BoxBlur.m in Sources */,
@@ -1597,7 +1601,7 @@
 				F73B27EF18F8F13D0054CE2F /* JDStatusBarStyle.m in Sources */,
 				F73B27F318F8F13D0054CE2F /* Circle.m in Sources */,
 				F73B27AC18F8F13D0054CE2F /* NSMutableArray+addImage.m in Sources */,
-				F73B26A918F8EFA70054CE2F /* DataHandler.m in Sources */,
+				F73B26A918F8EFA70054CE2F /* ShareHandler.m in Sources */,
 				F73B279C18F8F13D0054CE2F /* DCPathButton.m in Sources */,
 				F73B27B018F8F13D0054CE2F /* AFHTTPRequestOperationManager.m in Sources */,
 				F7466FE5182587F5004BA1FE /* Reachability.m in Sources */,

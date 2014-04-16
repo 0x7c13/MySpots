@@ -9,7 +9,7 @@
 #import "SpotsManager.h"
 #import "FileManager.h"
 #import "HomeViewController.h"
-#import "DataHandler.h"
+#import "ShareHandler.h"
 #import "Utilities.h"
 #import "SIAlertView.h"
 #import "PulsingHaloLayer.h"
@@ -20,11 +20,17 @@
 #import "ETActivityIndicatorView.h"
 #import "CircularProgressView.h"
 #import "DCPathButton.h"
+#import "CHTumblrMenuView.h"
+#import "FBShimmeringView.h"
 
-@interface HomeViewController () <DCPathButtonDelegate> {
+#import <Social/Social.h>
+#import <MessageUI/MessageUI.h>
+
+@interface HomeViewController () <DCPathButtonDelegate, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate, CHTumblrMenuViewDelegate> {
     BOOL needsToDisplayLaunchAnimation;
 }
 
+@property (weak, nonatomic) IBOutlet UIButton *shareButton;
 @property (strong, nonatomic) IBOutlet ANBlurredImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIView *buttonView;
 @property (weak, nonatomic) IBOutlet UIView *masterView;
@@ -32,7 +38,7 @@
 @property (nonatomic) DCPathButton *dcPathButton;
 @property (nonatomic) URBAlertView *alertView;
 @property (nonatomic) CircularProgressView *circularProgressView;
-
+@property (nonatomic) CHTumblrMenuView *menuView;
 @end
 
 @implementation HomeViewController
@@ -91,6 +97,7 @@
     [self.circularProgressView setProgress:0.0];
     self.circularProgressView.hidden = YES;
     [self.view addSubview:self.circularProgressView];
+    self.shareButton.alpha = 0.0f;
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -112,6 +119,7 @@
     self.dcPathButton.alpha = 0.0f;
     self.dcPathButton.userInteractionEnabled = NO;
     self.bottomLabel.alpha = 0.0f;
+    self.shareButton.alpha = 0.0f;
     [self stopHaloAnimation];
 }
 
@@ -126,19 +134,6 @@
     self.halo.radius = 130;
     self.halo.backgroundColor = [UIColor flatWhiteColor].CGColor;
     [self.buttonView.layer insertSublayer:self.halo atIndex:0];
-    [NSTimer scheduledTimerWithTimeInterval:0.1f target:self selector:@selector(startSecondHalo) userInfo:nil repeats:NO];
-}
-
-- (void)startSecondHalo
-{
-    if (!self.imageView.hidden) return;
-
-    CGFloat locationY = DEVICE_IS_4INCH_IPHONE ? 300 : 260;
-    PulsingHaloLayer *halo = [PulsingHaloLayer layer];
-    halo.position = CGPointMake(160, locationY);
-    halo.radius = 130;
-    halo.backgroundColor = [UIColor flatWhiteColor].CGColor;
-    [self.buttonView.layer insertSublayer:halo atIndex:0];
 }
 
 - (void)stopHaloAnimation
@@ -180,6 +175,7 @@
         [UIView animateWithDuration:0.7f animations:^{
             
             self.dcPathButton.alpha = 1.0f;
+            self.shareButton.alpha = 1.0f;
         } completion:^(BOOL finished){
             
             self.dcPathButton.userInteractionEnabled = YES;
@@ -243,9 +239,9 @@
                           }];
     alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
     alertView.backgroundStyle = SIAlertViewBackgroundStyleSolid;
-    alertView.titleFont = [UIFont fontWithName:@"OpenSans" size:25.0];
-    alertView.messageFont = [UIFont fontWithName:@"OpenSans" size:15.0];
-    alertView.buttonFont = [UIFont fontWithName:@"OpenSans" size:17.0];
+    alertView.titleFont = [UIFont fontWithName:@"Chalkduster" size:25.0];
+    alertView.messageFont = [UIFont fontWithName:@"Chalkduster" size:15.0];
+    alertView.buttonFont = [UIFont fontWithName:@"Chalkduster" size:17.0];
     
     [alertView show];
 }
@@ -284,9 +280,9 @@
         }];
         alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
         alertView.backgroundStyle = SIAlertViewBackgroundStyleSolid;
-        alertView.titleFont = [UIFont fontWithName:@"OpenSans" size:25.0];
-        alertView.messageFont = [UIFont fontWithName:@"OpenSans" size:15.0];
-        alertView.buttonFont = [UIFont fontWithName:@"OpenSans" size:17.0];
+        alertView.titleFont = [UIFont fontWithName:@"Chalkduster" size:25.0];
+        alertView.messageFont = [UIFont fontWithName:@"Chalkduster" size:15.0];
+        alertView.buttonFont = [UIFont fontWithName:@"Chalkduster" size:17.0];
         
         [alertView show];
     }
@@ -308,9 +304,9 @@
         }];
         alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
         alertView.backgroundStyle = SIAlertViewBackgroundStyleSolid;
-        alertView.titleFont = [UIFont fontWithName:@"OpenSans" size:25.0];
-        alertView.messageFont = [UIFont fontWithName:@"OpenSans" size:15.0];
-        alertView.buttonFont = [UIFont fontWithName:@"OpenSans" size:17.0];
+        alertView.titleFont = [UIFont fontWithName:@"Chalkduster" size:25.0];
+        alertView.messageFont = [UIFont fontWithName:@"Chalkduster" size:15.0];
+        alertView.buttonFont = [UIFont fontWithName:@"Chalkduster" size:17.0];
         
         [alertView show];
     }
@@ -337,9 +333,9 @@
                               }];
         alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
         alertView.backgroundStyle = SIAlertViewBackgroundStyleSolid;
-        alertView.titleFont = [UIFont fontWithName:@"OpenSans" size:25.0];
-        alertView.messageFont = [UIFont fontWithName:@"OpenSans" size:15.0];
-        alertView.buttonFont = [UIFont fontWithName:@"OpenSans" size:17.0];
+        alertView.titleFont = [UIFont fontWithName:@"Chalkduster" size:25.0];
+        alertView.messageFont = [UIFont fontWithName:@"Chalkduster" size:15.0];
+        alertView.buttonFont = [UIFont fontWithName:@"Chalkduster" size:17.0];
         
         [alertView show];
     }
@@ -360,7 +356,8 @@
         if (buttonIndex == 1) {
             if ([alertView textForTextFieldAtIndex:0].length == 8) {
                 
-                CGFloat locationY = DEVICE_IS_4INCH_IPHONE ? 280 : 230;
+                
+                CGFloat locationY = DEVICE_IS_4INCH_IPHONE ? 270 : 220;
                 ETActivityIndicatorView *etActivity = [[ETActivityIndicatorView alloc] initWithFrame:CGRectMake(weakSelf.view.frame.size.width/2 - 30, locationY, 60, 60)];
                 etActivity.color = [UIColor flatBlueColor];
                 [etActivity startAnimating];
@@ -370,32 +367,31 @@
                 
                 [JDStatusBarNotification showWithStatus:@"Downloading..." styleName:JDStatusBarStyleWarning];
                 
-                /*
-                 [DataHandler downloadMarkerByDownloadCode:[alertView textForTextFieldAtIndex:0]
-                 progress:^(NSUInteger totalBytesRead, NSInteger totalBytesExpectedToRead){
+                 [ShareHandler downloadSpotByDownloadCode:[alertView textForTextFieldAtIndex:0]
+                                                 progress:^(NSUInteger totalBytesRead, NSInteger totalBytesExpectedToRead){
                  
-                 //NSLog(@"%.0f", (float)totalBytesRead/(float)totalBytesExpectedToRead);
-                 if (totalBytesExpectedToRead != -1) {
-                 [weakSelf.circularProgressView setProgress:(float)totalBytesRead/(float)totalBytesExpectedToRead];
-                 }
-                 }
-                 completionBlock:^(DataHandlerOption option, NSError *error){
+                                                    //NSLog(@"%.0f", (float)totalBytesRead/(float)totalBytesExpectedToRead);
+                                                    if (totalBytesExpectedToRead != -1) {
+                                                        [weakSelf.circularProgressView setProgress:(float)totalBytesRead/(float)totalBytesExpectedToRead];
+                                                    }
+                                                }
+                                          completionBlock:^(ShareHandlerOption option, NSError *error){
                  
-                 weakSelf.circularProgressView.hidden = YES;
-                 weakSelf.dcPathButton.userInteractionEnabled = YES;
-                 [[weakSelf.view viewWithTag:6713] removeFromSuperview];
-                 if (option == DataHandlerOptionSuccess) {
-                 [JDStatusBarNotification showWithStatus:@"New marker added" dismissAfter:2.0f styleName:JDStatusBarStyleSuccess];
-                 } else if (option == DataHandlerOptionFailure) {
+                                             weakSelf.circularProgressView.hidden = YES;
+                                             weakSelf.dcPathButton.userInteractionEnabled = YES;
+                                             [[weakSelf.view viewWithTag:6713] removeFromSuperview];
+                                             if (option == ShareHandlerOptionSuccess) {
+                                                 [JDStatusBarNotification showWithStatus:@"New spot added" dismissAfter:2.0f styleName:JDStatusBarStyleSuccess];
+                                             } else if (option == ShareHandlerOptionFailure) {
                  
-                 if (error) {
-                 [JDStatusBarNotification showWithStatus:error.localizedDescription dismissAfter:2.0f styleName:JDStatusBarStyleError];
-                 } else {
-                 [JDStatusBarNotification showWithStatus:@"Error occurs" dismissAfter:2.0f styleName:JDStatusBarStyleError];
-                 }
-                 }
-                 }];
-                 */
+                                                 if (error) {
+                                                     [JDStatusBarNotification showWithStatus:error.localizedDescription dismissAfter:2.0f styleName:JDStatusBarStyleError];
+                                                 } else {
+                                                     [JDStatusBarNotification showWithStatus:@"Error occurs" dismissAfter:2.0f styleName:JDStatusBarStyleError];
+                                                 }
+                                             }
+                                         }];
+                
                 
                 weakSelf.dcPathButton.userInteractionEnabled = NO;
                 [alertView hideWithAnimation:URBAlertAnimationDefault];
@@ -437,9 +433,9 @@
                               }];
         alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
         alertView.backgroundStyle = SIAlertViewBackgroundStyleSolid;
-        alertView.titleFont = [UIFont fontWithName:@"OpenSans" size:25.0];
-        alertView.messageFont = [UIFont fontWithName:@"OpenSans" size:15.0];
-        alertView.buttonFont = [UIFont fontWithName:@"OpenSans" size:17.0];
+        alertView.titleFont = [UIFont fontWithName:@"Chalkduster" size:25.0];
+        alertView.messageFont = [UIFont fontWithName:@"Chalkduster" size:15.0];
+        alertView.buttonFont = [UIFont fontWithName:@"Chalkduster" size:17.0];
         
         [alertView show];
     }
@@ -464,6 +460,11 @@
     self.imageView.hidden = NO;
     [self stopHaloAnimation];
     [self.imageView blurInAnimationWithDuration:0.25f];
+    
+    self.shareButton.userInteractionEnabled = NO;
+    [UIView animateWithDuration:0.2f animations:^{
+        self.shareButton.alpha = 0.0f;
+    }];
 }
 
 - (void)pathButtonWillClose
@@ -472,6 +473,226 @@
         self.imageView.hidden = YES;
         [self startHaloAnimation];
     }];
+    
+    [UIView animateWithDuration:0.8f animations:^{
+        self.shareButton.alpha = 1.0f;
+    } completion:^(BOOL finished) {
+        self.shareButton.userInteractionEnabled = YES;
+    }];
 }
+
+
+- (IBAction)shareButtonPressed:(id)sender {
+    
+    self.shareButton.userInteractionEnabled = NO;
+    [UIView animateWithDuration:0.2f animations:^{
+        self.shareButton.alpha = 0.0f;
+    } completion:nil];
+    
+    [self stopHaloAnimation];
+    [self.halo removeFromSuperlayer];
+    
+    self.dcPathButton.userInteractionEnabled = NO;
+    [UIView animateWithDuration:0.2f animations:^{
+        self.dcPathButton.alpha = 0.0;
+    } completion:^(BOOL finished){
+        
+    }];
+    
+    self.imageView.hidden = NO;
+    [self.imageView blurInAnimationWithDuration:0.25f];
+
+    
+    
+    self.menuView = [[CHTumblrMenuView alloc] init];
+    self.menuView.delegate = self;
+    
+    __weak typeof(self) weakSelf = self;
+    [self.menuView addMenuItemWithTitle:@"Text" andIcon:[UIImage imageNamed:@"sms.png"] andSelectedBlock:^{
+        
+        if([MFMessageComposeViewController canSendText])
+        {
+            MFMessageComposeViewController *controller = [[MFMessageComposeViewController alloc] init];
+            controller.body = @"Hi\n\nCheck out the #MySpots App! It's amazing!";
+            controller.messageComposeDelegate = weakSelf;
+            [weakSelf presentViewController:controller animated:YES completion:nil];
+        }
+        
+    }];
+    [self.menuView addMenuItemWithTitle:@"Email" andIcon:[UIImage imageNamed:@"email.png"] andSelectedBlock:^{
+        
+        if ([MFMailComposeViewController canSendMail])
+        {
+            MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
+            mailer.mailComposeDelegate = weakSelf;
+            [mailer setSubject:@"MySpots"];
+            NSString *emailBody = @"Hi\n\nCheck out the #MySpots App! It's amazing!";
+            [mailer setMessageBody:emailBody isHTML:NO];
+            [weakSelf presentViewController:mailer animated:YES completion:nil];
+        }
+        
+    }];
+    [self.menuView addMenuItemWithTitle:@"Facebook" andIcon:[UIImage imageNamed:@"facebook_new.png"] andSelectedBlock:^{
+        
+        if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+            
+            SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+            
+            [controller setInitialText:@"Hi\n\nCheck out the #MySpots App! It's amazing!"];
+            [controller addImage:[UIImage imageNamed:@"icon.png"]];
+            
+            [weakSelf presentViewController:controller animated:YES completion:Nil];
+        } else {
+            SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"Oops" andMessage:@"Please login with your Facebook account in settings!"];
+            [alertView addButtonWithTitle:@"OK"
+                                     type:SIAlertViewButtonTypeDestructive
+                                  handler:^(SIAlertView *alertView) {
+                                  }];
+            alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
+            alertView.backgroundStyle = SIAlertViewBackgroundStyleSolid;
+            alertView.titleFont = [UIFont fontWithName:@"Chalkduster" size:25.0];
+            alertView.messageFont = [UIFont fontWithName:@"Chalkduster" size:15.0];
+            alertView.buttonFont = [UIFont fontWithName:@"Chalkduster" size:17.0];
+            
+            [alertView show];
+        }
+        
+    }];
+    [self.menuView addMenuItemWithTitle:@"Twitter" andIcon:[UIImage imageNamed:@"twitter.png"] andSelectedBlock:^{
+        
+        if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+            
+            SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+            
+            [controller setInitialText:@"Hi\n\nCheck out the #MySpots App! It's amazing!"];
+            [controller addImage:[UIImage imageNamed:@"icon.png"]];
+            
+            [weakSelf presentViewController:controller animated:YES completion:Nil];
+        } else {
+            SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"Oops" andMessage:@"Please login with your Twitter account in settings!"];
+            [alertView addButtonWithTitle:@"OK"
+                                     type:SIAlertViewButtonTypeDestructive
+                                  handler:^(SIAlertView *alertView) {
+                                  }];
+            alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
+            alertView.backgroundStyle = SIAlertViewBackgroundStyleSolid;
+            alertView.titleFont = [UIFont fontWithName:@"Chalkduster" size:25.0];
+            alertView.messageFont = [UIFont fontWithName:@"Chalkduster" size:15.0];
+            alertView.buttonFont = [UIFont fontWithName:@"Chalkduster" size:17.0];
+            
+            [alertView show];
+        }
+    }];
+    [self.menuView addMenuItemWithTitle:@"Google+" andIcon:[UIImage imageNamed:@"google_plus.png"] andSelectedBlock:^{
+        
+    }];
+    [self.menuView addMenuItemWithTitle:@"Weibo" andIcon:[UIImage imageNamed:@"weibo.png"] andSelectedBlock:^{
+        
+        if([SLComposeViewController isAvailableForServiceType:SLServiceTypeSinaWeibo]) {
+            
+            SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeSinaWeibo];
+            
+            [controller setInitialText:@"Hi\n\nCheck out the #MySpots App! It's amazing!"];
+            [controller addImage:[UIImage imageNamed:@"icon.png"]];
+            
+            [weakSelf presentViewController:controller animated:YES completion:Nil];
+        } else {
+            SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"Oops" andMessage:@"Please login with your Weibo account in settings!"];
+            [alertView addButtonWithTitle:@"OK"
+                                     type:SIAlertViewButtonTypeDestructive
+                                  handler:^(SIAlertView *alertView) {
+                                  }];
+            alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
+            alertView.backgroundStyle = SIAlertViewBackgroundStyleSolid;
+            alertView.titleFont = [UIFont fontWithName:@"Chalkduster" size:25.0];
+            alertView.messageFont = [UIFont fontWithName:@"Chalkduster" size:15.0];
+            alertView.buttonFont = [UIFont fontWithName:@"Chalkduster" size:17.0];
+            
+            [alertView show];
+        }
+    }];
+    
+    //CGFloat yOffset = DEVICE_IS_4INCH_IPHONE ? 0 : -30;
+    
+    /*
+     FBShimmeringView *shimmeringView = [[FBShimmeringView alloc] initWithFrame:CGRectMake(20, 95 + yOffset, 280, 150)];
+     UILabel *downloadCodeLabel = [[UILabel alloc] initWithFrame:shimmeringView.bounds];
+     downloadCodeLabel.textAlignment = NSTextAlignmentCenter;
+     downloadCodeLabel.font = [UIFont fontWithName:@"Chalkduster" size:45];
+     downloadCodeLabel.numberOfLines = 3;
+     downloadCodeLabel.textColor = [UIColor flatWhiteColor];
+     shimmeringView.contentView = downloadCodeLabel;
+     shimmeringView.shimmering = YES;
+     shimmeringView.alpha = 0.0f;
+     [self.menuView addSubview:shimmeringView];
+     */
+    
+    [self.menuView setUserInteractionEnabled:YES];
+    [self.menuView showInView:self.buttonView];
+    
+    /*
+     [UIView animateWithDuration:0.7f animations:^{
+     shimmeringView.alpha = 1.0f;
+     }];
+     */
+}
+
+#pragma mark - MFMessageComposeViewControllerDelegate
+
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
+{
+    switch (result) {
+        case MessageComposeResultSent:
+            [JDStatusBarNotification showWithStatus:@"Message sent!" dismissAfter:1.5f styleName:JDStatusBarStyleSuccess];
+            break;
+        default:
+            break;
+    }
+    [controller dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - MFMailComposeViewControllerDelegate
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
+{
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled: you cancelled the operation and no email message was queued.");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved: you saved the email message in the drafts folder.");
+            break;
+        case MFMailComposeResultSent:
+            [JDStatusBarNotification showWithStatus:@"Email sent!" dismissAfter:1.5f styleName:JDStatusBarStyleSuccess];
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail failed: the email message was not saved or queued, possibly due to an error.");
+            break;
+        default:
+            NSLog(@"Mail not sent.");
+            break;
+    }
+    
+    // Remove the mail view
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)tumblrMenuViewDidDismiss
+{
+    self.menuView.userInteractionEnabled = NO;
+    [self.imageView blurOutAnimationWithDuration:0.6f];
+
+    [UIView animateWithDuration:0.8f delay:0.5f options:UIViewAnimationOptionCurveEaseIn animations:^{
+        self.dcPathButton.alpha = 1.0;
+        self.shareButton.alpha = 1.0f;
+    } completion:^(BOOL finished){
+        self.imageView.hidden = YES;
+        self.dcPathButton.userInteractionEnabled = YES;
+        self.shareButton.userInteractionEnabled = YES;
+        [self startHaloAnimation];
+    }];
+}
+
 
 @end

@@ -9,7 +9,6 @@
 #import "LocationBasedARViewController.h"
 #import "EAGLView.h"
 #import "SpotsManager.h"
-#import "URBAlertView.h"
 #import "UIViewController+CWPopup.h"
 #import "JDStatusBarNotification.h"
 #import "MHNatGeoViewControllerTransition.h"
@@ -24,12 +23,10 @@
 #import "ImageViewController.h"
 
 #define kDebugMode 0
-#define kRangeOffset 10
 
 @interface LocationBasedARViewController () <AudioViewControllerDelegate, TextViewControllerDelegate, ImageViewControllerDelegate>
 - (UIImage*) getBillboardImageForTitle: (NSString*) title;
 @property (nonatomic) CLLocationManager *locationManager;
-@property (nonatomic) URBAlertView *alertView;
 @end
 
 
@@ -164,7 +161,7 @@
                     
                 } else if ([targetSpot isKindOfClass:[ImageSpot class]]) {
                     
-                    [JDStatusBarNotification showWithStatus:@"Decrypting..." styleName:JDStatusBarStyleError];
+                    //[JDStatusBarNotification showWithStatus:@"Decrypting..." styleName:JDStatusBarStyleError];
                     
                     [(ImageSpot *)targetSpot decryptHiddenImagesWithCompletionBlock:^(NSArray *images){
                         
@@ -173,11 +170,11 @@
                         imageVC.spot = targetSpot;
                         imageVC.delegate = self;
                         [self presentPopupViewController:imageVC animated:YES completion:nil];
-                        [JDStatusBarNotification showWithStatus:@"Decryption succeeded!" dismissAfter:1.0f styleName:JDStatusBarStyleSuccess];
+                        //[JDStatusBarNotification showWithStatus:@"Decryption succeeded!" dismissAfter:1.0f styleName:JDStatusBarStyleSuccess];
                     }];
                 } else if ([targetSpot isKindOfClass:[AudioSpot class]]) {
                     
-                    [JDStatusBarNotification showWithStatus:@"Decrypting..." styleName:JDStatusBarStyleError];
+                    //[JDStatusBarNotification showWithStatus:@"Decrypting..." styleName:JDStatusBarStyleError];
                     
                     [(AudioSpot *)targetSpot decryptHiddenAudioWithCompletionBlock:^(NSData *hiddenAudioData){
                         
@@ -186,7 +183,7 @@
                         audioVC.spot = targetSpot;
                         audioVC.delegate = self;
                         [self presentPopupViewController:audioVC animated:YES completion:nil];
-                        [JDStatusBarNotification showWithStatus:@"Decryption succeeded!" dismissAfter:1.0f styleName:JDStatusBarStyleSuccess];
+                        //[JDStatusBarNotification showWithStatus:@"Decryption succeeded!" dismissAfter:1.0f styleName:JDStatusBarStyleSuccess];
                     }];
                 }
                 break;
@@ -272,29 +269,6 @@
 
 #pragma - CLLocationManagerDelegate
 
-/*
-- (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region
-{
-#if kDebugMode
-    NSLog(@"user did enter region");
-#endif
-    
-    for (FBWaypoint *waypoint in self.goal.waypoints) {
-        if ([region.identifier isEqualToString:waypoint.label]) {
-            [FBDataHandler userDidVisitWaypoint:waypoint];
-            
-            // push notification here...
-            [TSMessage showNotificationInViewController:self title:@"Congratulations!" subtitle:[NSString stringWithFormat:@"You have visited %@", waypoint.label] type:TSMessageNotificationTypeSuccess];
-            
-            // check whether brutus need to be shown on screen
-            if ([FBDataHandler quizIsReadyForGoal:self.goal]) {
-                brutus->setVisible(true);
-            }
-            break;
-        }
-    }
-}
-*/
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {

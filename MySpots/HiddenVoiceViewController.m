@@ -9,7 +9,7 @@
 #import "Utilities.h"
 #import "FileManager.h"
 #import "SpotsManager.h"
-#import "DataHandler.h"
+#import "ShareHandler.h"
 #import "HiddenVoiceViewController.h"
 #import "UIColor+MLPFlatColors.h"
 #import "THProgressView.h"
@@ -232,9 +232,9 @@
                           }];
     alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
     alertView.backgroundStyle = SIAlertViewBackgroundStyleSolid;
-    alertView.titleFont = [UIFont fontWithName:@"OpenSans" size:25.0];
-    alertView.messageFont = [UIFont fontWithName:@"OpenSans" size:15.0];
-    alertView.buttonFont = [UIFont fontWithName:@"OpenSans" size:17.0];
+    alertView.titleFont = [UIFont fontWithName:@"Chalkduster" size:25.0];
+    alertView.messageFont = [UIFont fontWithName:@"Chalkduster" size:15.0];
+    alertView.buttonFont = [UIFont fontWithName:@"Chalkduster" size:17.0];
     
     [alertView show];
 }
@@ -278,38 +278,36 @@
                                   self.progressView.alpha = 1.0f;
                               }];
                               
-                              /*
-                              [DataHandler uploadMarker:[[SpotsManager sharedManager].spots lastObject]
-                                                 progress:^(NSUInteger bytesWritten, NSInteger totalBytesWritten){
-                                                     [self.progressView setProgress:(double)bytesWritten/(double)totalBytesWritten animated:YES];
-                                                 }
-                                          completionBlock:^(DataHandlerOption option, NSURL *markerURL, NSError *error){
+                              [ShareHandler uploadSpot:[[SpotsManager sharedManager].spots lastObject]
+                                              progress:^(NSUInteger bytesWritten, NSInteger totalBytesWritten){
+                                                 [self.progressView setProgress:(double)bytesWritten/(double)totalBytesWritten animated:YES];
+                                             }
+                                       completionBlock:^(ShareHandlerOption option, NSURL *spotURL, NSError *error){
                                               
                                               [etActivity removeFromSuperview];
-                                              [JDStatusBarNotification showWithStatus:@"Marker uploaded!" dismissAfter:2.0f styleName:JDStatusBarStyleSuccess];
+                                              [JDStatusBarNotification showWithStatus:@"Spot uploaded!" dismissAfter:2.0f styleName:JDStatusBarStyleSuccess];
                                               
                                               [UIView animateWithDuration:0.3f animations:^{
                                                   self.progressView.alpha = 0.0f;
                                                   self.progressView.hidden = YES;
                                               }];
                                               
-                                              if (option == DataHandlerOptionSuccess) {
+                                              if (option == ShareHandlerOptionSuccess) {
                                                   
-                                                  NSLog(@"%@", markerURL);
+                                                  NSLog(@"%@", spotURL);
                                               } else {
                                                   NSLog(@"%@", error.localizedDescription);
                                               }
                                               
-                                              [self showShareMenuWithDownloadURL:markerURL];
-                                          }];
-                               */
-                              
-                          }];
+                                              [self showShareMenuWithDownloadURL:spotURL];
+                                      }];
+
+                            }];
     alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
     alertView.backgroundStyle = SIAlertViewBackgroundStyleSolid;
-    alertView.titleFont = [UIFont fontWithName:@"OpenSans" size:25.0];
-    alertView.messageFont = [UIFont fontWithName:@"OpenSans" size:15.0];
-    alertView.buttonFont = [UIFont fontWithName:@"OpenSans" size:17.0];
+    alertView.titleFont = [UIFont fontWithName:@"Chalkduster" size:25.0];
+    alertView.messageFont = [UIFont fontWithName:@"Chalkduster" size:15.0];
+    alertView.buttonFont = [UIFont fontWithName:@"Chalkduster" size:17.0];
     
     [alertView show];
 }

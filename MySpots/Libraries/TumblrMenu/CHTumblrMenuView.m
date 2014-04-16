@@ -25,15 +25,15 @@
 
 #import "CHTumblrMenuView.h"
 
-#define kOffsetY (DEVICE_IS_4INCH_IPHONE ? 90 : 65)
+#define kOffsetY (DEVICE_IS_4INCH_IPHONE ? 50 : 35)
 #define CHTumblrMenuViewTag 1999
 #define CHTumblrMenuViewImageHeight 70
 #define CHTumblrMenuViewTitleHeight 20
-#define CHTumblrMenuViewVerticalPadding 30
+#define CHTumblrMenuViewVerticalPadding 45
 #define CHTumblrMenuViewHorizontalMargin 25
 #define CHTumblrMenuViewRriseAnimationID @"CHTumblrMenuViewRriseAnimationID"
 #define CHTumblrMenuViewDismissAnimationID @"CHTumblrMenuViewDismissAnimationID"
-#define CHTumblrMenuViewAnimationTime 0.7
+#define CHTumblrMenuViewAnimationTime 0.4
 #define CHTumblrMenuViewAnimationInterval (CHTumblrMenuViewAnimationTime / 5)
 
 #define TumblrBlue [UIColor colorWithRed:45/255.0f green:68/255.0f blue:94/255.0f alpha:1.0]
@@ -52,6 +52,7 @@
     
     [button setTitle:title forState:UIControlStateNormal];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    button.titleLabel.font = [UIFont fontWithName:@"Chalkduster" size:16];
     button.titleLabel.textAlignment = NSTextAlignmentCenter;
     
     button.selectedBlock = block;
@@ -81,9 +82,9 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        //UITapGestureRecognizer *ges = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss:)];
-        //ges.delegate = self;
-        //[self addGestureRecognizer:ges];
+        UITapGestureRecognizer *ges = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss:)];
+        ges.delegate = self;
+        [self addGestureRecognizer:ges];
         self.backgroundColor = [UIColor clearColor];
         //backgroundView_ = [[UIImageView alloc] initWithFrame:self.bounds];
         //backgroundView_.backgroundColor = TumblrBlue;
@@ -162,17 +163,26 @@
 
 - (void)dismiss:(id)sender
 {
+    if (self.delegate) {
+        if ([self.delegate respondsToSelector:@selector(tumblrMenuViewDidDismiss)]) {
+            [self.delegate tumblrMenuViewDidDismiss];
+        } else return;
+    } else return;
+    
     [self dropAnimation];
     double delayInSeconds = CHTumblrMenuViewAnimationTime  + CHTumblrMenuViewAnimationInterval * (buttons_.count + 1);
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         
+        /*
         if (self.delegate) {
             if ([self.delegate respondsToSelector:@selector(tumblrMenuViewDidDismiss)]) {
                 [self.delegate tumblrMenuViewDidDismiss];
             }
         }
+         */
         [self removeFromSuperview];
+         
     });
 }
 
