@@ -39,14 +39,12 @@
             
             UIImage *imageToSave = image;
             
-            /*
             if (image.size.width > kImageDefaultWidth) {
                 imageToSave = [Utilities imageWithImage:image scaledToWidth:kImageDefaultWidth];
             }
             if (imageToSave.size.height > kImageDefaultHeight) {
                 imageToSave = [Utilities imageWithImage:image scaledToHeight:kImageDefaultHeight];
             }
-            */
             
             NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
             [formatter setDateFormat:@"yyyyMMddHHmmss"];

@@ -124,13 +124,6 @@
 		F73B27E418F8F13D0054CE2F /* SIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = F73B276818F8F13D0054CE2F /* SIAlertView.m */; };
 		F73B27E518F8F13D0054CE2F /* UIWindow+SIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F73B276A18F8F13D0054CE2F /* UIWindow+SIUtils.m */; };
 		F73B27E618F8F13D0054CE2F /* UIView+Explode.m in Sources */ = {isa = PBXBuildFile; fileRef = F73B276D18F8F13D0054CE2F /* UIView+Explode.m */; };
-		F73B27E718F8F13D0054CE2F /* PECropRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = F73B277018F8F13D0054CE2F /* PECropRectView.m */; };
-		F73B27E818F8F13D0054CE2F /* PECropView.m in Sources */ = {isa = PBXBuildFile; fileRef = F73B277218F8F13D0054CE2F /* PECropView.m */; };
-		F73B27E918F8F13D0054CE2F /* PECropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F73B277418F8F13D0054CE2F /* PECropViewController.m */; };
-		F73B27EA18F8F13D0054CE2F /* PEPhotoCropEditor.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F73B277518F8F13D0054CE2F /* PEPhotoCropEditor.bundle */; };
-		F73B27EB18F8F13D0054CE2F /* PEResizeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = F73B277718F8F13D0054CE2F /* PEResizeControl.m */; };
-		F73B27EC18F8F13D0054CE2F /* UIImage+PECrop.m in Sources */ = {isa = PBXBuildFile; fileRef = F73B277918F8F13D0054CE2F /* UIImage+PECrop.m */; };
-		F73B27ED18F8F13D0054CE2F /* LXActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = F73B277C18F8F13D0054CE2F /* LXActionSheet.m */; };
 		F73B27EE18F8F13D0054CE2F /* JDStatusBarNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = F73B277F18F8F13D0054CE2F /* JDStatusBarNotification.m */; };
 		F73B27EF18F8F13D0054CE2F /* JDStatusBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = F73B278118F8F13D0054CE2F /* JDStatusBarStyle.m */; };
 		F73B27F018F8F13D0054CE2F /* JDStatusBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = F73B278318F8F13D0054CE2F /* JDStatusBarView.m */; };
@@ -418,19 +411,6 @@
 		F73B276A18F8F13D0054CE2F /* UIWindow+SIUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+SIUtils.m"; sourceTree = "<group>"; };
 		F73B276C18F8F13D0054CE2F /* UIView+Explode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Explode.h"; sourceTree = "<group>"; };
 		F73B276D18F8F13D0054CE2F /* UIView+Explode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Explode.m"; sourceTree = "<group>"; };
-		F73B276F18F8F13D0054CE2F /* PECropRectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PECropRectView.h; sourceTree = "<group>"; };
-		F73B277018F8F13D0054CE2F /* PECropRectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PECropRectView.m; sourceTree = "<group>"; };
-		F73B277118F8F13D0054CE2F /* PECropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PECropView.h; sourceTree = "<group>"; };
-		F73B277218F8F13D0054CE2F /* PECropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PECropView.m; sourceTree = "<group>"; };
-		F73B277318F8F13D0054CE2F /* PECropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PECropViewController.h; sourceTree = "<group>"; };
-		F73B277418F8F13D0054CE2F /* PECropViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PECropViewController.m; sourceTree = "<group>"; };
-		F73B277518F8F13D0054CE2F /* PEPhotoCropEditor.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PEPhotoCropEditor.bundle; sourceTree = "<group>"; };
-		F73B277618F8F13D0054CE2F /* PEResizeControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEResizeControl.h; sourceTree = "<group>"; };
-		F73B277718F8F13D0054CE2F /* PEResizeControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEResizeControl.m; sourceTree = "<group>"; };
-		F73B277818F8F13D0054CE2F /* UIImage+PECrop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PECrop.h"; sourceTree = "<group>"; };
-		F73B277918F8F13D0054CE2F /* UIImage+PECrop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PECrop.m"; sourceTree = "<group>"; };
-		F73B277B18F8F13D0054CE2F /* LXActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXActionSheet.h; sourceTree = "<group>"; };
-		F73B277C18F8F13D0054CE2F /* LXActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXActionSheet.m; sourceTree = "<group>"; };
 		F73B277E18F8F13D0054CE2F /* JDStatusBarNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDStatusBarNotification.h; sourceTree = "<group>"; };
 		F73B277F18F8F13D0054CE2F /* JDStatusBarNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDStatusBarNotification.m; sourceTree = "<group>"; };
 		F73B278018F8F13D0054CE2F /* JDStatusBarStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDStatusBarStyle.h; sourceTree = "<group>"; };
@@ -1020,35 +1000,6 @@
 			path = Libraries/LetterPressExplosion;
 			sourceTree = "<group>";
 		};
-		F73B276E18F8F13D0054CE2F /* PEPhotoCropEditor */ = {
-			isa = PBXGroup;
-			children = (
-				F73B276F18F8F13D0054CE2F /* PECropRectView.h */,
-				F73B277018F8F13D0054CE2F /* PECropRectView.m */,
-				F73B277118F8F13D0054CE2F /* PECropView.h */,
-				F73B277218F8F13D0054CE2F /* PECropView.m */,
-				F73B277318F8F13D0054CE2F /* PECropViewController.h */,
-				F73B277418F8F13D0054CE2F /* PECropViewController.m */,
-				F73B277518F8F13D0054CE2F /* PEPhotoCropEditor.bundle */,
-				F73B277618F8F13D0054CE2F /* PEResizeControl.h */,
-				F73B277718F8F13D0054CE2F /* PEResizeControl.m */,
-				F73B277818F8F13D0054CE2F /* UIImage+PECrop.h */,
-				F73B277918F8F13D0054CE2F /* UIImage+PECrop.m */,
-			);
-			name = PEPhotoCropEditor;
-			path = Libraries/PEPhotoCropEditor;
-			sourceTree = "<group>";
-		};
-		F73B277A18F8F13D0054CE2F /* LXActionSheet */ = {
-			isa = PBXGroup;
-			children = (
-				F73B277B18F8F13D0054CE2F /* LXActionSheet.h */,
-				F73B277C18F8F13D0054CE2F /* LXActionSheet.m */,
-			);
-			name = LXActionSheet;
-			path = Libraries/LXActionSheet;
-			sourceTree = "<group>";
-		};
 		F73B277D18F8F13D0054CE2F /* JDStatusBarNotification */ = {
 			isa = PBXGroup;
 			children = (
@@ -1212,8 +1163,6 @@
 				F73B276018F8F13D0054CE2F /* ANBlurredImageView */,
 				F73B276518F8F13D0054CE2F /* SIAlertView */,
 				F73B276B18F8F13D0054CE2F /* LetterPressExplosion */,
-				F73B276E18F8F13D0054CE2F /* PEPhotoCropEditor */,
-				F73B277A18F8F13D0054CE2F /* LXActionSheet */,
 				F73B277D18F8F13D0054CE2F /* JDStatusBarNotification */,
 				F73B278418F8F13D0054CE2F /* SWSnapshotStackView */,
 				F73B278718F8F13D0054CE2F /* CWPopup */,
@@ -1499,7 +1448,6 @@
 				F770C95E18FB176B00120723 /* facebook_c.png in Resources */,
 				F73B27D618F8F13D0054CE2F /* NotificationButtonBackground@2x.png in Resources */,
 				F73B27CA18F8F13D0054CE2F /* NotificationBackgroundErrorIcon@2x.png in Resources */,
-				F73B27EA18F8F13D0054CE2F /* PEPhotoCropEditor.bundle in Resources */,
 				F73B269E18F8EF260054CE2F /* twitter_new.png in Resources */,
 				F73B27A618F8F13D0054CE2F /* dc-button_2.png in Resources */,
 				F73B27A218F8F13D0054CE2F /* custom_5.png in Resources */,
@@ -1577,7 +1525,6 @@
 				F73B280A18F8FF8F0054CE2F /* ImageViewController.m in Sources */,
 				F732390418FA9D3D008BF09B /* ANBlurredTableView.m in Sources */,
 				F73B27B918F8F13D0054CE2F /* FBShimmeringView.m in Sources */,
-				F73B27E718F8F13D0054CE2F /* PECropRectView.m in Sources */,
 				F73B27E618F8F13D0054CE2F /* UIView+Explode.m in Sources */,
 				F73B26B618F8EFB60054CE2F /* UIImage+Encryption.m in Sources */,
 				F73B27F118F8F13D0054CE2F /* SWSnapshotStackView.m in Sources */,
@@ -1588,7 +1535,6 @@
 				F73B27C118F8F13D0054CE2F /* UIRefreshControl+AFNetworking.m in Sources */,
 				F73B27C318F8F13D0054CE2F /* MHNatGeoSegue.m in Sources */,
 				F732390518FA9D3D008BF09B /* UIImage+BoxBlur.m in Sources */,
-				F73B27EC18F8F13D0054CE2F /* UIImage+PECrop.m in Sources */,
 				F7466F7718244FAA004BA1FE /* AppDelegate.m in Sources */,
 				F73B27B218F8F13D0054CE2F /* AFNetworkReachabilityManager.m in Sources */,
 				F73B27DB18F8F13D0054CE2F /* THProgressView.m in Sources */,
@@ -1622,8 +1568,6 @@
 				F73B281F18F8FF9E0054CE2F /* CreatorViewController.m in Sources */,
 				F73B27BA18F8F13D0054CE2F /* FXBlurView.m in Sources */,
 				F79C6F4518FC7B8F0089B836 /* EAGLView.mm in Sources */,
-				F73B27E918F8F13D0054CE2F /* PECropViewController.m in Sources */,
-				F73B27ED18F8F13D0054CE2F /* LXActionSheet.m in Sources */,
 				F73B27DA18F8F13D0054CE2F /* PulsingHaloLayer.m in Sources */,
 				F73B27F818F8F13D0054CE2F /* UIColor+MLPFlatColors.m in Sources */,
 				F73B27BC18F8F13D0054CE2F /* UIActivityIndicatorView+AFNetworking.m in Sources */,
@@ -1631,7 +1575,6 @@
 				F73B27E018F8F13D0054CE2F /* URBMediaFocusViewController.m in Sources */,
 				F73B27D918F8F13D0054CE2F /* TSMessageView.m in Sources */,
 				F73B27C518F8F13D0054CE2F /* HexColor.m in Sources */,
-				F73B27E818F8F13D0054CE2F /* PECropView.m in Sources */,
 				F73B27BB18F8F13D0054CE2F /* AFNetworkActivityIndicatorManager.m in Sources */,
 				F73B27C418F8F13D0054CE2F /* MHNatGeoViewControllerTransition.m in Sources */,
 				F73B284018FA51B60054CE2F /* SpotsTableViewController.m in Sources */,
@@ -1644,7 +1587,6 @@
 				F73B281E18F8FF9E0054CE2F /* HiddenVoiceViewController.m in Sources */,
 				F73B27D818F8F13D0054CE2F /* TSBlurView.m in Sources */,
 				F73B281C18F8FF9E0054CE2F /* HiddenTextViewController.m in Sources */,
-				F73B27EB18F8F13D0054CE2F /* PEResizeControl.m in Sources */,
 				F79C6F4618FC7B8F0089B836 /* MetaioSDKViewController.mm in Sources */,
 				F73B26B718F8EFB60054CE2F /* NSString+Encryption.m in Sources */,
 				F73B26D018F8EFDA0054CE2F /* ImageSpot.m in Sources */,

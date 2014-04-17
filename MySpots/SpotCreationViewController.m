@@ -9,7 +9,6 @@
 #import "Utilities.h"
 #import "SpotsManager.h"
 #import "SpotCreationViewController.h"
-#import "PECropViewController.h"
 #import "SWSnapshotStackView.h"
 #import "UIColor+MLPFlatColors.h"
 #import "MHNatGeoViewControllerTransition.h"
