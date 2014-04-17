@@ -81,9 +81,9 @@
                                   }];
             alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
             alertView.backgroundStyle = SIAlertViewBackgroundStyleSolid;
-            alertView.titleFont = [UIFont fontWithName:@"OpenSans" size:25.0];
-            alertView.messageFont = [UIFont fontWithName:@"OpenSans" size:15.0];
-            alertView.buttonFont = [UIFont fontWithName:@"OpenSans" size:17.0];
+            alertView.titleFont = [UIFont fontWithName:@"Chalkduster" size:25.0];
+            alertView.messageFont = [UIFont fontWithName:@"Chalkduster" size:15.0];
+            alertView.buttonFont = [UIFont fontWithName:@"Chalkduster" size:17.0];
             
             [alertView show];
         }
@@ -107,9 +107,9 @@
                                   }];
             alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
             alertView.backgroundStyle = SIAlertViewBackgroundStyleSolid;
-            alertView.titleFont = [UIFont fontWithName:@"OpenSans" size:25.0];
-            alertView.messageFont = [UIFont fontWithName:@"OpenSans" size:15.0];
-            alertView.buttonFont = [UIFont fontWithName:@"OpenSans" size:17.0];
+            alertView.titleFont = [UIFont fontWithName:@"Chalkduster" size:25.0];
+            alertView.messageFont = [UIFont fontWithName:@"Chalkduster" size:15.0];
+            alertView.buttonFont = [UIFont fontWithName:@"Chalkduster" size:17.0];
             
             [alertView show];
         }
@@ -135,9 +135,9 @@
                                   }];
             alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
             alertView.backgroundStyle = SIAlertViewBackgroundStyleSolid;
-            alertView.titleFont = [UIFont fontWithName:@"OpenSans" size:25.0];
-            alertView.messageFont = [UIFont fontWithName:@"OpenSans" size:15.0];
-            alertView.buttonFont = [UIFont fontWithName:@"OpenSans" size:17.0];
+            alertView.titleFont = [UIFont fontWithName:@"Chalkduster" size:25.0];
+            alertView.messageFont = [UIFont fontWithName:@"Chalkduster" size:15.0];
+            alertView.buttonFont = [UIFont fontWithName:@"Chalkduster" size:17.0];
             
             [alertView show];
         }
@@ -148,7 +148,7 @@
     FBShimmeringView *shimmeringView = [[FBShimmeringView alloc] initWithFrame:CGRectMake(20, 70 + yOffset, 280, 150)];
     UILabel *downloadCodeLabel = [[UILabel alloc] initWithFrame:shimmeringView.bounds];
     downloadCodeLabel.textAlignment = NSTextAlignmentCenter;
-    downloadCodeLabel.font = [UIFont fontWithName:@"OpenSans" size:28];
+    downloadCodeLabel.font = [UIFont fontWithName:@"Chalkduster" size:25];
     downloadCodeLabel.numberOfLines = 3;
     downloadCodeLabel.textColor = [UIColor flatWhiteColor];
     downloadCodeLabel.text = [@"Your MySpots download code is:\n" stringByAppendingString:downloadCode];

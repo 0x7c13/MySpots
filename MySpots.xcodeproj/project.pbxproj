@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F720459118FFA53300B13C62 /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = F720459018FFA53300B13C62 /* setting.png */; };
 		F732390418FA9D3D008BF09B /* ANBlurredTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F732390118FA9D3D008BF09B /* ANBlurredTableView.m */; };
 		F732390518FA9D3D008BF09B /* UIImage+BoxBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = F732390318FA9D3D008BF09B /* UIImage+BoxBlur.m */; };
 		F73B268A18F8EF260054CE2F /* back_button.png in Resources */ = {isa = PBXBuildFile; fileRef = F73B267418F8EF260054CE2F /* back_button.png */; };
@@ -231,6 +232,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F720459018FFA53300B13C62 /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
 		F732390018FA9D3D008BF09B /* ANBlurredTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANBlurredTableView.h; sourceTree = "<group>"; };
 		F732390118FA9D3D008BF09B /* ANBlurredTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANBlurredTableView.m; sourceTree = "<group>"; };
 		F732390218FA9D3D008BF09B /* UIImage+BoxBlur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BoxBlur.h"; sourceTree = "<group>"; };
@@ -618,6 +620,7 @@
 		F73B267318F8EF260054CE2F /* UIRes */ = {
 			isa = PBXGroup;
 			children = (
+				F720459018FFA53300B13C62 /* setting.png */,
 				F781991018FDB2A900A0D038 /* share.png */,
 				F770C95B18FB176B00120723 /* twitter_c.png */,
 				F770C95C18FB176B00120723 /* facebook_c.png */,
@@ -1522,6 +1525,7 @@
 				F73B27A118F8F13D0054CE2F /* custom_4.png in Resources */,
 				F73B27A818F8F13D0054CE2F /* dc-button_4.png in Resources */,
 				F73B269A18F8EF260054CE2F /* settings.png in Resources */,
+				F720459118FFA53300B13C62 /* setting.png in Resources */,
 				F770C95718FB168B00120723 /* maps_c.png in Resources */,
 				F73B269818F8EF260054CE2F /* locker.png in Resources */,
 				F73B27C718F8F13D0054CE2F /* NotificationBackgroundError.png in Resources */,

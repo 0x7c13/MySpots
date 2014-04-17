@@ -65,7 +65,7 @@
     [_imageView setBlurAmount:1];
     
     self.dcPathButton = [[DCPathButton alloc]
-                          initDCPathButtonWithSubButtons:6
+                          initDCPathButtonWithSubButtons:5
                           totalRadius:110
                           centerRadius:45
                           subRadius:35
@@ -73,11 +73,10 @@
                           centerBackground:nil
                           subImages:^(DCPathButton *dc){
                               [dc subButtonImage:@"spot_c" withTag:0];
-                              [dc subButtonImage:@"camera_c" withTag:1];
-                              [dc subButtonImage:@"maps_c" withTag:2];
-                              [dc subButtonImage:@"twitter_c" withTag:3];
+                              [dc subButtonImage:@"maps_c" withTag:1];
+                              [dc subButtonImage:@"camera_c" withTag:2];
+                              [dc subButtonImage:@"setting" withTag:3];
                               [dc subButtonImage:@"download_c" withTag:4];
-                              [dc subButtonImage:@"facebook_c" withTag:5];
                           }
                           subImageBackground:nil
                           inLocationX:160 locationY:locationY toParentView:self.buttonView];
@@ -255,7 +254,7 @@
 #pragma mark - DCPathButton delegate
 
 - (void)button_0_action:(DCSubButton *)sender {
-    NSLog(@"Button Press Tag 0!!");
+
     [self executeSubButtonAnimationForButton:sender];
     [self.dcPathButton close];
     
@@ -263,33 +262,7 @@
 }
 
 - (void)button_1_action:(DCSubButton *)sender {
-    NSLog(@"Button Press Tag 1!!");
-    [self executeSubButtonAnimationForButton:sender];
-    
-    [self.dcPathButton close];
-    
-    if ([SpotsManager sharedManager].spots.count > 0) {
-        
-        [self performSegueWithIdentifier:@"cameraSegue" sender:nil];
-        
-    } else {
-        SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"Oops" andMessage:@"No spots are found, please create one first!"];
-        [alertView addButtonWithTitle:@"OK"
-                                 type:SIAlertViewButtonTypeDestructive
-                              handler:^(SIAlertView *alertView) {
-        }];
-        alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
-        alertView.backgroundStyle = SIAlertViewBackgroundStyleSolid;
-        alertView.titleFont = [UIFont fontWithName:@"Chalkduster" size:25.0];
-        alertView.messageFont = [UIFont fontWithName:@"Chalkduster" size:15.0];
-        alertView.buttonFont = [UIFont fontWithName:@"Chalkduster" size:17.0];
-        
-        [alertView show];
-    }
-}
 
-- (void)button_2_action:(DCSubButton *)sender {
-    NSLog(@"Button Press Tag 4!!");
     [self executeSubButtonAnimationForButton:sender];
     
     [self.dcPathButton close];
@@ -312,21 +285,18 @@
     }
 }
 
-- (void)button_3_action:(DCSubButton *)sender {
-    NSLog(@"Button Press Tag 3!!");
+- (void)button_2_action:(DCSubButton *)sender {
+    
     [self executeSubButtonAnimationForButton:sender];
     
     [self.dcPathButton close];
-    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+    
+    if ([SpotsManager sharedManager].spots.count > 0) {
         
-        SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        [self performSegueWithIdentifier:@"cameraSegue" sender:nil];
         
-        [controller setInitialText:@"Check out the #MySpots App!"];
-        [controller addImage:[UIImage imageNamed:@"icon.png"]];
-        
-        [self presentViewController:controller animated:YES completion:Nil];
     } else {
-        SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"Oops" andMessage:@"Please login with your Twitter account in settings!"];
+        SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"Oops" andMessage:@"No spots are found, please create one first!"];
         [alertView addButtonWithTitle:@"OK"
                                  type:SIAlertViewButtonTypeDestructive
                               handler:^(SIAlertView *alertView) {
@@ -341,8 +311,13 @@
     }
 }
 
+- (void)button_3_action:(DCSubButton *)sender {
+
+    [self executeSubButtonAnimationForButton:sender];
+}
+
 - (void)button_4_action:(DCSubButton *)sender {
-    NSLog(@"Button Press Tag 2!!");
+
     [self executeSubButtonAnimationForButton:sender];
     
     [self.dcPathButton close];
@@ -371,7 +346,7 @@
                                                  progress:^(NSUInteger totalBytesRead, NSInteger totalBytesExpectedToRead){
                  
                                                     //NSLog(@"%.0f", (float)totalBytesRead/(float)totalBytesExpectedToRead);
-                                                    if (totalBytesExpectedToRead != -1) {
+                                                    if (totalBytesExpectedToRead != -1 && totalBytesRead > 0) {
                                                         [weakSelf.circularProgressView setProgress:(float)totalBytesRead/(float)totalBytesExpectedToRead];
                                                     }
                                                 }
@@ -409,36 +384,6 @@
         
     }];
     [self.alertView showWithAnimation:URBAlertAnimationDefault];
-}
-
-- (void)button_5_action:(DCSubButton *)sender {
-    NSLog(@"Button Press Tag 5!!");
-    [self executeSubButtonAnimationForButton:sender];
-    
-    [self.dcPathButton close];
-    
-    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
-        
-        SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-        
-        [controller setInitialText:@"Check out the #MySpots App!"];
-        [controller addImage:[UIImage imageNamed:@"icon.png"]];
-        
-        [self presentViewController:controller animated:YES completion:Nil];
-    } else {
-        SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"Oops" andMessage:@"Please login with your Facebook account in settings!"];
-        [alertView addButtonWithTitle:@"OK"
-                                 type:SIAlertViewButtonTypeDestructive
-                              handler:^(SIAlertView *alertView) {
-                              }];
-        alertView.transitionStyle = SIAlertViewTransitionStyleDropDown;
-        alertView.backgroundStyle = SIAlertViewBackgroundStyleSolid;
-        alertView.titleFont = [UIFont fontWithName:@"Chalkduster" size:25.0];
-        alertView.messageFont = [UIFont fontWithName:@"Chalkduster" size:15.0];
-        alertView.buttonFont = [UIFont fontWithName:@"Chalkduster" size:17.0];
-        
-        [alertView show];
-    }
 }
 
 - (void)executeSubButtonAnimationForButton:(DCSubButton *)button

@@ -1,4 +1,4 @@
-
+//
 //  metaio SDK
 //
 // Copyright 2007-2013 metaio GmbH. All rights reserved.
@@ -172,6 +172,7 @@
                         [self presentPopupViewController:imageVC animated:YES completion:nil];
                         //[JDStatusBarNotification showWithStatus:@"Decryption succeeded!" dismissAfter:1.0f styleName:JDStatusBarStyleSuccess];
                     }];
+                    
                 } else if ([targetSpot isKindOfClass:[AudioSpot class]]) {
                     
                     //[JDStatusBarNotification showWithStatus:@"Decrypting..." styleName:JDStatusBarStyleError];
@@ -186,6 +187,10 @@
                         //[JDStatusBarNotification showWithStatus:@"Decryption succeeded!" dismissAfter:1.0f styleName:JDStatusBarStyleSuccess];
                     }];
                 }
+                
+                CLLocationDistance distance = [self.locationManager.location distanceFromLocation:[[CLLocation alloc] initWithLatitude:(CLLocationDegrees)targetSpot.latitude longitude:(CLLocationDegrees)targetSpot.longitude]];
+                [TSMessage showNotificationInViewController:self title:[NSString stringWithFormat:@"%.0f m from you", distance] subtitle:nil type:TSMessageNotificationTypeError duration:2.0f];
+                
                 break;
             }
         }

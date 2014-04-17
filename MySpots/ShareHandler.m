@@ -16,8 +16,6 @@
 #import "SpotsManager.h"
 #import "NSData+Encryption.h"
 
-#define kAFNetworkingEnabled 1
-
 @implementation ShareHandler
 
 
@@ -25,7 +23,7 @@
           progress:(void (^)(NSUInteger, NSInteger))progress
    completionBlock:(void (^)(ShareHandlerOption, NSURL *, NSError *))completion
 {
-    NSLog(@"Spot to upload is type of :%@", [spot class]);
+    NSLog(@"Spot to upload is a type of :%@", [spot class]);
     
     NSMutableDictionary *dataDic = [[NSMutableDictionary alloc] init];
     

@@ -284,22 +284,23 @@
                                              }
                                        completionBlock:^(ShareHandlerOption option, NSURL *spotURL, NSError *error){
                                               
-                                              [etActivity removeFromSuperview];
-                                              [JDStatusBarNotification showWithStatus:@"Spot uploaded!" dismissAfter:2.0f styleName:JDStatusBarStyleSuccess];
+                                                [etActivity removeFromSuperview];
                                               
-                                              [UIView animateWithDuration:0.3f animations:^{
-                                                  self.progressView.alpha = 0.0f;
-                                                  self.progressView.hidden = YES;
-                                              }];
+                                                [UIView animateWithDuration:0.3f animations:^{
+                                                    self.progressView.alpha = 0.0f;
+                                                    self.progressView.hidden = YES;
+                                                }];
                                               
-                                              if (option == ShareHandlerOptionSuccess) {
-                                                  
-                                                  NSLog(@"%@", spotURL);
-                                              } else {
-                                                  NSLog(@"%@", error.localizedDescription);
-                                              }
-                                              
-                                              [self showShareMenuWithDownloadURL:spotURL];
+                                               if (option == ShareHandlerOptionSuccess) {
+                                                   
+                                                   NSLog(@"%@", spotURL);
+                                                   [self showShareMenuWithDownloadURL:spotURL];
+                                                   [JDStatusBarNotification showWithStatus:@"spot uploaded!" dismissAfter:2.0f styleName:JDStatusBarStyleSuccess];
+                                                   
+                                               } else {
+                                                   NSLog(@"%@", error.localizedDescription);
+                                                   [JDStatusBarNotification showWithStatus:error.localizedDescription dismissAfter:2.0f styleName:JDStatusBarStyleError];
+                                               }
                                       }];
 
                             }];
